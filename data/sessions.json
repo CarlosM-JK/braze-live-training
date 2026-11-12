@@ -1,9 +1,90 @@
 {
- "updated": "2026-11-12T13:45:00+01:00",
+ "updated": "2026-11-12T15:33:24+01:00",
  "source": "https://learning.braze.com/calendar",
  "timezone": "Europe/Madrid",
- "count": 47,
+ "count": 56,
  "events": [
+  {
+   "title": "Agentic Marketing: A Guided Workshop",
+   "start": "2026-11-03T03:00:00+01:00",
+   "end": "2026-11-03T04:30:00+01:00",
+   "url": "/agentic-marketing-workshop/2516886",
+   "tags": []
+  },
+  {
+   "title": "Get Started with Braze: Driving First Transactions",
+   "start": "2026-11-03T04:00:00+01:00",
+   "end": "2026-11-03T05:00:00+01:00",
+   "url": "/getting-started-with-braze-driving-first-transactions/2154168",
+   "tags": [
+    "english",
+    "apac-timezones"
+   ]
+  },
+  {
+   "title": "Brazeを始めよう：成果を生み出す施策設定の基礎：ライブトレーニング",
+   "start": "2026-11-04T07:30:00+01:00",
+   "end": "2026-11-04T09:30:00+01:00",
+   "url": "/braze90-course/2317453",
+   "tags": []
+  },
+  {
+   "title": "Get Started with Braze: Seamless Reengagement with Targeted Reminders",
+   "start": "2026-11-04T15:00:00+01:00",
+   "end": "2026-11-04T16:00:00+01:00",
+   "url": "/seamless-reengagement-with-targeted-reminders/2163695",
+   "tags": [
+    "english",
+    "emea-timezones"
+   ]
+  },
+  {
+   "title": "Get Started with Braze: Foundations for Effective Campaigns",
+   "start": "2026-11-04T21:00:00+01:00",
+   "end": "2026-11-04T23:00:00+01:00",
+   "url": "/getting-started-with-braze-foundations-for-effective-campaigns/2152914",
+   "tags": [
+    "english",
+    "amer-timezones"
+   ]
+  },
+  {
+   "title": "Agentic Marketing: A Guided Workshop",
+   "start": "2026-11-05T16:00:00+01:00",
+   "end": "2026-11-05T17:30:00+01:00",
+   "url": "/agentic-marketing-workshop/2516886",
+   "tags": []
+  },
+  {
+   "title": "Introduction to Liquid",
+   "start": "2026-11-06T03:00:00+01:00",
+   "end": "2026-11-06T04:30:00+01:00",
+   "url": "/introduction-to-liquid/1823536",
+   "tags": [
+    "english",
+    "apac-timezones"
+   ]
+  },
+  {
+   "title": "SMS Messaging with Braze",
+   "start": "2026-11-06T16:00:00+01:00",
+   "end": "2026-11-06T18:00:00+01:00",
+   "url": "/sms-messaging-with-braze/1542011",
+   "tags": [
+    "english",
+    "emea-timezones"
+   ]
+  },
+  {
+   "title": "Email Messaging with Braze",
+   "start": "2026-11-09T21:00:00+01:00",
+   "end": "2026-11-09T23:00:00+01:00",
+   "url": "/email-messaging-with-braze/1839452",
+   "tags": [
+    "english",
+    "amer-timezones"
+   ]
+  },
   {
    "title": "Get Started with Braze: Engage and Retain with Personalized Recommendations",
    "start": "2026-11-10T04:00:00+01:00",

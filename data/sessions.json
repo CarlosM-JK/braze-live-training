@@ -1,0 +1,454 @@
+{
+ "updated": "2026-11-12T13:45:00+01:00",
+ "source": "https://learning.braze.com/calendar",
+ "timezone": "Europe/Madrid",
+ "count": 47,
+ "events": [
+  {
+   "title": "Get Started with Braze: Engage and Retain with Personalized Recommendations",
+   "start": "2026-11-10T04:00:00+01:00",
+   "end": "2026-11-10T05:00:00+01:00",
+   "url": "/getting-started-with-braze-engage-and-retain-with-personalised-recommendations/2161508",
+   "tags": [
+    "english",
+    "apac-timezones"
+   ]
+  },
+  {
+   "title": "Get Started with Braze: Foundations for Effective Campaigns",
+   "start": "2026-11-12T04:00:00+01:00",
+   "end": "2026-11-12T06:00:00+01:00",
+   "url": "/getting-started-with-braze-foundations-for-effective-campaigns/2152914",
+   "tags": [
+    "english",
+    "apac-timezones"
+   ]
+  },
+  {
+   "title": "Webinar: Smarter Decisions, Better Campaigns with Decisioning Studio Go",
+   "start": "2026-11-12T18:00:00+01:00",
+   "end": "2026-11-12T19:00:00+01:00",
+   "url": "/webinar-smarter-decisions-better-campaigns-with-decisioning-studio-go/2596526",
+   "tags": []
+  },
+  {
+   "title": "Canvas Flow を活用したエクスペリエンス オーケストレーション",
+   "start": "2026-11-13T07:30:00+01:00",
+   "end": "2026-11-13T09:00:00+01:00",
+   "url": "/canvas-101-ja/2158246",
+   "tags": [
+    "ja",
+    "apac-timezones"
+   ]
+  },
+  {
+   "title": "Prompt Engineering Workshop",
+   "start": "2026-11-13T15:00:00+01:00",
+   "end": "2026-11-13T17:00:00+01:00",
+   "url": "/prompt-engineering-workshop/2517729",
+   "tags": [
+    "live-training",
+    "english"
+   ]
+  },
+  {
+   "title": "Advanced Liquid",
+   "start": "2026-11-16T03:00:00+01:00",
+   "end": "2026-11-16T05:00:00+01:00",
+   "url": "/advanced-liquid/464032",
+   "tags": [
+    "english",
+    "apac-timezones"
+   ]
+  },
+  {
+   "title": "Practitioner Bootcamp",
+   "start": "2026-11-16T19:00:00+01:00",
+   "end": "2026-11-16T21:00:00+01:00",
+   "url": "/braze-certified-practitioner-bootcamp-and-certification/2101366",
+   "tags": [
+    "english",
+    "amer-timezones"
+   ]
+  },
+  {
+   "title": "Practitioner Bootcamp",
+   "start": "2026-11-17T04:00:00+01:00",
+   "end": "2026-11-17T06:00:00+01:00",
+   "url": "/braze-certified-practitioner-bootcamp-and-certification/2101366",
+   "tags": [
+    "english",
+    "apac-timezones"
+   ]
+  },
+  {
+   "title": "Brazeを始めよう：初回取引の促進（F1転換）",
+   "start": "2026-11-17T07:30:00+01:00",
+   "end": "2026-11-17T08:30:00+01:00",
+   "url": "/getting-started-with-braze-driving-first-transactions-ja/2450185",
+   "tags": []
+  },
+  {
+   "title": "Webinar: Braze in the Wild - Real-World Technical Solutions",
+   "start": "2026-11-17T18:00:00+01:00",
+   "end": "2026-11-17T19:30:00+01:00",
+   "url": "/webinar-braze-in-the-wild-real-world-technical-solutions/2596567",
+   "tags": []
+  },
+  {
+   "title": "Get Started with Braze: Seamless Reengagement with Targeted Reminders",
+   "start": "2026-11-18T04:00:00+01:00",
+   "end": "2026-11-18T05:00:00+01:00",
+   "url": "/seamless-reengagement-with-targeted-reminders/2163695",
+   "tags": [
+    "english",
+    "apac-timezones"
+   ]
+  },
+  {
+   "title": "Marketing Specialist Bootcamp",
+   "start": "2026-11-18T17:00:00+01:00",
+   "end": "2026-11-18T20:00:00+01:00",
+   "url": "/braze-certified-marketer-bootcamp-and-certification/2178931",
+   "tags": [
+    "english",
+    "amer-timezones"
+   ]
+  },
+  {
+   "title": "AI Liquid Essentials",
+   "start": "2026-11-19T03:00:00+01:00",
+   "end": "2026-11-19T05:00:00+01:00",
+   "url": "/ai-liquid-essentials/2549871",
+   "tags": [
+    "english",
+    "apac-timezones"
+   ]
+  },
+  {
+   "title": "Introduction to Liquid",
+   "start": "2026-11-19T16:00:00+01:00",
+   "end": "2026-11-19T17:30:00+01:00",
+   "url": "/introduction-to-liquid/1823536",
+   "tags": [
+    "english",
+    "emea-timezones"
+   ]
+  },
+  {
+   "title": "Experience Orchestration with Canvas",
+   "start": "2026-11-19T21:00:00+01:00",
+   "end": "2026-11-19T22:30:00+01:00",
+   "url": "/canvas-101/516007",
+   "tags": [
+    "english",
+    "amer-timezones"
+   ]
+  },
+  {
+   "title": "Marketing Specialist Bootcamp",
+   "start": "2026-11-20T03:00:00+01:00",
+   "end": "2026-11-20T06:00:00+01:00",
+   "url": "/braze-certified-marketer-bootcamp-and-certification/2178931",
+   "tags": [
+    "english",
+    "apac-timezones"
+   ]
+  },
+  {
+   "title": "Practitioner Bootcamp",
+   "start": "2026-11-20T16:00:00+01:00",
+   "end": "2026-11-20T18:00:00+01:00",
+   "url": "/braze-certified-practitioner-bootcamp-and-certification/2101366",
+   "tags": [
+    "english",
+    "amer-timezones"
+   ]
+  },
+  {
+   "title": "Connected Content",
+   "start": "2026-11-24T03:00:00+01:00",
+   "end": "2026-11-24T04:30:00+01:00",
+   "url": "/connected-content/1544284",
+   "tags": [
+    "english",
+    "apac-timezones"
+   ]
+  },
+  {
+   "title": "Brazeを始めよう：離脱気味なユーザーを自然に呼び戻す",
+   "start": "2026-11-24T07:30:00+01:00",
+   "end": "2026-11-24T08:30:00+01:00",
+   "url": "/reengage-churning-users-ja/2488446",
+   "tags": []
+  },
+  {
+   "title": "Marketing Specialist Bootcamp",
+   "start": "2026-11-24T15:00:00+01:00",
+   "end": "2026-11-24T18:00:00+01:00",
+   "url": "/braze-certified-marketer-bootcamp-and-certification/2178931",
+   "tags": [
+    "english",
+    "emea-timezones"
+   ]
+  },
+  {
+   "title": "Get Started with Braze: Winback and Sunset Strategies for Lasting Engagement",
+   "start": "2026-11-25T04:00:00+01:00",
+   "end": "2026-11-25T05:00:00+01:00",
+   "url": "/get-started-use-cases-winback-sunset-strategies-for-lasting-engagement/2165828",
+   "tags": [
+    "english",
+    "apac-timezones"
+   ]
+  },
+  {
+   "title": "Email Messaging with Braze",
+   "start": "2026-11-26T03:00:00+01:00",
+   "end": "2026-11-26T05:00:00+01:00",
+   "url": "/email-messaging-with-braze/1839452",
+   "tags": [
+    "english",
+    "apac-timezones"
+   ]
+  },
+  {
+   "title": "Advanced Liquid",
+   "start": "2026-11-30T10:00:00+01:00",
+   "end": "2026-11-30T12:00:00+01:00",
+   "url": "/advanced-liquid/464032",
+   "tags": [
+    "english",
+    "emea-timezones"
+   ]
+  },
+  {
+   "title": "AI Liquid Essentials",
+   "start": "2026-11-30T16:00:00+01:00",
+   "end": "2026-11-30T18:00:00+01:00",
+   "url": "/ai-liquid-essentials/2549871",
+   "tags": [
+    "english",
+    "emea-timezones"
+   ]
+  },
+  {
+   "title": "Connected Content",
+   "start": "2026-11-30T21:00:00+01:00",
+   "end": "2026-11-30T22:30:00+01:00",
+   "url": "/connected-content/1544284",
+   "tags": [
+    "english",
+    "amer-timezones"
+   ]
+  },
+  {
+   "title": "Connected Content",
+   "start": "2026-12-01T04:00:00+01:00",
+   "end": "2026-12-01T05:30:00+01:00",
+   "url": "/connected-content/1544284",
+   "tags": [
+    "english",
+    "apac-timezones"
+   ]
+  },
+  {
+   "title": "Brazeを始めよう：成果を生み出す施策設定の基礎：ライブトレーニング",
+   "start": "2026-12-01T07:30:00+01:00",
+   "end": "2026-12-01T09:30:00+01:00",
+   "url": "/braze90-course/2317453",
+   "tags": []
+  },
+  {
+   "title": "Experience Orchestration with Canvas",
+   "start": "2026-12-01T16:00:00+01:00",
+   "end": "2026-12-01T17:30:00+01:00",
+   "url": "/canvas-101/516007",
+   "tags": [
+    "english",
+    "emea-timezones"
+   ]
+  },
+  {
+   "title": "Get Started with Braze: Driving First Transactions",
+   "start": "2026-12-02T04:00:00+01:00",
+   "end": "2026-12-02T05:00:00+01:00",
+   "url": "/getting-started-with-braze-driving-first-transactions/2154168",
+   "tags": [
+    "english",
+    "apac-timezones"
+   ]
+  },
+  {
+   "title": "Email Messaging with Braze",
+   "start": "2026-12-03T04:00:00+01:00",
+   "end": "2026-12-03T06:00:00+01:00",
+   "url": "/email-messaging-with-braze/1839452",
+   "tags": [
+    "english",
+    "apac-timezones"
+   ]
+  },
+  {
+   "title": "Introduction to Liquid",
+   "start": "2026-12-04T21:00:00+01:00",
+   "end": "2026-12-04T22:30:00+01:00",
+   "url": "/introduction-to-liquid/1823536",
+   "tags": [
+    "english",
+    "amer-timezones"
+   ]
+  },
+  {
+   "title": "Get Started with Braze: Engage and Retain with Personalized Recommendations",
+   "start": "2026-12-07T04:00:00+01:00",
+   "end": "2026-12-07T05:00:00+01:00",
+   "url": "/getting-started-with-braze-engage-and-retain-with-personalised-recommendations/2161508",
+   "tags": [
+    "english",
+    "apac-timezones"
+   ]
+  },
+  {
+   "title": "Agentic Marketing Workshop",
+   "start": "2026-12-08T04:00:00+01:00",
+   "end": "2026-12-08T05:30:00+01:00",
+   "url": "/agentic-marketing-workshop/2516886",
+   "tags": [
+    "english",
+    "apac-timezones"
+   ]
+  },
+  {
+   "title": "Canvas Flow を活用したエクスペリエンス オーケストレーション",
+   "start": "2026-12-08T07:30:00+01:00",
+   "end": "2026-12-08T09:00:00+01:00",
+   "url": "/canvas-101-ja/2158246",
+   "tags": [
+    "ja",
+    "apac-timezones"
+   ]
+  },
+  {
+   "title": "AI Liquid Essentials",
+   "start": "2026-12-08T16:00:00+01:00",
+   "end": "2026-12-08T18:00:00+01:00",
+   "url": "/ai-liquid-essentials/2549871",
+   "tags": [
+    "english",
+    "emea-timezones"
+   ]
+  },
+  {
+   "title": "Practitioner Bootcamp",
+   "start": "2026-12-09T04:00:00+01:00",
+   "end": "2026-12-09T06:00:00+01:00",
+   "url": "/braze-certified-practitioner-bootcamp-and-certification/2101366",
+   "tags": [
+    "english",
+    "apac-timezones"
+   ]
+  },
+  {
+   "title": "Connected Content",
+   "start": "2026-12-10T21:00:00+01:00",
+   "end": "2026-12-10T22:30:00+01:00",
+   "url": "/connected-content/1544284",
+   "tags": [
+    "english",
+    "amer-timezones"
+   ]
+  },
+  {
+   "title": "Email Messaging with Braze",
+   "start": "2026-12-11T21:00:00+01:00",
+   "end": "2026-12-11T23:00:00+01:00",
+   "url": "/email-messaging-with-braze/1839452",
+   "tags": [
+    "english",
+    "amer-timezones"
+   ]
+  },
+  {
+   "title": "Get Started with Braze: Foundations for Effective Campaigns",
+   "start": "2026-12-15T04:00:00+01:00",
+   "end": "2026-12-15T06:00:00+01:00",
+   "url": "/getting-started-with-braze-foundations-for-effective-campaigns/2152914",
+   "tags": [
+    "english",
+    "apac-timezones"
+   ]
+  },
+  {
+   "title": "Brazeを始めよう：継続利用を促す",
+   "start": "2026-12-15T07:30:00+01:00",
+   "end": "2026-12-15T08:30:00+01:00",
+   "url": "/seamless-reengagement-with-targeted-reminders-ja/2450189",
+   "tags": []
+  },
+  {
+   "title": "Get Started with Braze: Foundations for Effective Campaigns",
+   "start": "2026-12-15T16:00:00+01:00",
+   "end": "2026-12-15T18:00:00+01:00",
+   "url": "/getting-started-with-braze-foundations-for-effective-campaigns/2152914",
+   "tags": [
+    "english",
+    "emea-timezones"
+   ]
+  },
+  {
+   "title": "Get Started with Braze: Winback and Sunset Strategies for Lasting Engagement",
+   "start": "2026-12-16T04:00:00+01:00",
+   "end": "2026-12-16T05:00:00+01:00",
+   "url": "/get-started-use-cases-winback-sunset-strategies-for-lasting-engagement/2165828",
+   "tags": [
+    "english",
+    "apac-timezones"
+   ]
+  },
+  {
+   "title": "Get Started with Braze: Seamless Reengagement with Targeted Reminders",
+   "start": "2026-12-16T23:30:00+01:00",
+   "end": "2026-12-17T00:30:00+01:00",
+   "url": "/seamless-reengagement-with-targeted-reminders/2163695",
+   "tags": [
+    "english",
+    "apac-timezones"
+   ]
+  },
+  {
+   "title": "Get Started with Braze: Driving First Transactions",
+   "start": "2026-12-17T16:00:00+01:00",
+   "end": "2026-12-17T17:00:00+01:00",
+   "url": "/getting-started-with-braze-driving-first-transactions/2154168",
+   "tags": [
+    "english",
+    "emea-timezones"
+   ]
+  },
+  {
+   "title": "Get Started with Braze: Engage and Retain with Personalized Recommendations",
+   "start": "2026-12-17T21:00:00+01:00",
+   "end": "2026-12-17T22:00:00+01:00",
+   "url": "/getting-started-with-braze-engage-and-retain-with-personalised-recommendations/2161508",
+   "tags": [
+    "english",
+    "amer-timezones"
+   ]
+  },
+  {
+   "title": "Brazeを始めよう：離脱したユーザーを呼び戻すか配信停止の判断",
+   "start": "2026-12-22T07:30:00+01:00",
+   "end": "2026-12-22T08:30:00+01:00",
+   "url": "/discontinue-churned-users-ja/2488448",
+   "tags": []
+  },
+  {
+   "title": "How Bilt Personalizes Offers for Every Member",
+   "start": "2027-01-07T17:00:00+01:00",
+   "end": "2027-01-07T18:00:00+01:00",
+   "url": "/webinar-how-bilt-personalizes-offers-for-every-member/2596441",
+   "tags": []
+  }
+ ]
+}

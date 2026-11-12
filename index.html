@@ -4,156 +4,374 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex, nofollow">
-<title>Braze Live Training · Calendario del grupo</title>
+<title>Braze Live Training · COE Braze Iberia</title>
+<link rel="icon" type="image/png" href="assets/jakala-j-blue.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Sans+Condensed:wght@600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
-/* Layout: cabecera con resumen → barra de filtros → vista (lista por semanas | mes). Datos separados en el bloque DATA. */
+/* Línea JAKALA: JBlue + blanco, Raleway. Malla hexagonal ondulada en la cabecera, un único hexágono de foco.
+   Rojo, lila y turquesa solo como color de datos (áreas). Tema claro único. */
 :root{
-  --bg:#f4f5f7; --surface:#ffffff; --ink:#1b2130; --muted:#5d6577; --line:#dfe2e8;
-  --accent:#0f6b6b; --accent-soft:#e2f0ef;
-  --ok:#2e7d4f; --ok-soft:#e3f2e8; --warn:#9a6a12; --warn-soft:#f7eedb;
-  --a-orq:#6a4fb3; --a-can:#c0532f; --a-dat:#1f6fa8; --a-ia:#0f6b6b; --a-uc:#8a6d12; --a-cert:#a3366b; --a-otr:#6b7280;
-  --display:"IBM Plex Sans Condensed","Arial Narrow",system-ui,sans-serif;
-  --body:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
-  --mono:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace;
+  --jblue:#040066; --jblue-2:#040ab2; --jblue-3:#1941fa; --jblue-4:#3c82ff;
+  --ink:#0d0b33; --black:#000000; --jred:#f00a0a; --muted:#5b5a73; --line:#e8e8e8; --line-2:#cfcfcf; --soft:#f5f5f5; --white:#ffffff; --tint:#eef2ff;
+  --a-orq:#5c13b5; --a-can:#f00a0a; --a-dat:#1941fa; --a-ia:#008b8b; --a-uc:#e8584f; --a-cert:#040066; --a-otr:#8c8c8c;
+  --font:"Raleway",-apple-system,"Segoe UI",Arial,sans-serif;
   color-scheme:light;
-}
-@media (prefers-color-scheme: dark){
-  :root:not([data-theme="light"]){
-    --bg:#12151c; --surface:#1a1f29; --ink:#e7e9ee; --muted:#9aa2b2; --line:#2c3341;
-    --accent:#4fb8b2; --accent-soft:#16302f;
-    --ok:#6cc58f; --ok-soft:#173022; --warn:#e0b45a; --warn-soft:#33290f;
-    --a-orq:#a792e6; --a-can:#ec8a66; --a-dat:#6cb2e6; --a-ia:#4fb8b2; --a-uc:#d6b34a; --a-cert:#e07aab; --a-otr:#9aa2b2;
-    color-scheme:dark;
-  }
-}
-:root[data-theme="dark"]{
-  --bg:#12151c; --surface:#1a1f29; --ink:#e7e9ee; --muted:#9aa2b2; --line:#2c3341;
-  --accent:#4fb8b2; --accent-soft:#16302f;
-  --ok:#6cc58f; --ok-soft:#173022; --warn:#e0b45a; --warn-soft:#33290f;
-  --a-orq:#a792e6; --a-can:#ec8a66; --a-dat:#6cb2e6; --a-ia:#4fb8b2; --a-uc:#d6b34a; --a-cert:#e07aab; --a-otr:#9aa2b2;
-  color-scheme:dark;
 }
 *{box-sizing:border-box}
 html,body{margin:0}
-body{background:var(--bg);color:var(--ink);font:15px/1.5 var(--body);padding:28px 20px 48px}
-.wrap{max-width:1080px;margin:0 auto;display:flex;flex-direction:column;gap:20px}
-h1,h2,h3{font-family:var(--display);text-wrap:balance;margin:0;letter-spacing:.01em}
-h1{font-size:30px;line-height:1.15}
-h2{font-size:19px}
-a{color:var(--accent)}
-.sub{color:var(--muted);font-size:14px;max-width:70ch;margin:6px 0 0}
-.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px}
-.stat{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:12px 14px}
-.stat b{display:block;font:600 24px/1.1 var(--display);font-variant-numeric:tabular-nums}
-.stat span{color:var(--muted);font-size:13px}
-.bar{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:14px;display:flex;flex-direction:column;gap:12px}
-.row{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
-.row>.lbl{font-size:12px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);min-width:64px}
-.chip{border:1px solid var(--line);background:transparent;color:var(--ink);border-radius:999px;padding:5px 12px;font:500 13px var(--body);cursor:pointer;display:inline-flex;gap:6px;align-items:center}
-.chip .dot{width:8px;height:8px;border-radius:50%;background:var(--c,var(--muted))}
-.chip[aria-pressed="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
-.chip:focus-visible,.tab:focus-visible,select:focus-visible,.nav button:focus-visible,a:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
-.toggle{display:inline-flex;gap:6px;align-items:center;font-size:13px;cursor:pointer}
-.toggle input{accent-color:var(--accent);width:16px;height:16px}
-select{font:13px var(--body);padding:5px 8px;border-radius:6px;border:1px solid var(--line);background:var(--surface);color:var(--ink)}
-.tabs{display:flex;gap:4px;border-bottom:1px solid var(--line)}
-.tab{background:none;border:none;border-bottom:2px solid transparent;padding:8px 14px;font:600 14px var(--body);color:var(--muted);cursor:pointer}
-.tab[aria-selected="true"]{color:var(--ink);border-bottom-color:var(--accent)}
-.week{display:flex;flex-direction:column;gap:6px}
-.week h3{font-size:14px;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;padding:10px 0 2px}
-.ev{background:var(--surface);border:1px solid var(--line);border-left:4px solid var(--c);border-radius:8px;padding:10px 14px;display:grid;grid-template-columns:118px 1fr auto;gap:4px 16px;align-items:center}
-.ev.past{opacity:.5}
-.when{font:500 13px/1.35 var(--mono);font-variant-numeric:tabular-nums}
-.when small{display:block;color:var(--muted);font-family:var(--body);font-size:12px}
-.what{min-width:0}
-.what .t{font-weight:600}
-.meta{display:flex;flex-wrap:wrap;gap:6px;margin-top:4px}
-.pill{font-size:11.5px;border-radius:4px;padding:1px 7px;border:1px solid var(--line);color:var(--muted);white-space:nowrap}
-.pill.area{color:var(--c);border-color:currentColor}
-.pill.es{background:var(--ok-soft);color:var(--ok);border-color:transparent;font-weight:600}
-.pill.noes{background:var(--warn-soft);color:var(--warn);border-color:transparent}
-.go{font-size:13px;font-weight:600;white-space:nowrap;text-decoration:none;border:1px solid var(--accent);border-radius:6px;padding:5px 10px}
-.go:hover{background:var(--accent-soft)}
-.empty{color:var(--muted);padding:24px;text-align:center;background:var(--surface);border:1px dashed var(--line);border-radius:10px}
-.nav{display:flex;align-items:center;gap:10px;padding:10px 0}
-.nav button{border:1px solid var(--line);background:var(--surface);color:var(--ink);border-radius:6px;padding:4px 10px;cursor:pointer;font:600 14px var(--body)}
-.nav h2{min-width:170px;text-align:center}
+body{background:var(--soft);color:var(--ink);font:400 15px/1.6 var(--font);-webkit-font-smoothing:antialiased}
+a{color:var(--jblue-3)}
+h1,h2,h3{margin:0;text-wrap:balance}
+.container{max-width:1180px;margin:0 auto;padding:0 28px}
+.num{font-variant-numeric:tabular-nums lining-nums}
+.overline{font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase}
+
+/* ===== Barra superior (blanca: logo a color + idioma) ===== */
+.topnav{background:var(--white);border-bottom:1px solid var(--line)}
+.topnav .container{display:flex;align-items:center;justify-content:space-between;gap:16px;height:68px}
+.brand{display:flex;align-items:center;gap:16px}
+.brand img{height:24px;width:auto;display:block}
+.brand .sep{width:1px;height:24px;background:var(--line-2)}
+.brand span{font-size:13px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--black)}
+.langs{display:flex;align-items:center;gap:2px}
+.langs svg{width:16px;height:16px;stroke:var(--muted);margin-right:8px}
+.langs button{background:none;border:none;font:700 13px var(--font);letter-spacing:.06em;color:var(--muted);padding:8px 9px;cursor:pointer;position:relative}
+.langs button:hover{color:var(--black)}
+.langs button[aria-pressed="true"]{color:var(--black)}
+.langs button[aria-pressed="true"]::after{content:"";position:absolute;left:9px;right:9px;bottom:2px;height:2px;background:var(--jred)}
+.langs button:focus-visible{outline:2px solid var(--jblue-3);outline-offset:2px}
+
+/* ===== Cabecera ===== */
+.hero{background:var(--jblue);color:var(--white);position:relative;overflow:hidden}
+#mesh{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;-webkit-mask-image:linear-gradient(90deg,transparent 0%,rgba(0,0,0,.35) 35%,#000 75%);mask-image:linear-gradient(90deg,transparent 0%,rgba(0,0,0,.35) 35%,#000 75%)}
+.hero-inner{position:relative}
+.hero-main{display:grid;grid-template-columns:1fr auto;gap:40px;align-items:center;padding:60px 0 52px}
+.hero .overline{color:var(--jblue-4)}
+.hero h1{font-weight:800;font-size:clamp(38px,5.6vw,68px);line-height:1.04;letter-spacing:-.015em;margin-top:12px}
+.hero h1 em{font-style:normal;color:var(--jblue-4)}
+.lead{max-width:56ch;margin:18px 0 0;color:rgba(255,255,255,.82);font-size:17px}
+.stats{display:flex;flex-wrap:wrap;gap:12px 40px;margin-top:34px}
+.stat b{display:block;font-size:34px;font-weight:800;line-height:1}
+.stat span{display:block;margin-top:6px;font-size:13px;color:rgba(255,255,255,.7)}
+.hexwrap{position:relative;width:270px}
+.hexwrap::before{content:"";position:absolute;inset:-14px;background:rgba(60,130,255,.18);clip-path:polygon(50% 0,100% 25%,100% 75%,50% 100%,0 75%,0 25%)}
+.hex{position:relative;width:100%;aspect-ratio:1/1.1547;background:var(--jblue-3);clip-path:polygon(50% 0,100% 25%,100% 75%,50% 100%,0 75%,0 25%);display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:0 34px;gap:6px;text-decoration:none;color:var(--white);transition:background .2s}
+.hex:hover{background:#2f55ff}
+.hex:focus-visible{outline:3px solid var(--white);outline-offset:6px}
+.hex .k{font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;opacity:.85}
+.hex .cd{font-size:12px;font-weight:700;background:var(--white);color:var(--jblue);padding:3px 10px;border-radius:999px}
+.hex .d{font-size:32px;font-weight:800;line-height:1.05}
+.hex .h{font-size:14px;font-weight:700}
+.hex .t{font-size:13px;line-height:1.3;opacity:.92;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+
+/* ===== Destacadas ===== */
+.featured{padding:44px 0 8px}
+.sec-head{display:flex;align-items:flex-end;justify-content:space-between;gap:16px;margin-bottom:18px}
+.sec-head h2{font-size:28px;font-weight:800;color:var(--black);line-height:1.15;display:flex;align-items:center;gap:12px}
+.sec-head h2::before{content:"";width:14px;height:16px;background:var(--jred);clip-path:polygon(50% 0,100% 25%,100% 75%,50% 100%,0 75%,0 25%);flex:none}
+.sec-head p{margin:4px 0 0;color:var(--muted);font-size:14px}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.card{background:var(--white);border:1px solid var(--line);display:flex;flex-direction:column;text-decoration:none;color:var(--ink);transition:transform .18s,box-shadow .18s;position:relative;overflow:hidden}
+.card::before{content:"";height:5px;background:var(--c)}
+.card:hover{transform:translateY(-3px);box-shadow:0 14px 30px -14px rgba(4,0,102,.35)}
+.card:focus-visible{outline:2px solid var(--jblue-3);outline-offset:2px}
+.card-body{padding:20px 22px 22px;display:flex;flex-direction:column;gap:12px;flex:1}
+.card-top{display:flex;align-items:center;justify-content:space-between;gap:10px}
+.card .when{display:flex;align-items:baseline;gap:10px}
+.card .when b{font-size:30px;font-weight:800;color:var(--jblue);line-height:1}
+.card .when span{font-size:13px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.08em}
+.pill{display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:700;padding:3px 10px;border-radius:999px;background:color-mix(in srgb,var(--c) 11%,#fff);color:var(--ink);white-space:nowrap}
+.pill i{width:8px;height:8px;border-radius:50%;background:var(--c)}
+.card h3{font-size:18px;font-weight:700;line-height:1.3;flex:1}
+.card-foot{display:flex;align-items:center;justify-content:space-between;font-size:13px;font-weight:600;color:var(--muted);border-top:1px solid var(--line);padding-top:12px}
+.card-foot .go{color:var(--jblue-3);font-weight:700}
+.card .soon{color:var(--jred);font-size:12px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;margin-bottom:-6px}
+.card-foot{gap:12px}
+.card-foot .go{white-space:nowrap}
+
+/* ===== Filtros ===== */
+.toolbar{position:sticky;top:0;z-index:5;background:rgba(255,255,255,.96);backdrop-filter:blur(8px);border-top:1px solid var(--line);border-bottom:1px solid var(--line);margin-top:40px}
+.toolbar .container{display:flex;flex-direction:column;gap:12px;padding-top:14px;padding-bottom:14px}
+.trow{display:flex;flex-wrap:wrap;gap:10px 18px;align-items:center}
+.lbl{font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{border:1px solid var(--line-2);background:var(--white);color:var(--ink);border-radius:999px;padding:6px 14px;font:600 13px var(--font);cursor:pointer;display:inline-flex;gap:8px;align-items:center;transition:all .15s}
+.chip .dot{width:9px;height:9px;border-radius:50%;background:var(--c)}
+.chip small{font-size:11px;font-weight:700;color:var(--muted)}
+.chip:hover{border-color:var(--c)}
+.chip[aria-pressed="true"]{background:var(--c);border-color:var(--c);color:var(--white)}
+.chip[aria-pressed="true"] .dot{background:var(--white)}
+.chip[aria-pressed="true"] small{color:rgba(255,255,255,.8)}
+.search{flex:1 1 200px;min-width:170px;max-width:300px;position:relative}
+.search input{width:100%;font:500 14px var(--font);padding:8px 14px 8px 36px;border:1px solid var(--line-2);border-radius:999px;color:var(--ink);background:var(--white)}
+.search svg{position:absolute;left:13px;top:50%;transform:translateY(-50%);width:15px;height:15px;stroke:var(--muted)}
+.switch{display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:600;cursor:pointer;user-select:none}
+.switch input{appearance:none;width:36px;height:20px;border-radius:20px;background:var(--line-2);position:relative;cursor:pointer;margin:0;transition:background .15s}
+.switch input::after{content:"";position:absolute;top:2px;left:2px;width:16px;height:16px;border-radius:50%;background:var(--white);transition:left .15s;box-shadow:0 1px 2px rgba(0,0,0,.2)}
+.switch input:checked{background:var(--jblue-3)}
+.switch input:checked::after{left:18px}
+.field{display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:600}
+select{font:600 13px var(--font);padding:6px 30px 6px 12px;border:1px solid var(--line-2);border-radius:999px;background:var(--white) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M1 1l4 4 4-4' fill='none' stroke='%23040066' stroke-width='1.6'/%3E%3C/svg%3E") no-repeat right 12px center;appearance:none;color:var(--ink)}
+.seg{display:inline-flex;background:var(--soft);border-radius:999px;padding:3px;margin-left:auto}
+.seg button{background:transparent;color:var(--muted);border:none;padding:6px 18px;font:700 13px var(--font);cursor:pointer;border-radius:999px}
+.seg button[aria-selected="true"]{background:var(--jblue);color:var(--white)}
+.count{font-size:13px;font-weight:600;color:var(--muted)}
+.chip:focus-visible,.seg button:focus-visible,select:focus-visible,.search input:focus-visible,.switch input:focus-visible,.btn:focus-visible,.navm button:focus-visible,.mini:focus-visible{outline:2px solid var(--jblue-3);outline-offset:2px}
+
+/* ===== Lista ===== */
+main{padding:30px 0 56px}
+.week{margin-bottom:30px}
+.week-h{display:flex;align-items:baseline;gap:14px;margin-bottom:12px}
+.week-h h2{font-size:20px;font-weight:800;color:var(--black)}
+.week-h.now h2::after{content:"";display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--jred);margin-left:10px;vertical-align:middle}
+.week-h small{font-size:13px;font-weight:600;color:var(--muted)}
+.week-h::after{content:"";flex:1;height:1px;background:var(--line-2);align-self:center}
+.rows{display:flex;flex-direction:column;gap:8px}
+.ev{display:grid;grid-template-columns:76px 96px 1fr auto 140px;gap:20px;align-items:center;padding:12px 18px 12px 12px;background:var(--white);border:1px solid var(--line);border-left:4px solid var(--c);transition:box-shadow .15s,transform .15s}
+.ev:hover{box-shadow:0 8px 22px -14px rgba(4,0,102,.4);transform:translateX(2px)}
+.ev.past{opacity:.45}
+.tile{width:76px;height:76px;display:flex;flex-direction:column;align-items:center;justify-content:center;background:var(--soft);color:var(--jblue);line-height:1}
+.tile b{font-size:30px;font-weight:800}
+.tile span{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;margin-top:5px;color:var(--muted)}
+.ev.es .tile{background:var(--jblue);color:var(--white)}
+.ev.es .tile span{color:rgba(255,255,255,.75)}
+.time{font-size:16px;font-weight:700}
+.time small{display:block;font-size:12px;font-weight:500;color:var(--muted)}
+.title{font-size:16px;font-weight:700;line-height:1.35}
+.tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:6px}
+.tag{font-size:11.5px;font-weight:700;padding:2px 9px;border-radius:999px;background:var(--soft);color:var(--muted)}
+.tag.es{background:var(--tint);color:var(--jblue-3)}
+.btn{display:inline-flex;justify-content:center;align-items:center;gap:8px;background:var(--jblue);color:var(--white);text-decoration:none;font:700 13px var(--font);padding:10px 16px;border-radius:999px;white-space:nowrap;transition:background .15s}
+.btn:hover{background:var(--jblue-3)}
+.btn span{transition:transform .15s}
+.btn:hover span{transform:translateX(3px)}
+.empty{background:var(--white);border:1px dashed var(--line-2);padding:44px;text-align:center;color:var(--muted)}
+
+/* ===== Mes ===== */
+.navm{display:flex;align-items:center;gap:14px;margin-bottom:16px}
+.navm h2{font-size:28px;font-weight:800;color:var(--black);min-width:240px}
+.navm button{width:38px;height:38px;border:1px solid var(--line-2);background:var(--white);color:var(--jblue);font:700 18px var(--font);cursor:pointer;border-radius:50%}
+.navm button:hover{border-color:var(--jblue)}
 .grid-wrap{overflow-x:auto}
-.grid{display:grid;grid-template-columns:repeat(7,minmax(120px,1fr));border-top:1px solid var(--line);border-left:1px solid var(--line);min-width:840px}
-.grid .hd{font-size:12px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);padding:6px 8px;border-right:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--surface)}
-.cell{min-height:104px;border-right:1px solid var(--line);border-bottom:1px solid var(--line);padding:6px;display:flex;flex-direction:column;gap:4px;background:var(--surface)}
-.cell.out{background:transparent}
-.cell.today{box-shadow:inset 0 0 0 2px var(--accent)}
-.cell .n{font:500 12px var(--mono);color:var(--muted)}
-.mini{display:block;font-size:11.5px;line-height:1.3;padding:3px 5px;border-radius:4px;border-left:3px solid var(--c);background:var(--bg);color:var(--ink);text-decoration:none}
-.mini.past{opacity:.5}
-.mini b{font-family:var(--mono);font-weight:500}
-.mini.es{background:var(--ok-soft)}
-.legend{display:flex;flex-wrap:wrap;gap:14px;font-size:12.5px;color:var(--muted)}
-footer{font-size:13px;color:var(--muted);border-top:1px solid var(--line);padding-top:14px;display:flex;flex-direction:column;gap:4px;max-width:80ch}
-@media (max-width:640px){
-  .ev{grid-template-columns:1fr;gap:6px}
-  .go{justify-self:start}
+.grid{display:grid;grid-template-columns:repeat(7,minmax(130px,1fr));background:var(--white);border:1px solid var(--line);min-width:920px}
+.grid .hd{padding:12px 10px;font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--white);background:var(--black)}
+.cell{min-height:124px;border-top:1px solid var(--line);border-left:1px solid var(--line);padding:8px;display:flex;flex-direction:column;gap:5px}
+.cell:nth-child(7n+1){border-left:none}
+.cell.out{background:var(--soft)}
+.cell.out .n{opacity:.4}
+.cell .n{font-size:13px;font-weight:800;color:var(--jblue);width:26px;height:26px;display:grid;place-items:center}
+.cell.today .n{background:var(--jred);color:var(--white);border-radius:50%}
+.mini{display:block;font-size:12px;line-height:1.3;padding:5px 7px;border-left:3px solid var(--c);background:color-mix(in srgb,var(--c) 8%,#fff);color:var(--ink);text-decoration:none;font-weight:600}
+.mini b{font-weight:800;color:var(--jblue)}
+.mini.es{box-shadow:inset 0 0 0 1px var(--jblue-4)}
+.mini.past{opacity:.45}
+.mini:hover{background:color-mix(in srgb,var(--c) 16%,#fff)}
+.legend{display:flex;flex-wrap:wrap;gap:18px;margin-top:12px;font-size:12.5px;color:var(--muted)}
+.legend span{display:inline-flex;align-items:center;gap:6px}
+.legend i{width:16px;height:12px;box-shadow:inset 0 0 0 1px var(--jblue-4);border-left:3px solid var(--jblue-3)}
+
+/* ===== Pie ===== */
+footer{background:var(--black);color:rgba(255,255,255,.72);padding:34px 0;font-size:13px;border-top:4px solid var(--jred)}
+footer .container{display:flex;flex-wrap:wrap;align-items:center;gap:14px 32px;justify-content:space-between}
+footer img{height:18px;width:auto;display:block}
+footer a{color:var(--white)}
+footer .meta{display:flex;flex-direction:column;gap:4px;max-width:70ch}
+
+@media (max-width:980px){
+  .cards{grid-template-columns:1fr 1fr}
+  .ev{grid-template-columns:64px 1fr auto;gap:8px 16px}
+  .tile{width:64px;height:64px}
+  .ev .time{grid-column:2;grid-row:1}
+  .ev .what{grid-column:1/-1}
+  .ev .pill{grid-column:3;grid-row:1;justify-self:end}
+  .ev .btn{grid-column:1/-1;justify-self:start}
 }
+@media (max-width:760px){
+  .hero-main{grid-template-columns:1fr}
+  .hexwrap{width:220px}
+  .cards{grid-template-columns:1fr}
+  .seg{margin-left:0}
+  .langs svg{display:none}
+}
+@media (max-width:520px){.brand span,.brand .sep{display:none}.langs button{padding:8px 6px}}
+@media (max-width:420px){.container{padding:0 16px}}
 @media (prefers-reduced-motion:reduce){*{transition:none!important}}
 </style>
 </head>
 <body>
-<div class="wrap">
-  <header>
-    <h1>Braze Live Training · Calendario del grupo</h1>
-    <p class="sub">Sesiones en directo de Braze Learning en hora de Madrid, clasificadas por las áreas del grupo de referentes. <strong>Horario ES</strong> marca las sesiones de lunes a viernes que empiezan entre las 8:30 y las 20:00.</p>
-  </header>
 
-  <section class="stats" id="stats" aria-label="Resumen"></section>
-
-  <section class="bar" aria-label="Filtros">
-    <div class="row" id="areaChips"><span class="lbl">Área</span></div>
-    <div class="row">
-      <span class="lbl">Ver</span>
-      <label class="toggle"><input type="checkbox" id="fEs"> Solo horario ES</label>
-      <label class="toggle"><input type="checkbox" id="fPast" checked> Ocultar pasadas</label>
-      <label class="toggle" for="fLang">Idioma
-        <select id="fLang"><option value="en">Inglés</option><option value="ja">Japonés</option><option value="all">Todos</option></select>
-      </label>
-      <label class="toggle" for="fType">Tipo
-        <select id="fType"><option value="all">Todos</option></select>
-      </label>
+<nav class="topnav" aria-label="Cabecera">
+  <div class="container">
+    <div class="brand"><img src="assets/jakala-logo-full.png" alt="JAKALA"><i class="sep"></i><span>COE Braze Iberia</span></div>
+    <div class="langs" role="group" aria-label="Idioma / Language">
+      <svg viewBox="0 0 16 16" fill="none" stroke-width="1.4" aria-hidden="true"><circle cx="8" cy="8" r="6.5"/><path d="M1.5 8h13M8 1.5c2 2 2 11 0 13M8 1.5c-2 2-2 11 0 13"/></svg>
+      <button type="button" data-lang="es" aria-pressed="true">ES</button>
+      <button type="button" data-lang="en" aria-pressed="false">EN</button>
+      <button type="button" data-lang="fr" aria-pressed="false">FR</button>
+      <button type="button" data-lang="it" aria-pressed="false">IT</button>
     </div>
-  </section>
-
-  <div class="tabs" role="tablist">
-    <button class="tab" role="tab" id="tabList" aria-selected="true">Lista por semanas</button>
-    <button class="tab" role="tab" id="tabMonth" aria-selected="false">Mes</button>
   </div>
+</nav>
 
-  <main id="view"></main>
+<header class="hero">
+  <canvas id="mesh" aria-hidden="true"></canvas>
+  <div class="container hero-inner">
+    <div class="hero-main">
+      <div>
+        <div class="overline">Braze Learning · Live training</div>
+        <h1 data-i18n-html="h1"></h1>
+        <p class="lead" data-i18n="lead"></p>
+        <div class="stats" id="stats"></div>
+      </div>
+      <div class="hexwrap">
+        <a class="hex" id="nextHex" href="https://learning.braze.com/calendar" target="_blank" rel="noopener">
+          <span class="k" data-i18n="nextEs"></span>
+          <span class="cd" id="nextCd" hidden></span>
+          <span class="d num" id="nextD">—</span>
+          <span class="h num" id="nextH"></span>
+          <span class="t" id="nextT"></span>
+        </a>
+      </div>
+    </div>
+  </div>
+</header>
 
-  <footer>
-    <span id="srcLine"></span>
-    <span>Fuente: calendario público de <a href="https://learning.braze.com/calendar">learning.braze.com/calendar</a>. Para registrarte en una sesión necesitas tu acceso a Braze Learning; al registrarte recibes la invitación en tu calendario.</span>
-  </footer>
+<section class="featured">
+  <div class="container">
+    <div class="sec-head">
+      <div><h2 data-i18n="featH"></h2><p data-i18n="featP"></p></div>
+    </div>
+    <div class="cards" id="cards"></div>
+  </div>
+</section>
+
+<div class="toolbar">
+  <div class="container">
+    <div class="trow">
+      <span class="lbl" data-i18n="area"></span>
+      <div class="chips" id="areaChips"></div>
+    </div>
+    <div class="trow">
+      <label class="search" for="q"><svg viewBox="0 0 16 16" fill="none" stroke-width="1.7"><circle cx="7" cy="7" r="5"/><path d="M11 11l4 4"/></svg><input id="q" type="search" placeholder="" data-i18n-ph="search" autocomplete="off"></label>
+      <label class="switch" for="fEs"><input type="checkbox" id="fEs"> <span data-i18n="onlyEs"></span></label>
+      <label class="switch" for="fPast"><input type="checkbox" id="fPast" checked> <span data-i18n="hidePast"></span></label>
+      <label class="field" for="fType"><span data-i18n="type"></span> <select id="fType"><option value="all" data-i18n="all"></option></select></label>
+      <label class="field" for="fLang"><span data-i18n="lang"></span> <select id="fLang"><option value="en" data-i18n="english"></option><option value="ja" data-i18n="japanese"></option><option value="all" data-i18n="all"></option></select></label>
+      <span class="count num" id="count"></span>
+      <div class="seg" role="tablist" aria-label="Vista">
+        <button type="button" role="tab" id="tabList" aria-selected="true" data-i18n="list"></button>
+        <button type="button" role="tab" id="tabMonth" aria-selected="false" data-i18n="month"></button>
+      </div>
+    </div>
+  </div>
 </div>
+
+<main><div class="container" id="view"></div></main>
+
+<footer>
+  <div class="container">
+    <img src="assets/jakala-logo-white.png" alt="JAKALA">
+    <div class="meta">
+      <span id="srcLine"></span>
+      <span data-i18n-html="source"></span>
+    </div>
+  </div>
+</footer>
 
 <script>
 /* Los datos se cargan de data/sessions.json, que actualiza el robot de GitHub Actions. */
-let DATA_UPDATED = null;
-let EVENTS = [];
-
+let EVENTS = [], UPDATED = null, LOADED = false, FAILED = false;
 const BASE = "https://learning.braze.com";
 const AREAS = [
-  {id:"orq", name:"Orquestación", c:"--a-orq"},
-  {id:"can", name:"Canales", c:"--a-can"},
-  {id:"dat", name:"Datos e integraciones", c:"--a-dat"},
-  {id:"ia",  name:"IA y personalización", c:"--a-ia"},
-  {id:"uc",  name:"Casos de uso", c:"--a-uc"},
-  {id:"cert",name:"Certificación", c:"--a-cert"},
-  {id:"otr", name:"Otros", c:"--a-otr"}
+  {id:"orq", c:"--a-orq"}, {id:"can", c:"--a-can"}, {id:"dat", c:"--a-dat"}, {id:"ia", c:"--a-ia"},
+  {id:"uc", c:"--a-uc"}, {id:"cert", c:"--a-cert"}, {id:"otr", c:"--a-otr"}
 ];
 const AREA = Object.fromEntries(AREAS.map(a=>[a.id,a]));
+
+/* ===== Textos por idioma ===== */
+const I18N = {
+ es:{ locale:"es-ES",
+  h1:"Aprende Braze <em>en directo</em>, sin perderte ninguna sesión.",
+  lead:"Todas las sesiones en directo de Braze Learning en hora de Madrid, organizadas por área. Elige, filtra y regístrate desde la ficha de cada sesión.",
+  nextEs:"Próxima en horario ES", noNextEs:"Sin sesiones próximas en horario ES", loading:"Cargando sesiones…", noData:"Datos no disponibles",
+  today:"Hoy", tomorrow:"Mañana", inDays:n=>`En ${n} días`,
+  stUp:"sesiones próximas", st14:"en las próximas 2 semanas", stEs:"en horario ES", stBoot:"bootcamps de certificación",
+  featH:"Las siguientes en horario ES", featP:"Lunes a viernes, empiezan entre las 8:30 y las 20:00.", featEmpty:"No hay más sesiones próximas en horario ES.",
+  area:"Área", search:"Buscar sesión", onlyEs:"Solo horario ES", hidePast:"Ocultar pasadas", type:"Tipo", all:"Todos", lang:"Idioma", english:"Inglés", japanese:"Japonés",
+  list:"Lista", month:"Mes", sessions:n=>`${n} ${n===1?"sesión":"sesiones"}`,
+  thisWeek:"Esta semana", nextWeek:"La semana que viene", weekOf:(d,m)=>`Semana del ${d} de ${m}`,
+  until:"hasta", esTag:"Horario ES", jaTag:"Japonés", view:"Ver sesión",
+  empty:"No hay sesiones con estos filtros. Prueba a quitar \"Solo horario ES\" o a cambiar de área.",
+  legendEs:"Horario ES", legendColor:"El color indica el área", prev:"Mes anterior", next:"Mes siguiente",
+  updated:(f,t,n)=>`Actualizado el ${f} a las ${t} · ${n} sesiones publicadas · Hora de Madrid.`,
+  source:'Fuente: calendario público de <a href="https://learning.braze.com/calendar" target="_blank" rel="noopener">Braze Learning</a>. El registro se hace en Braze Learning con tu acceso.',
+  error:"No se han podido cargar las sesiones. Recarga la página; si sigue fallando, avisa a quien mantiene el repositorio.",
+  dow:["Dom","Lun","Mar","Mié","Jue","Vie","Sáb"],
+  areas:{orq:"Orquestación",can:"Canales",dat:"Datos e integraciones",ia:"IA y personalización",uc:"Casos de uso",cert:"Certificación",otr:"Otros"} },
+ en:{ locale:"en-GB",
+  h1:"Learn Braze <em>live</em>, without missing a single session.",
+  lead:"Every Braze Learning live session in Madrid time, organised by area. Browse, filter and register from each session page.",
+  nextEs:"Next in Spain hours", noNextEs:"No upcoming sessions in Spain hours", loading:"Loading sessions…", noData:"Data not available",
+  today:"Today", tomorrow:"Tomorrow", inDays:n=>`In ${n} days`,
+  stUp:"upcoming sessions", st14:"in the next 2 weeks", stEs:"in Spain hours", stBoot:"certification bootcamps",
+  featH:"Coming up in Spain hours", featP:"Monday to Friday, starting between 8:30 and 20:00.", featEmpty:"No more upcoming sessions in Spain hours.",
+  area:"Area", search:"Search sessions", onlyEs:"Spain hours only", hidePast:"Hide past", type:"Type", all:"All", lang:"Language", english:"English", japanese:"Japanese",
+  list:"List", month:"Month", sessions:n=>`${n} ${n===1?"session":"sessions"}`,
+  thisWeek:"This week", nextWeek:"Next week", weekOf:(d,m)=>`Week of ${d} ${m}`,
+  until:"until", esTag:"Spain hours", jaTag:"Japanese", view:"View session",
+  empty:"No sessions match these filters. Try turning off \"Spain hours only\" or choosing another area.",
+  legendEs:"Spain hours", legendColor:"Colour shows the area", prev:"Previous month", next:"Next month",
+  updated:(f,t,n)=>`Updated on ${f} at ${t} · ${n} sessions published · Madrid time.`,
+  source:'Source: public calendar of <a href="https://learning.braze.com/calendar" target="_blank" rel="noopener">Braze Learning</a>. Registration is done in Braze Learning with your account.',
+  error:"Sessions could not be loaded. Reload the page; if it keeps failing, tell whoever maintains the repository.",
+  dow:["Sun","Mon","Tue","Wed","Thu","Fri","Sat"],
+  areas:{orq:"Orchestration",can:"Channels",dat:"Data & integrations",ia:"AI & personalisation",uc:"Use cases",cert:"Certification",otr:"Other"} },
+ fr:{ locale:"fr-FR",
+  h1:"Apprenez Braze <em>en direct</em>, sans manquer aucune session.",
+  lead:"Toutes les sessions en direct de Braze Learning à l'heure de Madrid, classées par domaine. Parcourez, filtrez et inscrivez-vous depuis la fiche de chaque session.",
+  nextEs:"Prochaine en horaire Espagne", noNextEs:"Aucune session à venir en horaire Espagne", loading:"Chargement des sessions…", noData:"Données indisponibles",
+  today:"Aujourd'hui", tomorrow:"Demain", inDays:n=>`Dans ${n} jours`,
+  stUp:"sessions à venir", st14:"dans les 2 prochaines semaines", stEs:"en horaire Espagne", stBoot:"bootcamps de certification",
+  featH:"À venir en horaire Espagne", featP:"Du lundi au vendredi, début entre 8h30 et 20h00.", featEmpty:"Plus de sessions à venir en horaire Espagne.",
+  area:"Domaine", search:"Rechercher une session", onlyEs:"Horaire Espagne uniquement", hidePast:"Masquer les passées", type:"Type", all:"Tous", lang:"Langue", english:"Anglais", japanese:"Japonais",
+  list:"Liste", month:"Mois", sessions:n=>`${n} session${n===1?"":"s"}`,
+  thisWeek:"Cette semaine", nextWeek:"La semaine prochaine", weekOf:(d,m)=>`Semaine du ${d} ${m}`,
+  until:"jusqu'à", esTag:"Horaire Espagne", jaTag:"Japonais", view:"Voir la session",
+  empty:"Aucune session ne correspond à ces filtres. Désactivez « Horaire Espagne uniquement » ou changez de domaine.",
+  legendEs:"Horaire Espagne", legendColor:"La couleur indique le domaine", prev:"Mois précédent", next:"Mois suivant",
+  updated:(f,t,n)=>`Mis à jour le ${f} à ${t} · ${n} sessions publiées · Heure de Madrid.`,
+  source:'Source : calendrier public de <a href="https://learning.braze.com/calendar" target="_blank" rel="noopener">Braze Learning</a>. L\'inscription se fait sur Braze Learning avec votre compte.',
+  error:"Impossible de charger les sessions. Rechargez la page ; si le problème persiste, prévenez la personne qui gère le dépôt.",
+  dow:["Dim","Lun","Mar","Mer","Jeu","Ven","Sam"],
+  areas:{orq:"Orchestration",can:"Canaux",dat:"Données et intégrations",ia:"IA et personnalisation",uc:"Cas d'usage",cert:"Certification",otr:"Autres"} },
+ it:{ locale:"it-IT",
+  h1:"Impara Braze <em>dal vivo</em>, senza perdere nessuna sessione.",
+  lead:"Tutte le sessioni dal vivo di Braze Learning in orario di Madrid, organizzate per area. Sfoglia, filtra e iscriviti dalla scheda di ogni sessione.",
+  nextEs:"Prossima in orario Spagna", noNextEs:"Nessuna sessione in arrivo in orario Spagna", loading:"Caricamento sessioni…", noData:"Dati non disponibili",
+  today:"Oggi", tomorrow:"Domani", inDays:n=>`Tra ${n} giorni`,
+  stUp:"sessioni in arrivo", st14:"nelle prossime 2 settimane", stEs:"in orario Spagna", stBoot:"bootcamp di certificazione",
+  featH:"Le prossime in orario Spagna", featP:"Dal lunedì al venerdì, inizio tra le 8:30 e le 20:00.", featEmpty:"Nessun'altra sessione in arrivo in orario Spagna.",
+  area:"Area", search:"Cerca sessione", onlyEs:"Solo orario Spagna", hidePast:"Nascondi passate", type:"Tipo", all:"Tutti", lang:"Lingua", english:"Inglese", japanese:"Giapponese",
+  list:"Elenco", month:"Mese", sessions:n=>`${n} ${n===1?"sessione":"sessioni"}`,
+  thisWeek:"Questa settimana", nextWeek:"La prossima settimana", weekOf:(d,m)=>`Settimana del ${d} ${m}`,
+  until:"fino alle", esTag:"Orario Spagna", jaTag:"Giapponese", view:"Vedi sessione",
+  empty:"Nessuna sessione con questi filtri. Prova a disattivare \"Solo orario Spagna\" o a cambiare area.",
+  legendEs:"Orario Spagna", legendColor:"Il colore indica l'area", prev:"Mese precedente", next:"Mese successivo",
+  updated:(f,t,n)=>`Aggiornato il ${f} alle ${t} · ${n} sessioni pubblicate · Ora di Madrid.`,
+  source:'Fonte: calendario pubblico di <a href="https://learning.braze.com/calendar" target="_blank" rel="noopener">Braze Learning</a>. L\'iscrizione si fa su Braze Learning con il tuo account.',
+  error:"Impossibile caricare le sessioni. Ricarica la pagina; se il problema persiste, avvisa chi gestisce il repository.",
+  dow:["Dom","Lun","Mar","Mer","Gio","Ven","Sab"],
+  areas:{orq:"Orchestrazione",can:"Canali",dat:"Dati e integrazioni",ia:"IA e personalizzazione",uc:"Casi d'uso",cert:"Certificazione",otr:"Altro"} }
+};
+let LANG = "es";
+try { const saved = localStorage.getItem("blt-lang"); if (I18N[saved]) LANG = saved; else { const nav=(navigator.language||"").slice(0,2); if(I18N[nav]) LANG=nav; } } catch(e) {}
+const T = () => I18N[LANG];
+const areaName = id => T().areas[id];
+const monthName = (m,style="long") => new Intl.DateTimeFormat(T().locale,{month:style,timeZone:"UTC"}).format(new Date(Date.UTC(2026,m-1,15))).replace(".","");
+const cap = s => s[0].toUpperCase()+s.slice(1);
+const short = t => t.replace(/^Get Started with Braze: /,"Get Started: ");
 
 function areaOf(t){
   if(/bootcamp/i.test(t)) return "cert";
@@ -172,154 +390,180 @@ function typeOf(t,u){
   return "Live training";
 }
 const REG = {"emea-timezones":"EMEA","amer-timezones":"AMER","apac-timezones":"APAC"};
-const DOW = ["dom","lun","mar","mié","jue","vie","sáb"];
-const DOWL = ["Domingo","Lunes","Martes","Miércoles","Jueves","Viernes","Sábado"];
-const MON = ["enero","febrero","marzo","abril","mayo","junio","julio","agosto","septiembre","octubre","noviembre","diciembre"];
 
 function build(raw){
  return raw.map(ev=>{
-  const title=ev.title, start=ev.start, url=ev.url, tg=ev.tags||[];
+  const title=ev.title, start=ev.start, url=ev.url||"", tg=ev.tags||[];
   const y=+start.slice(0,4), m=+start.slice(5,7), d=+start.slice(8,10);
   const hhmm = start.slice(11,16);
   const dow = new Date(Date.UTC(y,m-1,d)).getUTCDay();
   const mins = +hhmm.slice(0,2)*60 + +hhmm.slice(3,5);
-  const ja = tg.includes("ja") || /[\u3040-\u30ff\u4e00-\u9fff]/.test(title);
+  const ja = tg.includes("ja") || /[぀-ヿ一-鿿]/.test(title);
   return {
-    title, url: BASE+url, start, end: (ev.end||"").slice(11,16), y, m, d, dow, hhmm,
-    key: start.slice(0,10),
-    ts: Date.parse(start),
+    title, url: BASE+url, start, end:(ev.end||"").slice(11,16), y, m, d, dow, hhmm,
+    key: start.slice(0,10), ts: Date.parse(start),
     lang: ja ? "ja" : "en",
     region: tg.map(t=>REG[t]).filter(Boolean)[0] || "",
-    area: areaOf(title),
-    type: typeOf(title,url),
+    area: areaOf(title), type: typeOf(title,url),
     es: dow>=1 && dow<=5 && mins>=510 && mins<=1200
   };
  }).sort((a,b)=>a.ts-b.ts);
 }
 
-const state = {areas:new Set(), es:false, hidePast:true, lang:"en", type:"all", view:"list", month:null};
+const state = {areas:new Set(), q:"", es:false, hidePast:true, lang:"en", type:"all", view:"list", month:null};
 const now = Date.now();
+const todayKey = new Date().toLocaleDateString("sv-SE",{timeZone:"Europe/Madrid"});
+const esc = s => s.replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const cvar = e => `var(${AREA[e.area].c})`;
+const norm = s => s.toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g,"");
+const dayLabel = e => `${T().dow[e.dow]} · ${monthName(e.m,"short")}`;
+function daysUntil(e){ return Math.round((Date.UTC(e.y,e.m-1,e.d) - Date.parse(todayKey+"T00:00:00Z"))/864e5); }
+function rel(e){ const n=daysUntil(e); return n<=0?T().today:n===1?T().tomorrow:T().inDays(n); }
+const pill = e => `<span class="pill" style="--c:${cvar(e)}"><i></i>${areaName(e.area)}</span>`;
 
 function filtered(){
+  const q = norm(state.q.trim());
   return EVENTS.filter(e=>
     (!state.areas.size || state.areas.has(e.area)) &&
     (!state.es || e.es) &&
     (!state.hidePast || e.ts >= now - 3600e3) &&
     (state.lang==="all" || e.lang===state.lang) &&
-    (state.type==="all" || e.type===state.type)
+    (state.type==="all" || e.type===state.type) &&
+    (!q || norm(e.title+" "+areaName(e.area)+" "+e.type).includes(q))
   );
 }
-function esc(s){return s.replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]))}
-function areaVar(e){return `var(${AREA[e.area].c})`}
 
-function renderStats(){
-  const up = EVENTS.filter(e=>e.ts>=now && e.lang==="en");
-  const in14 = up.filter(e=>e.ts < now + 14*864e5);
-  const es = up.filter(e=>e.es);
-  const boot = up.filter(e=>e.type==="Bootcamp");
-  const last = up.length ? up[up.length-1] : null;
-  const box = (n,l)=>`<div class="stat"><b>${n}</b><span>${l}</span></div>`;
-  document.getElementById("stats").innerHTML =
-    box(up.length,"sesiones próximas en inglés") +
-    box(in14.length,"en los próximos 14 días") +
-    box(es.length,"en horario ES") +
-    box(boot.length,"bootcamps de certificación") +
-    box(last ? `${last.d} ${MON[last.m-1].slice(0,3)}` : "—","última fecha publicada");
+function applyStatic(){
+  document.documentElement.lang = LANG;
+  document.querySelectorAll("[data-i18n]").forEach(el=>{ el.textContent = T()[el.dataset.i18n]; });
+  document.querySelectorAll("[data-i18n-html]").forEach(el=>{ el.innerHTML = T()[el.dataset.i18nHtml]; });
+  document.querySelectorAll("[data-i18n-ph]").forEach(el=>{ el.placeholder = T()[el.dataset.i18nPh]; });
+  document.querySelectorAll(".langs button").forEach(b=>b.setAttribute("aria-pressed", b.dataset.lang===LANG));
+  if(!LOADED) document.getElementById("nextT").textContent = FAILED ? T().noData : T().loading;
 }
 
-function renderChips(){
-  const el = document.getElementById("areaChips");
+function renderTop(){
+  const up = EVENTS.filter(e=>e.ts>=now && e.lang==="en");
+  const esUp = up.filter(e=>e.es);
+  const next = esUp[0], cd=document.getElementById("nextCd");
+  if(next){
+    cd.textContent = rel(next); cd.hidden = false;
+    document.getElementById("nextD").textContent = `${T().dow[next.dow]} ${next.d} ${monthName(next.m,"short")}`;
+    document.getElementById("nextH").textContent = `${next.hhmm}–${next.end}`;
+    document.getElementById("nextT").textContent = short(next.title);
+    document.getElementById("nextHex").href = next.url;
+  } else { cd.hidden = true; document.getElementById("nextT").textContent = T().noNextEs; }
+
+  const in14 = up.filter(e=>e.ts < now + 14*864e5).length;
+  const boot = up.filter(e=>e.type==="Bootcamp").length;
+  const s = (n,l)=>`<div class="stat"><b class="num">${n}</b><span>${l}</span></div>`;
+  document.getElementById("stats").innerHTML = s(up.length,T().stUp) + s(in14,T().st14) + s(esUp.length,T().stEs) + s(boot,T().stBoot);
+
+  const feat = esUp.slice(1,4);
+  document.getElementById("cards").innerHTML = feat.length ? feat.map(e=>`
+    <a class="card" href="${e.url}" target="_blank" rel="noopener" style="--c:${cvar(e)}">
+      <div class="card-body">
+        <div class="card-top"><div class="when"><b class="num">${e.d}</b><span>${dayLabel(e)}</span></div>${pill(e)}</div>
+        <span class="soon">${rel(e)}</span>
+        <h3>${esc(short(e.title))}</h3>
+        <div class="card-foot"><span class="num">${e.hhmm}–${e.end} · ${e.type}</span><span class="go">${T().view} →</span></div>
+      </div>
+    </a>`).join("") : `<div class="empty">${T().featEmpty}</div>`;
+}
+
+function renderControls(){
+  const el = document.getElementById("areaChips"); el.innerHTML="";
   AREAS.forEach(a=>{
-    const n = EVENTS.filter(e=>e.area===a.id).length;
-    if(!n) return;
+    if(!EVENTS.some(e=>e.area===a.id)) return;
+    const n = EVENTS.filter(e=>e.area===a.id && e.ts>=now && e.lang==="en").length;
     const b = document.createElement("button");
-    b.className="chip"; b.type="button"; b.setAttribute("aria-pressed","false");
+    b.type="button"; b.className="chip"; b.setAttribute("aria-pressed", state.areas.has(a.id));
     b.style.setProperty("--c",`var(${a.c})`);
-    b.innerHTML = `<span class="dot"></span>${a.name}`;
+    b.innerHTML = `<span class="dot"></span>${areaName(a.id)} <small class="num">${n}</small>`;
     b.onclick=()=>{ state.areas.has(a.id)?state.areas.delete(a.id):state.areas.add(a.id); b.setAttribute("aria-pressed",state.areas.has(a.id)); render(); };
     el.appendChild(b);
   });
   const sel = document.getElementById("fType");
-  [...new Set(EVENTS.map(e=>e.type))].sort().forEach(t=>{const o=document.createElement("option");o.value=t;o.textContent=t;sel.appendChild(o);});
+  if(sel.options.length===1) [...new Set(EVENTS.map(e=>e.type))].sort().forEach(t=>{const o=document.createElement("option");o.value=t;o.textContent=t;sel.appendChild(o);});
 }
 
-function weekStart(e){
-  const dt = new Date(Date.UTC(e.y,e.m-1,e.d));
-  const off = (e.dow+6)%7; dt.setUTCDate(dt.getUTCDate()-off);
-  return dt;
+function weekStart(e){ const dt=new Date(Date.UTC(e.y,e.m-1,e.d)); dt.setUTCDate(dt.getUTCDate()-((e.dow+6)%7)); return dt; }
+const THIS_WS = weekStart({y:+todayKey.slice(0,4),m:+todayKey.slice(5,7),d:+todayKey.slice(8,10),dow:new Date(todayKey+"T00:00:00Z").getUTCDay()});
+function weekLabel(ws){
+  const diff = Math.round((ws-THIS_WS)/(7*864e5));
+  if(diff===0) return T().thisWeek;
+  if(diff===1) return T().nextWeek;
+  return T().weekOf(ws.getUTCDate(), monthName(ws.getUTCMonth()+1));
 }
+
 function renderList(list){
-  if(!list.length) return `<div class="empty">No hay sesiones con estos filtros. Prueba a quitar "Solo horario ES" o cambiar de área.</div>`;
+  if(!list.length) return `<div class="empty">${T().empty}</div>`;
   const groups = new Map();
-  list.forEach(e=>{
-    const ws = weekStart(e); const k = ws.toISOString().slice(0,10);
-    if(!groups.has(k)) groups.set(k,{ws,items:[]});
-    groups.get(k).items.push(e);
-  });
+  list.forEach(e=>{ const ws=weekStart(e), k=ws.toISOString().slice(0,10); if(!groups.has(k)) groups.set(k,{ws,items:[]}); groups.get(k).items.push(e); });
   let html="";
   for(const {ws,items} of groups.values()){
-    const we = new Date(ws); we.setUTCDate(we.getUTCDate()+6);
-    const lbl = `Semana del ${ws.getUTCDate()} ${MON[ws.getUTCMonth()].slice(0,3)} al ${we.getUTCDate()} ${MON[we.getUTCMonth()].slice(0,3)}`;
-    html += `<section class="week"><h3>${lbl}</h3>`;
+    const we=new Date(ws); we.setUTCDate(we.getUTCDate()+6);
+    const isNow = Math.round((ws-THIS_WS)/(7*864e5))===0;
+    html += `<section class="week"><div class="week-h${isNow?" now":""}"><h2>${weekLabel(ws)}</h2><small class="num">${ws.getUTCDate()} ${monthName(ws.getUTCMonth()+1,"short")} – ${we.getUTCDate()} ${monthName(we.getUTCMonth()+1,"short")} · ${T().sessions(items.length)}</small></div><div class="rows">`;
     items.forEach(e=>{
-      const a = AREA[e.area];
-      html += `<article class="ev${e.ts<now?" past":""}" style="--c:${areaVar(e)}">
-        <div class="when">${DOW[e.dow]} ${e.d} ${MON[e.m-1].slice(0,3)}<small>${e.hhmm}–${e.end}</small></div>
-        <div class="what"><div class="t">${esc(e.title)}</div>
-          <div class="meta">
-            <span class="pill area">${a.name}</span>
-            <span class="pill">${e.type}</span>
-            ${e.region?`<span class="pill">${e.region}</span>`:""}
-            ${e.lang==="ja"?`<span class="pill">Japonés</span>`:""}
-            <span class="pill ${e.es?"es":"noes"}">${e.es?"Horario ES":"Fuera de horario ES"}</span>
+      html += `<article class="ev${e.es?" es":""}${e.ts<now?" past":""}" style="--c:${cvar(e)}">
+        <div class="tile"><b class="num">${e.d}</b><span>${dayLabel(e)}</span></div>
+        <div class="time num">${e.hhmm}<small>${T().until} ${e.end}</small></div>
+        <div class="what"><div class="title">${esc(e.title)}</div>
+          <div class="tags">
+            ${e.es?`<span class="tag es">${T().esTag}</span>`:""}
+            <span class="tag">${e.type}</span>
+            ${e.region?`<span class="tag">${e.region}</span>`:""}
+            ${e.lang==="ja"?`<span class="tag">${T().jaTag}</span>`:""}
           </div></div>
-        <a class="go" href="${e.url}" target="_blank" rel="noopener">Ver sesión ↗</a>
+        ${pill(e)}
+        <a class="btn" href="${e.url}" target="_blank" rel="noopener">${T().view} <span aria-hidden="true">→</span></a>
       </article>`;
     });
-    html += `</section>`;
+    html += `</div></section>`;
   }
   return html;
 }
 
 function renderMonth(list){
-  if(!state.month){
-    const first = list[0] || EVENTS.find(e=>e.ts>=now) || EVENTS[0];
-    state.month = {y:first.y, m:first.m};
-  }
-  const {y,m} = state.month;
-  const byDay = {};
+  if(!state.month){ const f=list[0]||EVENTS.find(e=>e.ts>=now)||EVENTS[0]; state.month={y:f.y,m:f.m}; }
+  const {y,m}=state.month, byDay={};
   list.forEach(e=>{ (byDay[e.key] ||= []).push(e); });
-  const first = new Date(Date.UTC(y,m-1,1));
-  const lead = (first.getUTCDay()+6)%7;
-  const start = new Date(first); start.setUTCDate(1-lead);
-  const todayKey = new Date().toLocaleDateString("sv-SE",{timeZone:"Europe/Madrid"});
-  let html = `<div class="nav"><button type="button" id="prevM" aria-label="Mes anterior">‹</button><h2>${MON[m-1][0].toUpperCase()+MON[m-1].slice(1)} ${y}</h2><button type="button" id="nextM" aria-label="Mes siguiente">›</button></div>`;
-  html += `<div class="grid-wrap"><div class="grid">`;
-  ["Lun","Mar","Mié","Jue","Vie","Sáb","Dom"].forEach(d=>html+=`<div class="hd">${d}</div>`);
+  const first=new Date(Date.UTC(y,m-1,1)), lead=(first.getUTCDay()+6)%7, start=new Date(first);
+  start.setUTCDate(1-lead);
+  let html=`<div class="navm"><button type="button" id="prevM" aria-label="${T().prev}">‹</button><h2>${cap(monthName(m))} ${y}</h2><button type="button" id="nextM" aria-label="${T().next}">›</button></div><div class="grid-wrap"><div class="grid">`;
+  [1,2,3,4,5,6,0].forEach(i=>html+=`<div class="hd">${T().dow[i]}</div>`);
   for(let i=0;i<42;i++){
-    const dt = new Date(start); dt.setUTCDate(start.getUTCDate()+i);
+    const dt=new Date(start); dt.setUTCDate(start.getUTCDate()+i);
     if(i>=35 && dt.getUTCMonth()!==m-1) break;
-    const k = dt.toISOString().slice(0,10);
-    const out = dt.getUTCMonth()!==m-1;
-    html += `<div class="cell${out?" out":""}${k===todayKey?" today":""}"><span class="n">${dt.getUTCDate()}</span>`;
+    const k=dt.toISOString().slice(0,10), out=dt.getUTCMonth()!==m-1;
+    html+=`<div class="cell${out?" out":""}${k===todayKey?" today":""}"><span class="n num">${dt.getUTCDate()}</span>`;
     (byDay[k]||[]).forEach(e=>{
-      html += `<a class="mini${e.es?" es":""}${e.ts<now?" past":""}" style="--c:${areaVar(e)}" href="${e.url}" target="_blank" rel="noopener" title="${esc(e.title)} · ${AREA[e.area].name}"><b>${e.hhmm}</b> ${esc(e.title.replace(/^Get Started with Braze: /,"GS: ").replace(/^Webinar: /,"Webinar: "))}</a>`;
+      html+=`<a class="mini${e.es?" es":""}${e.ts<now?" past":""}" style="--c:${cvar(e)}" href="${e.url}" target="_blank" rel="noopener" title="${esc(e.title)} · ${areaName(e.area)}"><b class="num">${e.hhmm}</b> ${esc(short(e.title))}</a>`;
     });
-    html += `</div>`;
+    html+=`</div>`;
   }
-  html += `</div></div><div class="legend" style="margin-top:10px"><span>Fondo verde: horario ES.</span><span>El borde de color indica el área.</span></div>`;
-  return html;
+  return html+`</div></div><div class="legend"><span><i></i>${T().legendEs}</span><span>${T().legendColor}</span></div>`;
 }
 
 function render(){
-  const list = filtered();
-  const v = document.getElementById("view");
-  v.innerHTML = state.view==="list" ? renderList(list) : renderMonth(list);
+  if(!LOADED) return;
+  const list=filtered();
+  document.getElementById("count").textContent = T().sessions(list.length);
+  document.getElementById("view").innerHTML = state.view==="list" ? renderList(list) : renderMonth(list);
   if(state.view==="month"){
-    document.getElementById("prevM").onclick=()=>{let{y,m}=state.month;m--;if(m<1){m=12;y--;}state.month={y,m};render();};
-    document.getElementById("nextM").onclick=()=>{let{y,m}=state.month;m++;if(m>12){m=1;y++;}state.month={y,m};render();};
+    document.getElementById("prevM").onclick=()=>{let{y,m}=state.month;if(--m<1){m=12;y--;}state.month={y,m};render();};
+    document.getElementById("nextM").onclick=()=>{let{y,m}=state.month;if(++m>12){m=1;y++;}state.month={y,m};render();};
   }
 }
+function renderFooter(){
+  if(!UPDATED) return;
+  const f = UPDATED.toLocaleDateString(T().locale,{timeZone:"Europe/Madrid",day:"numeric",month:"long",year:"numeric"});
+  const t = UPDATED.toLocaleTimeString(T().locale,{timeZone:"Europe/Madrid",hour:"2-digit",minute:"2-digit"});
+  document.getElementById("srcLine").textContent = T().updated(f,t,EVENTS.length);
+}
+function renderAll(){ applyStatic(); if(LOADED){ renderTop(); renderControls(); render(); renderFooter(); } if(FAILED) showError(); }
+function showError(){ document.getElementById("view").innerHTML = `<div class="empty">${T().error}</div>`; }
 function setView(v){
   state.view=v;
   document.getElementById("tabList").setAttribute("aria-selected",v==="list");
@@ -327,6 +571,31 @@ function setView(v){
   render();
 }
 
+/* Malla hexagonal ondulada (elemento "Mesh" de la guía de marca) */
+function drawMesh(){
+  const cv=document.getElementById("mesh"), r=cv.getBoundingClientRect(), dpr=Math.min(window.devicePixelRatio||1,2);
+  cv.width=r.width*dpr; cv.height=r.height*dpr;
+  const g=cv.getContext("2d"); g.scale(dpr,dpr); g.clearRect(0,0,r.width,r.height);
+  g.strokeStyle="rgba(140,170,255,.32)"; g.lineWidth=1;
+  const s=26, w=Math.sqrt(3)*s, h=1.5*s;
+  const warp=(x,y)=>{ const k=x/r.width; return [x + 18*Math.sin(y/90 + k*3), y + 30*Math.sin(x/140 + y/260)*(0.4+k)]; };
+  for(let row=-2; row*h < r.height+2*s; row++){
+    for(let col=-2; col*w < r.width+2*w; col++){
+      const cx=col*w + (row%2?w/2:0), cy=row*h;
+      g.beginPath();
+      for(let i=0;i<=6;i++){ const a=Math.PI/3*i+Math.PI/6, [x,y]=warp(cx+s*Math.cos(a), cy+s*Math.sin(a)); i?g.lineTo(x,y):g.moveTo(x,y); }
+      g.stroke();
+    }
+  }
+}
+let rz; window.addEventListener("resize",()=>{clearTimeout(rz);rz=setTimeout(drawMesh,150);});
+drawMesh();
+
+document.querySelectorAll(".langs button").forEach(b=>b.onclick=()=>{
+  LANG=b.dataset.lang; try{ localStorage.setItem("blt-lang",LANG); }catch(e){}
+  renderAll();
+});
+document.getElementById("q").oninput=e=>{state.q=e.target.value;render();};
 document.getElementById("fEs").onchange=e=>{state.es=e.target.checked;render();};
 document.getElementById("fPast").onchange=e=>{state.hidePast=e.target.checked;render();};
 document.getElementById("fLang").onchange=e=>{state.lang=e.target.value;render();};
@@ -334,19 +603,11 @@ document.getElementById("fType").onchange=e=>{state.type=e.target.value;render()
 document.getElementById("tabList").onclick=()=>setView("list");
 document.getElementById("tabMonth").onclick=()=>setView("month");
 
+applyStatic();
 fetch("data/sessions.json",{cache:"no-store"})
   .then(r=>{ if(!r.ok) throw new Error(r.status); return r.json(); })
-  .then(j=>{
-    EVENTS = build(j.events||[]);
-    DATA_UPDATED = j.updated;
-    const upd = new Date(DATA_UPDATED);
-    document.getElementById("srcLine").textContent =
-      `Datos actualizados el ${upd.toLocaleDateString("es-ES",{timeZone:"Europe/Madrid",day:"numeric",month:"long",year:"numeric"})} a las ${upd.toLocaleTimeString("es-ES",{timeZone:"Europe/Madrid",hour:"2-digit",minute:"2-digit"})} · ${EVENTS.length} sesiones publicadas. Se actualiza automáticamente cada día.`;
-    renderChips(); renderStats(); render();
-  })
-  .catch(()=>{
-    document.getElementById("view").innerHTML = `<div class="empty">No se han podido cargar las sesiones. Recarga la página; si sigue fallando, avisa a quien mantiene el repositorio.</div>`;
-  });
+  .then(j=>{ EVENTS = build(j.events||[]); UPDATED = new Date(j.updated); LOADED = true; renderAll(); })
+  .catch(()=>{ FAILED = true; renderAll(); });
 </script>
 </body>
 </html>

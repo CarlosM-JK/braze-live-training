@@ -1,35 +1,54 @@
-name: Actualizar sesiones de Braze
+name: Actualizar y publicar la web
 
 on:
   schedule:
     # Todos los días a las 05:17 UTC (06:17 en Madrid en invierno, 07:17 en verano)
     - cron: "17 5 * * *"
+  push:
+    branches: [main]      # al subir cambios (diseño, páginas nuevas) se publica solo
   workflow_dispatch: {}   # botón "Run workflow" para lanzarlo a mano
 
 permissions:
   contents: write
+  pages: write
+  id-token: write
 
 concurrency:
-  group: update-sessions
+  group: pages
   cancel-in-progress: false
 
 jobs:
-  update:
+  publicar:
     runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy.outputs.page_url }}
     steps:
       - uses: actions/checkout@v4
+
+      - name: Comprobar que existe la contraseña
+        env:
+          STATICRYPT_PASSWORD: ${{ secrets.STATICRYPT_PASSWORD }}
+        run: |
+          if [ -z "$STATICRYPT_PASSWORD" ]; then
+            echo "Falta el secreto STATICRYPT_PASSWORD (Settings > Secrets and variables > Actions)." >&2
+            exit 1
+          fi
 
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
 
-      - name: Descargar sesiones
+      - name: Descargar sesiones de Braze
+        id: fetch
+        continue-on-error: true   # si falla, se publica igualmente con los últimos datos buenos
         run: python scripts/fetch_sessions.py
 
-      - name: Guardar cambios
+      - name: Guardar datos nuevos en el repositorio
+        if: github.event_name != 'push'
         run: |
           if git diff --quiet -- data/sessions.json; then
-            echo "Sin cambios que guardar."
+            echo "Sin cambios en las sesiones."
             exit 0
           fi
           git config user.name "github-actions[bot]"
@@ -37,3 +56,46 @@ jobs:
           git add data/sessions.json
           git commit -m "Actualizar sesiones de Braze Learning"
           git push
+
+      - name: Montar la web
+        run: python scripts/build_site.py
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Cifrar las páginas con contraseña
+        env:
+          STATICRYPT_PASSWORD: ${{ secrets.STATICRYPT_PASSWORD }}
+        working-directory: _site
+        run: |
+          # StatiCrypt deja el resultado en _enc/_site (cifra el HTML y copia los logos)
+          npx --yes staticrypt@3.5.4 . -r -d ../_enc \
+            --config false \
+            --salt 6a3f1c9e2b7d4a0f8e5c1b9d7a3e6f20 \
+            --short \
+            --remember 30 \
+            --template ../scripts/staticrypt_template.html \
+            --template-title "COE Braze Iberia" \
+            --template-instructions "Introduce la contraseña del grupo · Enter the group password" \
+            --template-placeholder "Contraseña / Password" \
+            --template-button "Entrar / Enter" \
+            --template-remember "Recordarme 30 días / Remember me" \
+            --template-error "Contraseña incorrecta / Wrong password"
+          test -f ../_enc/_site/index.html && test -f ../_enc/_site/sesiones/index.html
+
+      - uses: actions/configure-pages@v5
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _enc/_site
+
+      - name: Publicar en GitHub Pages
+        id: deploy
+        uses: actions/deploy-pages@v4
+
+      - name: Avisar si falló la descarga de Braze
+        if: steps.fetch.outcome == 'failure'
+        run: |
+          echo "La web se ha publicado, pero NO se pudieron descargar sesiones nuevas de Braze. Revisa el paso 'Descargar sesiones de Braze'." >&2
+          exit 1

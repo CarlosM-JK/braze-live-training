@@ -1,26 +1,9 @@
 {
- "updated": "2026-11-12T15:33:24+01:00",
+ "updated": "2026-11-13T07:15:09+01:00",
  "source": "https://learning.braze.com/calendar",
  "timezone": "Europe/Madrid",
- "count": 56,
+ "count": 54,
  "events": [
-  {
-   "title": "Agentic Marketing: A Guided Workshop",
-   "start": "2026-11-03T03:00:00+01:00",
-   "end": "2026-11-03T04:30:00+01:00",
-   "url": "/agentic-marketing-workshop/2516886",
-   "tags": []
-  },
-  {
-   "title": "Get Started with Braze: Driving First Transactions",
-   "start": "2026-11-03T04:00:00+01:00",
-   "end": "2026-11-03T05:00:00+01:00",
-   "url": "/getting-started-with-braze-driving-first-transactions/2154168",
-   "tags": [
-    "english",
-    "apac-timezones"
-   ]
-  },
   {
    "title": "Brazeを始めよう：成果を生み出す施策設定の基礎：ライブトレーニング",
    "start": "2026-11-04T07:30:00+01:00",

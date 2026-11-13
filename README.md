@@ -1,28 +1,42 @@
-# Braze Live Training · Calendario del grupo
+# COE Braze Iberia · Hub
 
-Calendario de las sesiones en directo de [Braze Learning](https://learning.braze.com/calendar), en hora de Madrid, con filtros por área temática, tipo de sesión, idioma y horario laboral en España.
+Web interna del grupo de referentes de Braze (Jakala), protegida con contraseña.
 
-Uso interno del COE Braze Iberia (Jakala). Solo contiene información pública publicada por Braze.
+- **Portada** (`index.html`): presentación del hub con Chroco, próximas sesiones en horario ES, releases (próximamente) y observatorio.
+- **Sesiones** (`sesiones/index.html`): calendario de las sesiones en directo de [Braze Learning](https://learning.braze.com/calendar) en hora de Madrid.
+- Próximamente: Releases de Braze, biblioteca de casos de uso y observatorio Braze + Salesforce.
 
 ## Cómo funciona
 
 | Archivo | Qué hace |
 |---|---|
-| `index.html` | La página. Lee las sesiones de `data/sessions.json`. |
-| `data/sessions.json` | Las sesiones. Lo actualiza el robot; no hace falta editarlo a mano. |
+| `index.html`, `sesiones/index.html` | Las páginas (diseño y textos en ES/EN/FR/IT). |
+| `assets/` | Logos de Jakala y las tres poses de Chroco. |
+| `data/sessions.json` | Sesiones de Braze Learning. Lo actualiza el robot. |
+| `data/observatorio.json` | Noticias del observatorio Braze + Salesforce (estado: anunciado / rumoreado / disponible, en ES/EN/FR/IT). De momento se edita a mano. |
 | `scripts/fetch_sessions.py` | Descarga las sesiones del calendario público de Braze Learning. |
-| `.github/workflows/update.yml` | El robot: ejecuta el script cada día y guarda los cambios. |
+| `scripts/build_site.py` | Monta la web e inserta las sesiones dentro de las páginas. |
+| `scripts/staticrypt_template.html` | Pantalla de contraseña con la imagen de Jakala. |
+| `.github/workflows/update.yml` | El robot: descarga, monta, cifra y publica. |
 
-Cada día, GitHub Actions descarga el calendario de los próximos 12 meses. Si hay cambios, actualiza `data/sessions.json` y GitHub Pages publica la página con los datos nuevos. Si la descarga falla, no se toca nada y la página sigue mostrando los últimos datos buenos.
+El robot se ejecuta cada día y cada vez que se sube un cambio a `main`:
+1. Descarga las sesiones de Braze (si falla, publica igualmente con los últimos datos y avisa).
+2. Monta la web e inserta los datos dentro de las páginas.
+3. Cifra cada página con la contraseña del grupo (StatiCrypt). Sin contraseña, el contenido es ilegible.
+4. Publica el resultado en GitHub Pages.
 
-## Tareas habituales
+## Contraseña
 
-- **Forzar una actualización:** pestaña **Actions** → *Actualizar sesiones de Braze* → **Run workflow**.
-- **Comprobar que el robot funciona:** pestaña **Actions**; cada ejecución aparece en verde (bien) o en rojo (error).
-- **Cambiar la clasificación por áreas:** función `areaOf` en `index.html` (palabras clave del título).
-- **Cambiar el horario ES:** en `index.html`, `mins>=510 && mins<=1200` (de 8:30 a 20:00, en minutos desde medianoche).
+- Se guarda como secreto del repositorio: **Settings → Secrets and variables → Actions → `STATICRYPT_PASSWORD`**. No es visible para nadie, tampoco en el repositorio público.
+- Para cambiarla: edita el secreto y lanza el robot (**Actions → Actualizar y publicar la web → Run workflow**). Quien tuviera marcado "Recordarme" tendrá que volver a introducirla.
+- Una sola contraseña para todo el hub; "Recordarme" la guarda 30 días en ese navegador.
 
-## Notas
+## Importante
 
-- El calendario de Braze no tiene una API documentada. Si Braze cambia su web, el robot fallará (aparecerá en rojo en Actions) y habrá que revisar `scripts/fetch_sessions.py`.
-- La página está marcada para que los buscadores no la indexen, pero cualquiera con el enlace puede verla.
+- **Este repositorio es público.** Las páginas publicadas están cifradas, pero los archivos del repositorio se pueden leer. No subas aquí información interna, de clientes ni contraseñas: eso va en SharePoint.
+- El calendario de Braze no tiene una API documentada; si Braze cambia su web, el robot avisará con un error en Actions.
+- GitHub desactiva las tareas programadas tras 60 días sin actividad: se reactivan en Actions → Enable workflow.
+
+## Añadir una noticia al observatorio
+
+Edita `data/observatorio.json` (lápiz en GitHub) y añade un elemento a `items`, con `status` (`anunciado`, `rumoreado` o `disponible`), `date` (AAAA-MM-DD), `source`, `url` (opcional), `image` (opcional, ruta a una imagen propia en `assets/`) y `title` / `text` en `es`, `en`, `fr` e `it`. Al guardar, la web se republica sola. Con más de una noticia, el carrusel se activa automáticamente.

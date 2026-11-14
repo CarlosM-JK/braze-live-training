@@ -49,18 +49,22 @@ jobs:
         continue-on-error: true   # si falla, se publica con las últimas releases buenas
         run: python scripts/fetch_releases.py
 
+      - name: Buscar imágenes oficiales de la actualidad
+        continue-on-error: true   # si no encuentra imagen, la web pone una ilustración de marca
+        run: python scripts/fetch_images.py
+
       - name: Guardar datos nuevos en el repositorio
         if: github.event_name != 'push'
         run: |
           git add -N data/releases.json 2>/dev/null || true
-          if git diff --quiet -- data/sessions.json data/releases.json; then
-            echo "Sin cambios en sesiones ni releases."
+          if git diff --quiet -- data/sessions.json data/releases.json data/actualidad.json; then
+            echo "Sin cambios en sesiones, releases ni actualidad."
             exit 0
           fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/sessions.json data/releases.json
-          git commit -m "Actualizar sesiones y releases de Braze"
+          git add data/sessions.json data/releases.json data/actualidad.json
+          git commit -m "Actualizar sesiones, releases e imágenes de actualidad"
           git push
 
       - name: Montar la web
@@ -88,7 +92,7 @@ jobs:
             --template-button "Entrar / Enter" \
             --template-remember "Recordarme 30 días / Remember me" \
             --template-error "Contraseña incorrecta / Wrong password"
-          test -f ../_enc/_site/index.html && test -f ../_enc/_site/sesiones/index.html && test -f ../_enc/_site/releases/index.html
+          test -f ../_enc/_site/index.html && test -f ../_enc/_site/sesiones/index.html && test -f ../_enc/_site/releases/index.html && test -f ../_enc/_site/actualidad/index.html
 
       - uses: actions/configure-pages@v5
 

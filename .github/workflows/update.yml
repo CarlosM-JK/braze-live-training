@@ -44,17 +44,23 @@ jobs:
         continue-on-error: true   # si falla, se publica igualmente con los últimos datos buenos
         run: python scripts/fetch_sessions.py
 
+      - name: Descargar releases de Braze
+        id: releases
+        continue-on-error: true   # si falla, se publica con las últimas releases buenas
+        run: python scripts/fetch_releases.py
+
       - name: Guardar datos nuevos en el repositorio
         if: github.event_name != 'push'
         run: |
-          if git diff --quiet -- data/sessions.json; then
-            echo "Sin cambios en las sesiones."
+          git add -N data/releases.json 2>/dev/null || true
+          if git diff --quiet -- data/sessions.json data/releases.json; then
+            echo "Sin cambios en sesiones ni releases."
             exit 0
           fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/sessions.json
-          git commit -m "Actualizar sesiones de Braze Learning"
+          git add data/sessions.json data/releases.json
+          git commit -m "Actualizar sesiones y releases de Braze"
           git push
 
       - name: Montar la web
@@ -82,7 +88,7 @@ jobs:
             --template-button "Entrar / Enter" \
             --template-remember "Recordarme 30 días / Remember me" \
             --template-error "Contraseña incorrecta / Wrong password"
-          test -f ../_enc/_site/index.html && test -f ../_enc/_site/sesiones/index.html
+          test -f ../_enc/_site/index.html && test -f ../_enc/_site/sesiones/index.html && test -f ../_enc/_site/releases/index.html
 
       - uses: actions/configure-pages@v5
 
@@ -94,8 +100,8 @@ jobs:
         id: deploy
         uses: actions/deploy-pages@v4
 
-      - name: Avisar si falló la descarga de Braze
-        if: steps.fetch.outcome == 'failure'
+      - name: Avisar si falló alguna descarga de Braze
+        if: steps.fetch.outcome == 'failure' || steps.releases.outcome == 'failure'
         run: |
-          echo "La web se ha publicado, pero NO se pudieron descargar sesiones nuevas de Braze. Revisa el paso 'Descargar sesiones de Braze'." >&2
+          echo "La web se ha publicado, pero falló la descarga de sesiones o de releases de Braze. Revisa los pasos 'Descargar ...' de esta ejecución." >&2
           exit 1

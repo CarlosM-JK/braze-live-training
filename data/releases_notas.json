@@ -1,4 +1,5 @@
 {
- "_ayuda": "Valoración del grupo por funcionalidad. Clave: fecha de la release + '#' + id de la funcionalidad (el id aparece en el enlace 'Ver en Braze Docs' de cada ficha, tras el '#'). Campos: casos_uso (texto), en_instancia ('si', 'no' o 'por_confirmar'), pedir ('si', 'no' o 'por_confirmar'), responsable (texto), comentario (texto). Todos opcionales.",
+ "_ayuda": "Valoración del grupo. 'items': clave = fecha de la release + '#' + id de la funcionalidad (el id aparece tras '#' en el enlace 'Ver en Braze Docs' de cada ficha); campos opcionales: casos_uso, en_instancia ('si', 'no' o 'por_confirmar'), pedir ('si', 'no' o 'por_confirmar'), responsable, comentario. 'destacados' (opcional): clave = fecha de la release, valor = lista de ids que se muestran en la portada; si no se indica, se eligen automáticamente.",
+ "destacados": {},
  "items": {}
 }

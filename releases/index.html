@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Releases de Braze · COE Braze Iberia</title>
+<link rel="icon" type="image/png" href="../assets/jakala-j-blue.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+/* Releases: misma línea que la portada (A4). Datos de data/releases.json (robot diario) y
+   valoraciones del grupo de data/releases_notas.json. */
+:root{
+  --jblue:#040066; --jblue-2:#040ab2; --jblue-3:#1941fa; --jblue-4:#3c82ff; --sky:#8caaff;
+  --ink:#0d0b33; --black:#000; --red:#f00a0a; --muted:#4a4a63; --muted-2:#6b6b80;
+  --line:#e3e6ef; --tint:#eef1fb; --soft:#f6f7fb; --white:#fff;
+  --font:"Raleway",-apple-system,"Segoe UI",Arial,sans-serif;
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+html,body{margin:0}
+body{background:var(--white);color:var(--ink);font:400 16px/1.6 var(--font);-webkit-font-smoothing:antialiased}
+a{color:var(--jblue-3);text-decoration:none}
+a:hover{color:var(--jblue)}
+h1,h2,h3{margin:0;text-wrap:balance}
+.wrap{max-width:1320px;margin:0 auto;padding:0 48px}
+.mesh{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
+:focus-visible{outline:2px solid var(--jblue-3);outline-offset:3px}
+
+.top{background:var(--white);border-bottom:1px solid #e8e8ee}
+.top .wrap{height:84px;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap}
+.brand{display:flex;align-items:center;gap:18px;color:inherit}
+.brand img{height:22px;display:block}
+.brand i{width:1px;height:22px;background:#cfcfcf}
+.brand span{font-size:12px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--black)}
+.nav{display:flex;align-items:center;gap:30px;font-size:14px;font-weight:700;flex-wrap:wrap}
+.nav a{color:var(--black)}
+.nav a[aria-current="page"]{color:var(--jblue-3)}
+.langs{display:flex;gap:4px;padding-left:22px;border-left:1px solid #e3e3e8}
+.langs button{background:none;border:0;font:700 12px var(--font);letter-spacing:.08em;color:#8a8a99;padding:6px;cursor:pointer;border-bottom:2px solid transparent}
+.langs button[aria-pressed="true"]{color:var(--black);border-bottom-color:var(--red)}
+
+.head{position:relative;overflow:hidden;background:var(--tint)}
+.head .wrap{position:relative;padding-top:64px;padding-bottom:56px;display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:32px}
+.num{font-size:120px;line-height:.8;font-weight:900;color:transparent;-webkit-text-stroke:2px var(--jblue-3)}
+.head h1{font-size:clamp(40px,5vw,60px);line-height:1.02;font-weight:800;letter-spacing:-.02em;color:var(--jblue);margin-top:18px}
+.head p{margin:14px 0 0;font-size:17px;color:var(--muted);max-width:56ch}
+.stats{display:flex;gap:36px;flex-wrap:wrap}
+.stat b{display:block;font-size:40px;font-weight:900;line-height:1;color:var(--jblue)}
+.stat span{display:block;margin-top:6px;font-size:13px;font-weight:600;color:var(--muted-2)}
+
+.bar{position:sticky;top:0;z-index:5;background:rgba(255,255,255,.96);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.bar .wrap{padding-top:14px;padding-bottom:14px;display:flex;flex-direction:column;gap:12px}
+.brow{display:flex;flex-wrap:wrap;gap:10px 16px;align-items:center}
+.lbl{font-size:11px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--muted-2);min-width:88px}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{border:1px solid #cfd4e2;background:var(--white);color:var(--ink);padding:6px 13px;font:700 13px var(--font);cursor:pointer}
+.chip:hover{border-color:var(--jblue)}
+.chip[aria-pressed="true"]{background:var(--jblue);border-color:var(--jblue);color:var(--white)}
+.chip small{font-weight:700;opacity:.65;margin-left:4px}
+.search{flex:1 1 240px;max-width:340px;position:relative}
+.search input{width:100%;font:500 14px var(--font);padding:9px 12px 9px 36px;border:1px solid #cfd4e2;color:var(--ink);background:var(--white)}
+.search svg{position:absolute;left:12px;top:50%;transform:translateY(-50%);width:15px;height:15px}
+select{font:700 13px var(--font);padding:8px 12px;border:1px solid #cfd4e2;background:var(--white);color:var(--ink)}
+.count{margin-left:auto;font-size:13px;font-weight:700;color:var(--muted-2)}
+
+main .wrap{padding-top:48px;padding-bottom:96px}
+.rel{margin-bottom:64px}
+.rel-h{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:12px;padding-bottom:16px;border-bottom:2px solid var(--black);margin-bottom:8px}
+.rel-h h2{font-size:34px;font-weight:800;letter-spacing:-.015em;color:var(--jblue)}
+.rel-h h2 small{font-size:14px;font-weight:700;color:var(--muted-2);letter-spacing:0;margin-left:12px}
+.rel-h a{font-size:14px;font-weight:800}
+.sec-h{display:flex;align-items:center;gap:10px;margin:28px 0 12px;font-size:12px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--black)}
+.sec-h::before{content:"";width:10px;height:12px;background:var(--jblue-3);clip-path:polygon(50% 0,100% 25%,100% 75%,50% 100%,0 75%,0 25%)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(380px,100%),1fr));gap:16px}
+.item{border:1px solid var(--line);background:var(--white);padding:22px 24px;display:flex;flex-direction:column;gap:10px}
+.item .t{display:flex;justify-content:space-between;align-items:flex-start;gap:12px}
+.item h3{font-size:17px;line-height:1.3;font-weight:800}
+.pill{flex:none;font-size:10.5px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;padding:4px 8px;white-space:nowrap}
+.pill.ga{background:var(--jblue);color:var(--white)}
+.pill.beta{background:var(--jblue-3);color:var(--white)}
+.pill.early{background:var(--white);color:var(--jblue-3);box-shadow:inset 0 0 0 1px var(--jblue-3)}
+.pill.none{background:var(--soft);color:var(--muted-2)}
+.item p{margin:0;font-size:14.5px;line-height:1.55;color:var(--muted)}
+.item .links{display:flex;gap:16px;flex-wrap:wrap;font-size:13px;font-weight:800}
+.eval{margin-top:4px;padding:12px 14px;background:var(--soft);font-size:13px;display:grid;grid-template-columns:auto 1fr;gap:4px 12px}
+.eval dt{font-weight:800;color:var(--black)}
+.eval dd{margin:0;color:var(--muted)}
+.pending{margin-top:auto;font-size:12px;font-weight:700;color:#9a9ab0}
+.empty{padding:40px;border:1px dashed #c9cdd8;color:var(--muted-2);text-align:center}
+
+footer{background:#000;border-top:4px solid var(--red);color:#b5b5c0;font-size:13px}
+footer .wrap{padding-top:32px;padding-bottom:32px;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
+footer img{height:18px;display:block}
+
+@media (max-width:640px){.wrap{padding:0 20px}.nav{gap:14px;font-size:13px}.langs{padding-left:10px}.num{font-size:84px}.count{margin-left:0}}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="../"><img src="../assets/jakala-logo-full.png" alt="JAKALA"><i></i><span>COE Braze Iberia</span></a>
+    <nav class="nav" aria-label="Secciones">
+      <a href="../sesiones/" data-t="nav1"></a>
+      <a href="./" aria-current="page" data-t="nav2"></a>
+      <a href="../#observatorio" data-t="nav3"></a>
+      <span class="langs" role="group" aria-label="Idioma / Language">
+        <button type="button" data-lang="es">ES</button><button type="button" data-lang="en">EN</button><button type="button" data-lang="fr">FR</button><button type="button" data-lang="it">IT</button>
+      </span>
+    </nav>
+  </div>
+</header>
+
+<section class="head">
+  <svg class="mesh" aria-hidden="true" style="opacity:.7"><defs><pattern id="hx" width="48" height="83" patternUnits="userSpaceOnUse"><path d="M24 0L48 13.9V41.6L24 55.4L0 41.6V13.9Z M24 55.4V83" fill="none" stroke="#dbe2f8" stroke-width="1"/></pattern></defs><rect width="100%" height="100%" fill="url(#hx)"/></svg>
+  <div class="wrap">
+    <div>
+      <span class="num" aria-hidden="true">02</span>
+      <h1 data-t="title"></h1>
+      <p data-t="lead"></p>
+    </div>
+    <div class="stats" id="stats"></div>
+  </div>
+</section>
+
+<div class="bar">
+  <div class="wrap">
+    <div class="brow">
+      <label class="search" for="q"><svg viewBox="0 0 16 16" fill="none" stroke="#6b6b80" stroke-width="1.7" aria-hidden="true"><circle cx="7" cy="7" r="5"/><path d="M11 11l4 4"/></svg><input id="q" type="search" autocomplete="off"></label>
+      <label for="rel" style="display:flex;align-items:center;gap:8px;font-size:13px;font-weight:700"><span data-t="release"></span><select id="rel"></select></label>
+      <span class="count" id="count"></span>
+    </div>
+    <div class="brow"><span class="lbl" data-t="avail"></span><div class="chips" id="labelChips"></div></div>
+    <div class="brow"><span class="lbl" data-t="section"></span><div class="chips" id="sectionChips"></div></div>
+  </div>
+</div>
+
+<main><div class="wrap" id="list"></div></main>
+
+<footer>
+  <div class="wrap">
+    <img src="../assets/jakala-logo-white.png" alt="JAKALA">
+    <span id="src"></span>
+  </div>
+</footer>
+
+<script>
+let DATA = /*__RELEASES__*/null;
+let NOTES = /*__RELNOTES__*/null;
+
+const I18N = {
+ es:{ locale:"es-ES", nav1:"01 Formación", nav2:"02 Producto", nav3:"03 Observatorio",
+  title:"Releases de Braze", lead:"Todas las novedades de producto publicadas por Braze desde 2026, con su disponibilidad y la valoración del grupo.",
+  search:"Buscar funcionalidad", release:"Release", all:"Todas", avail:"Disponibilidad", section:"Sección",
+  labels:{ga:"GA",beta:"Beta",early:"Early access",none:"Sin etiqueta"},
+  stR:"releases", stI:"funcionalidades", stL:"última release",
+  items:n=>`${n} ${n===1?"funcionalidad":"funcionalidades"}`, viewBraze:"Ver en Braze Docs ↗", doc:"Documentación ↗",
+  pending:"Pendiente de valorar por el grupo", evUse:"Casos de uso", evInst:"¿La tenemos?", evAsk:"¿Pedirla?", evOwner:"Responsable", evNote:"Comentario",
+  yes:"Sí", no:"No", unknown:"Por confirmar",
+  empty:"No hay funcionalidades con estos filtros.", noData:"Todavía no hay datos de releases. Se cargarán en la próxima actualización automática.",
+  src:(d)=>`Fuente: release notes oficiales de Braze · Actualizado el ${d}` },
+ en:{ locale:"en-GB", nav1:"01 Training", nav2:"02 Product", nav3:"03 Watch",
+  title:"Braze releases", lead:"Every product update Braze has published since 2026, with its availability and the group's assessment.",
+  search:"Search features", release:"Release", all:"All", avail:"Availability", section:"Section",
+  labels:{ga:"GA",beta:"Beta",early:"Early access",none:"No label"},
+  stR:"releases", stI:"features", stL:"latest release",
+  items:n=>`${n} ${n===1?"feature":"features"}`, viewBraze:"View on Braze Docs ↗", doc:"Documentation ↗",
+  pending:"Pending group assessment", evUse:"Use cases", evInst:"Do we have it?", evAsk:"Request it?", evOwner:"Owner", evNote:"Comment",
+  yes:"Yes", no:"No", unknown:"To be confirmed",
+  empty:"No features match these filters.", noData:"No release data yet. It will load on the next automatic update.",
+  src:(d)=>`Source: official Braze release notes · Updated on ${d}` },
+ fr:{ locale:"fr-FR", nav1:"01 Formation", nav2:"02 Produit", nav3:"03 Observatoire",
+  title:"Releases Braze", lead:"Toutes les nouveautés produit publiées par Braze depuis 2026, avec leur disponibilité et l'avis du groupe.",
+  search:"Rechercher une fonctionnalité", release:"Release", all:"Toutes", avail:"Disponibilité", section:"Section",
+  labels:{ga:"GA",beta:"Bêta",early:"Early access",none:"Sans étiquette"},
+  stR:"releases", stI:"fonctionnalités", stL:"dernière release",
+  items:n=>`${n} fonctionnalité${n===1?"":"s"}`, viewBraze:"Voir sur Braze Docs ↗", doc:"Documentation ↗",
+  pending:"Évaluation du groupe en attente", evUse:"Cas d'usage", evInst:"L'avons-nous ?", evAsk:"La demander ?", evOwner:"Responsable", evNote:"Commentaire",
+  yes:"Oui", no:"Non", unknown:"À confirmer",
+  empty:"Aucune fonctionnalité ne correspond à ces filtres.", noData:"Pas encore de données. Elles arriveront à la prochaine mise à jour automatique.",
+  src:(d)=>`Source : release notes officielles de Braze · Mis à jour le ${d}` },
+ it:{ locale:"it-IT", nav1:"01 Formazione", nav2:"02 Prodotto", nav3:"03 Osservatorio",
+  title:"Release di Braze", lead:"Tutte le novità di prodotto pubblicate da Braze dal 2026, con disponibilità e valutazione del gruppo.",
+  search:"Cerca funzionalità", release:"Release", all:"Tutte", avail:"Disponibilità", section:"Sezione",
+  labels:{ga:"GA",beta:"Beta",early:"Early access",none:"Senza etichetta"},
+  stR:"release", stI:"funzionalità", stL:"ultima release",
+  items:n=>`${n} funzionalità`, viewBraze:"Vedi su Braze Docs ↗", doc:"Documentazione ↗",
+  pending:"In attesa di valutazione del gruppo", evUse:"Casi d'uso", evInst:"Ce l'abbiamo?", evAsk:"Richiederla?", evOwner:"Responsabile", evNote:"Commento",
+  yes:"Sì", no:"No", unknown:"Da confermare",
+  empty:"Nessuna funzionalità con questi filtri.", noData:"Ancora nessun dato. Arriverà con il prossimo aggiornamento automatico.",
+  src:(d)=>`Fonte: release notes ufficiali di Braze · Aggiornato il ${d}` }
+};
+let LANG="es";
+try { const s=localStorage.getItem("blt-lang"); if(I18N[s]) LANG=s; else { const n=(navigator.language||"").slice(0,2); if(I18N[n]) LANG=n; } } catch(e) {}
+const T=()=>I18N[LANG];
+const esc=s=>String(s==null?"":s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const norm=s=>String(s).toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g,"");
+const fmt=(iso,opt)=>new Date(iso.length===10?iso+"T12:00:00Z":iso).toLocaleDateString(T().locale,Object.assign({timeZone:"Europe/Madrid"},opt||{day:"numeric",month:"long",year:"numeric"}));
+
+const state={q:"",rel:"all",labels:new Set(),sections:new Set()};
+const REL=()=> (DATA && DATA.releases) || [];
+const lab=it=>it.label||"none";
+
+function evalBlock(rel,it){
+  const n=NOTES && NOTES.items && NOTES.items[rel.date+"#"+it.id];
+  if(!n) return `<span class="pending">${T().pending}</span>`;
+  const yn=v=>v==="si"||v==="sí"||v===true?T().yes:v==="no"||v===false?T().no:T().unknown;
+  const rows=[];
+  if(n.casos_uso) rows.push([T().evUse,esc(n.casos_uso)]);
+  if(n.en_instancia!=null) rows.push([T().evInst,yn(n.en_instancia)]);
+  if(n.pedir!=null) rows.push([T().evAsk,yn(n.pedir)]);
+  if(n.responsable) rows.push([T().evOwner,esc(n.responsable)]);
+  if(n.comentario) rows.push([T().evNote,esc(n.comentario)]);
+  return rows.length?`<dl class="eval">${rows.map(r=>`<dt>${r[0]}</dt><dd>${r[1]}</dd>`).join("")}</dl>`:`<span class="pending">${T().pending}</span>`;
+}
+
+function controls(){
+  const sel=document.getElementById("rel");
+  sel.innerHTML=`<option value="all">${T().all}</option>`+REL().map(r=>`<option value="${r.date}">${fmt(r.date,{day:"numeric",month:"short",year:"numeric"})}</option>`).join("");
+  sel.value=state.rel;
+  const all=REL().flatMap(r=>r.items);
+  const lc=document.getElementById("labelChips");
+  lc.innerHTML=["ga","beta","early","none"].map(k=>`<button type="button" class="chip" data-k="${k}" aria-pressed="${state.labels.has(k)}">${T().labels[k]}<small>${all.filter(i=>lab(i)===k).length}</small></button>`).join("");
+  lc.querySelectorAll(".chip").forEach(b=>b.onclick=()=>{const k=b.dataset.k;state.labels.has(k)?state.labels.delete(k):state.labels.add(k);b.setAttribute("aria-pressed",state.labels.has(k));render();});
+  const secs=[...new Set(all.map(i=>i.section))];
+  const sc=document.getElementById("sectionChips");
+  sc.innerHTML=secs.map(s=>`<button type="button" class="chip" data-s="${esc(s)}" aria-pressed="${state.sections.has(s)}">${esc(s)}<small>${all.filter(i=>i.section===s).length}</small></button>`).join("");
+  sc.querySelectorAll(".chip").forEach(b=>b.onclick=()=>{const s=b.dataset.s;state.sections.has(s)?state.sections.delete(s):state.sections.add(s);b.setAttribute("aria-pressed",state.sections.has(s));render();});
+}
+
+function render(){
+  const list=document.getElementById("list");
+  if(!REL().length){ list.innerHTML=`<div class="empty">${T().noData}</div>`; document.getElementById("count").textContent=""; return; }
+  const q=norm(state.q.trim()); let total=0, html="";
+  for(const r of REL()){
+    if(state.rel!=="all" && r.date!==state.rel) continue;
+    const items=r.items.filter(it=>(!state.labels.size||state.labels.has(lab(it)))&&(!state.sections.size||state.sections.has(it.section))&&(!q||norm(it.title+" "+it.summary+" "+it.section).includes(q)));
+    if(!items.length) continue;
+    total+=items.length;
+    const bySec=new Map(); items.forEach(it=>{ if(!bySec.has(it.section)) bySec.set(it.section,[]); bySec.get(it.section).push(it); });
+    html+=`<section class="rel"><div class="rel-h"><h2>${fmt(r.date)}<small>${T().items(items.length)}</small></h2><a href="${esc(r.url)}" target="_blank" rel="noopener">${T().viewBraze}</a></div>`;
+    for(const [sec,its] of bySec){
+      html+=`<div class="sec-h">${esc(sec)}</div><div class="grid">`+its.map(it=>`
+        <article class="item" id="${esc(r.date+"-"+it.id)}">
+          <div class="t"><h3>${esc(it.title)}</h3><span class="pill ${lab(it)}">${T().labels[lab(it)]}</span></div>
+          ${it.summary?`<p>${esc(it.summary)}</p>`:""}
+          <div class="links">${it.doc?`<a href="${esc(it.doc)}" target="_blank" rel="noopener">${T().doc}</a>`:""}<a href="${esc(r.url+"#"+it.id)}" target="_blank" rel="noopener">${T().viewBraze}</a></div>
+          ${evalBlock(r,it)}
+        </article>`).join("")+`</div>`;
+    }
+    html+=`</section>`;
+  }
+  list.innerHTML=html||`<div class="empty">${T().empty}</div>`;
+  document.getElementById("count").textContent=T().items(total);
+}
+
+function renderAll(){
+  document.documentElement.lang=LANG;
+  document.querySelectorAll("[data-t]").forEach(el=>el.textContent=T()[el.dataset.t]);
+  document.getElementById("q").placeholder=T().search;
+  document.querySelectorAll(".langs button").forEach(b=>b.setAttribute("aria-pressed",b.dataset.lang===LANG));
+  const rs=REL(), n=rs.reduce((a,r)=>a+r.items.length,0);
+  document.getElementById("stats").innerHTML=rs.length?`<div class="stat"><b>${rs.length}</b><span>${T().stR}</span></div><div class="stat"><b>${n}</b><span>${T().stI}</span></div><div class="stat"><b>${fmt(rs[0].date,{day:"numeric",month:"short"})}</b><span>${T().stL}</span></div>`:"";
+  document.getElementById("src").textContent=DATA&&DATA.updated?T().src(fmt(DATA.updated)):"";
+  controls(); render();
+}
+document.querySelectorAll(".langs button").forEach(b=>b.onclick=()=>{LANG=b.dataset.lang;try{localStorage.setItem("blt-lang",LANG);}catch(e){}renderAll();});
+document.getElementById("q").oninput=e=>{state.q=e.target.value;render();};
+document.getElementById("rel").onchange=e=>{state.rel=e.target.value;render();};
+
+/* Enlace directo a una release: releases/#2026-11-12 */
+const h=decodeURIComponent(location.hash.slice(1)); if(/^\d{4}-\d{2}-\d{2}$/.test(h)) state.rel=h;
+renderAll();
+if(!DATA) fetch("../data/releases.json").then(r=>r.json()).then(j=>{DATA=j;renderAll();}).catch(()=>{});
+if(!NOTES) fetch("../data/releases_notas.json").then(r=>r.json()).then(j=>{NOTES=j;render();}).catch(()=>{});
+</script>
+</body>
+</html>

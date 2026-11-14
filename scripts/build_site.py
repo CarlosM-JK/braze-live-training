@@ -1,9 +1,8 @@
 """Monta la web en la carpeta _site antes de cifrarla.
 
-- Copia las páginas (index.html y sesiones/) y la carpeta assets/.
-- Inserta las sesiones (data/sessions.json) y el observatorio (data/observatorio.json)
-  dentro de cada página, para que
-  los datos queden cifrados junto con la página y no se publiquen sueltos.
+- Copia las páginas (portada, sesiones/ y releases/) y la carpeta assets/.
+- Inserta los datos (sesiones, releases, valoraciones del grupo y observatorio) dentro de
+  cada página que los usa, para que queden cifrados junto con la página y no se publiquen sueltos.
 Lo ejecuta GitHub Actions (.github/workflows/update.yml).
 """
 import json
@@ -12,9 +11,21 @@ import shutil
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 SITE = ROOT / "_site"
-PAGES = ["index.html", "sesiones/index.html"]
-PLACEHOLDER = "/*__SESSIONS__*/null"
-OBS_PLACEHOLDER = "/*__OBSERVATORIO__*/null"
+PAGES = ["index.html", "sesiones/index.html", "releases/index.html"]
+DATA = {
+    "/*__SESSIONS__*/null": "sessions.json",
+    "/*__RELEASES__*/null": "releases.json",
+    "/*__RELNOTES__*/null": "releases_notas.json",
+    "/*__OBSERVATORIO__*/null": "observatorio.json",
+}
+
+
+def load(name: str) -> str:
+    path = ROOT / "data" / name
+    if not path.exists():
+        return "null"
+    data = json.loads(path.read_text(encoding="utf-8"))
+    return json.dumps(data, ensure_ascii=False, separators=(",", ":")).replace("</", "<\\/")
 
 
 def main() -> None:
@@ -22,22 +33,15 @@ def main() -> None:
         shutil.rmtree(SITE)
     SITE.mkdir()
     shutil.copytree(ROOT / "assets", SITE / "assets")
-
-    data = json.loads((ROOT / "data" / "sessions.json").read_text(encoding="utf-8"))
-    inline = json.dumps(data, ensure_ascii=False, separators=(",", ":")).replace("</", "<\\/")
-    obs_path = ROOT / "data" / "observatorio.json"
-    obs = json.loads(obs_path.read_text(encoding="utf-8")) if obs_path.exists() else {"items": []}
-    obs_inline = json.dumps(obs, ensure_ascii=False, separators=(",", ":")).replace("</", "<\\/")
-
+    inline = {marker: load(name) for marker, name in DATA.items()}
     for page in PAGES:
         src = (ROOT / page).read_text(encoding="utf-8")
-        if PLACEHOLDER not in src:
-            raise SystemExit(f"ERROR: falta el marcador de datos en {page}")
+        for marker, value in inline.items():
+            src = src.replace(marker, value, 1)
         out = SITE / page
         out.parent.mkdir(parents=True, exist_ok=True)
-        src = src.replace(PLACEHOLDER, inline, 1).replace(OBS_PLACEHOLDER, obs_inline, 1)
         out.write_text(src, encoding="utf-8")
-    print(f"Web montada en _site con {len(data.get('events', []))} sesiones.")
+    print("Web montada en _site: " + ", ".join(PAGES))
 
 
 if __name__ == "__main__":

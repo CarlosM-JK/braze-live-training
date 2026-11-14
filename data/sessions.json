@@ -1,36 +1,9 @@
 {
- "updated": "2026-11-13T07:15:09+01:00",
+ "updated": "2026-11-14T07:02:22+01:00",
  "source": "https://learning.braze.com/calendar",
  "timezone": "Europe/Madrid",
- "count": 54,
+ "count": 51,
  "events": [
-  {
-   "title": "Brazeを始めよう：成果を生み出す施策設定の基礎：ライブトレーニング",
-   "start": "2026-11-04T07:30:00+01:00",
-   "end": "2026-11-04T09:30:00+01:00",
-   "url": "/braze90-course/2317453",
-   "tags": []
-  },
-  {
-   "title": "Get Started with Braze: Seamless Reengagement with Targeted Reminders",
-   "start": "2026-11-04T15:00:00+01:00",
-   "end": "2026-11-04T16:00:00+01:00",
-   "url": "/seamless-reengagement-with-targeted-reminders/2163695",
-   "tags": [
-    "english",
-    "emea-timezones"
-   ]
-  },
-  {
-   "title": "Get Started with Braze: Foundations for Effective Campaigns",
-   "start": "2026-11-04T21:00:00+01:00",
-   "end": "2026-11-04T23:00:00+01:00",
-   "url": "/getting-started-with-braze-foundations-for-effective-campaigns/2152914",
-   "tags": [
-    "english",
-    "amer-timezones"
-   ]
-  },
   {
    "title": "Agentic Marketing: A Guided Workshop",
    "start": "2026-11-05T16:00:00+01:00",

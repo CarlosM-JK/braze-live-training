@@ -2,7 +2,8 @@
 
 Web interna del grupo de referentes de Braze (Jakala), protegida con contraseña.
 
-- **Portada** (`index.html`): presentación del hub con Chroco, próximas sesiones en horario ES, releases (próximamente) y observatorio.
+- **Portada** (`index.html`): presentación del hub con Chroco, próximas sesiones en horario ES, las últimas releases y Actualidad Braze.
+- **Actualidad** (`actualidad/index.html`): noticias sobre Braze seleccionadas cada semana, con filtros por categoría, y el seguimiento de la compra por Salesforce.
 - **Sesiones** (`sesiones/index.html`): calendario de las sesiones en directo de [Braze Learning](https://learning.braze.com/calendar) en hora de Madrid.
 - **Releases** (`releases/index.html`): lanzamientos de Braze desde 2026 en una cronología con índice por meses; cada lanzamiento se despliega y muestra sus novedades en pestañas por sección, con la valoración del grupo. La portada muestra los cuatro últimos.
 
@@ -15,7 +16,8 @@ Web interna del grupo de referentes de Braze (Jakala), protegida con contraseña
 | `data/sessions.json` | Sesiones de Braze Learning. Lo actualiza el robot. |
 | `data/releases.json` | Release notes de Braze desde 2026. Lo actualiza el robot. |
 | `data/releases_notas.json` | Valoración del grupo por funcionalidad (casos de uso, si la tenemos, si pedirla, responsable). Se edita a mano. |
-| `data/observatorio.json` | Noticias del observatorio Braze + Salesforce (estado: anunciado / rumoreado / disponible, en ES/EN/FR/IT). De momento se edita a mano. |
+| `data/actualidad.json` | Actualidad Braze: `noticias` (categoría, fuente, "por qué nos importa") y `salesforce` (fase, hitos y noticias con estado anunciado / rumoreado / disponible / análisis), en ES/EN/FR/IT. Lo prepara Claude cada semana. |
+| `scripts/fetch_images.py` | Cada día busca la imagen oficial de las noticias de braze.com y salesforce.com. Si no hay, la web pone una ilustración de marca. |
 | `scripts/fetch_sessions.py` | Descarga las sesiones del calendario público de Braze Learning. |
 | `scripts/fetch_releases.py` | Lee braze.com/docs/releases/history y cada release de 2026 en adelante. |
 | `scripts/build_site.py` | Monta la web e inserta las sesiones dentro de las páginas. |
@@ -40,9 +42,14 @@ El robot se ejecuta cada día y cada vez que se sube un cambio a `main`:
 - El calendario de Braze no tiene una API documentada; si Braze cambia su web, el robot avisará con un error en Actions.
 - GitHub desactiva las tareas programadas tras 60 días sin actividad: se reactivan en Actions → Enable workflow.
 
-## Añadir una noticia al observatorio
+## Actualidad Braze
 
-Edita `data/observatorio.json` (lápiz en GitHub) y añade un elemento a `items`, con `status` (`anunciado`, `rumoreado` o `disponible`), `date` (AAAA-MM-DD), `source`, `url` (opcional), `image` (opcional, ruta a una imagen propia en `assets/`) y `title` / `text` en `es`, `en`, `fr` e `it`. Al guardar, la web se republica sola. Con más de una noticia, el carrusel se activa automáticamente.
+Las noticias viven en `data/actualidad.json`. Para cambiarlas, sustituye el archivo por la versión nueva (o edítalo con el lápiz en GitHub) y la web se republica sola.
+
+- `noticias`: `date` (AAAA-MM-DD), `cat` (`producto`, `mercado`, `eventos` o `corporativo`), `source` (nombre corto), `url`, `image` (déjalo vacío) y `title` / `why` en `es`, `en`, `fr` e `it`.
+- `salesforce.items`: igual, con `status` (`anunciado`, `rumoreado`, `disponible` o `analisis`) y `text` en lugar de `why`.
+- `salesforce.hitos`: pasos de la operación con `state` (`done`, `next` o `todo`).
+- Imágenes: solo se usan las oficiales de braze.com y salesforce.com, que busca el robot. Nunca subas fotos de medios.
 
 ## Destacados de la portada
 

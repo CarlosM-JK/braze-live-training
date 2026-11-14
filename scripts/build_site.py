@@ -11,12 +11,12 @@ import shutil
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 SITE = ROOT / "_site"
-PAGES = ["index.html", "sesiones/index.html", "releases/index.html"]
+PAGES = ["index.html", "sesiones/index.html", "releases/index.html", "actualidad/index.html"]
 DATA = {
     "/*__SESSIONS__*/null": "sessions.json",
     "/*__RELEASES__*/null": "releases.json",
     "/*__RELNOTES__*/null": "releases_notas.json",
-    "/*__OBSERVATORIO__*/null": "observatorio.json",
+    "/*__ACTUALIDAD__*/null": "actualidad.json",
 }
 
 

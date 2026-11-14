@@ -1,0 +1,234 @@
+{
+ "_ayuda": "Actualidad Braze. Lo prepara Claude cada semana. noticias: cat = producto | mercado | eventos | corporativo. salesforce.items: status = anunciado | rumoreado | disponible | analisis. hitos: state = done | next | todo. Deja image vacío: el robot busca la imagen oficial de la fuente (solo braze.com y salesforce.com). source: nombre corto y neutro de la fuente (Braze Blog, Business Wire, Salesforce, CIO.com…).",
+ "updated": "2026-11-14",
+ "noticias": [
+  {
+   "date": "2026-11-09",
+   "cat": "mercado",
+   "source": "Braze Blog",
+   "url": "https://www.braze.com/resources/articles/braze-named-leader-2026-gartner-email-magic-quadrant",
+   "image": "https://cdn.sanity.io/images/b7pblshe/marketing-prod/8bce4d07741d6479a4a9f1089c0553863e419194-1200x628.png",
+   "title": {
+    "es": "Braze, Líder en el primer Gartner Magic Quadrant de plataformas de email marketing",
+    "en": "Braze named a Leader in the first Gartner Magic Quadrant for Email Marketing Platforms",
+    "fr": "Braze nommé Leader du premier Magic Quadrant Gartner des plateformes d'email marketing",
+    "it": "Braze nominata Leader nel primo Magic Quadrant Gartner delle piattaforme di email marketing"
+   },
+   "why": {
+    "es": "Argumento de peso en propuestas a clientes que comparan Braze con herramientas de email tradicionales.",
+    "en": "A strong argument in proposals for clients comparing Braze with traditional email tools.",
+    "fr": "Un argument de poids face aux clients qui comparent Braze aux outils d'email classiques.",
+    "it": "Un argomento forte nelle proposte a clienti che confrontano Braze con strumenti email tradizionali."
+   }
+  },
+  {
+   "date": "2026-11-05",
+   "cat": "eventos",
+   "source": "Braze Blog",
+   "url": "https://www.braze.com/resources/articles/key-insights-from-grow-with-braze-dubai-2026",
+   "image": "https://cdn.sanity.io/images/b7pblshe/marketing-prod/8df06b2daca4ab1b0957dacd1e2462fcc8ef3de2-2400x1256.png",
+   "title": {
+    "es": "Las claves de Grow with Braze Dubai 2026",
+    "en": "Key insights from Grow with Braze Dubai 2026",
+    "fr": "Les points clés de Grow with Braze Dubaï 2026",
+    "it": "I punti chiave di Grow with Braze Dubai 2026"
+   },
+   "why": {
+    "es": "Resumen de casos y tendencias del evento; útil para preparar demos con el equipo internacional.",
+    "en": "A round-up of cases and trends from the event; useful for preparing demos with the international team.",
+    "fr": "Synthèse des cas et tendances de l'événement ; utile pour préparer les démos internationales.",
+    "it": "Sintesi di casi e tendenze dell'evento; utile per preparare le demo con il team internazionale."
+   }
+  },
+  {
+   "date": "2026-11-03",
+   "cat": "corporativo",
+   "source": "Business Wire",
+   "url": "https://www.businesswire.com/news/home/20261103322524/en/",
+   "image": "",
+   "title": {
+    "es": "Braze presentará sus resultados del tercer trimestre el 8 de diciembre",
+    "en": "Braze will report its third-quarter results on 8 December",
+    "fr": "Braze publiera ses résultats du troisième trimestre le 8 décembre",
+    "it": "Braze presenterà i risultati del terzo trimestre l'8 dicembre"
+   },
+   "why": {
+    "es": "Primeros resultados tras el anuncio de compra: atentos a cualquier mensaje sobre la hoja de ruta.",
+    "en": "First results since the acquisition announcement: watch for any roadmap messages.",
+    "fr": "Premiers résultats depuis l'annonce du rachat : à suivre pour la feuille de route.",
+    "it": "Primi risultati dopo l'annuncio dell'acquisizione: attenzione ai messaggi sulla roadmap."
+   }
+  },
+  {
+   "date": "2026-11-02",
+   "cat": "producto",
+   "source": "Braze Blog",
+   "url": "https://www.braze.com/resources/articles/operator-connect-product-spotlight",
+   "image": "https://cdn.sanity.io/images/b7pblshe/marketing-prod/e5b4e50c827a52d300668bd68ad60f52578227e8-2400x1256.png",
+   "title": {
+    "es": "Operator Connect lleva la inteligencia de Braze a las herramientas que ya usas",
+    "en": "Operator Connect brings Braze intelligence into the tools you already use",
+    "fr": "Operator Connect apporte l'intelligence de Braze dans vos outils habituels",
+    "it": "Operator Connect porta l'intelligenza di Braze negli strumenti che usi già"
+   },
+   "why": {
+    "es": "Acerca la IA de Braze al día a día del cliente; buena candidata para nuestras demos de IA.",
+    "en": "Brings Braze AI into clients' everyday tools; a good candidate for our AI demos.",
+    "fr": "Rapproche l'IA de Braze du quotidien du client ; bonne candidate pour nos démos IA.",
+    "it": "Porta l'IA di Braze nel lavoro quotidiano del cliente; buona candidata per le nostre demo IA."
+   }
+  },
+  {
+   "date": "2026-09-29",
+   "cat": "producto",
+   "source": "Braze",
+   "url": "https://www.braze.com/press-releases/braze-accelerates-ai-innovation-empowering-marketers-to-treat-every-customer-like-their-only-customer",
+   "image": "",
+   "title": {
+    "es": "Braze presenta Decisioning Studio Go, Agentic Standards y Operator Connect",
+    "en": "Braze unveils Decisioning Studio Go, Agentic Standards and Operator Connect",
+    "fr": "Braze présente Decisioning Studio Go, Agentic Standards et Operator Connect",
+    "it": "Braze presenta Decisioning Studio Go, Agentic Standards e Operator Connect"
+   },
+   "why": {
+    "es": "Nuevas piezas de IA anunciadas en beta, con Decisioning Studio Go previsto en GA el 14 de octubre; candidatas a casos de uso.",
+    "en": "New AI pieces announced in beta, with Decisioning Studio Go expected in GA on 14 October; use-case candidates.",
+    "fr": "Nouvelles briques IA annoncées en bêta, Decisioning Studio Go prévu en GA le 14 octobre ; candidates pour des cas d'usage.",
+    "it": "Nuovi elementi IA annunciati in beta, con Decisioning Studio Go previsto in GA il 14 ottobre; candidati per casi d'uso."
+   }
+  }
+ ],
+ "salesforce": {
+  "fase": {
+   "es": "Compra anunciada · a la espera de aprobaciones",
+   "en": "Acquisition announced · awaiting approvals",
+   "fr": "Rachat annoncé · en attente des approbations",
+   "it": "Acquisizione annunciata · in attesa delle approvazioni"
+  },
+  "hitos": [
+   {
+    "state": "done",
+    "date": "2026-10-20",
+    "title": {
+     "es": "Anuncio del acuerdo",
+     "en": "Agreement announced",
+     "fr": "Annonce de l'accord",
+     "it": "Annuncio dell'accordo"
+    },
+    "note": {
+     "es": "20 oct 2026",
+     "en": "20 Oct 2026",
+     "fr": "20 oct. 2026",
+     "it": "20 ott 2026"
+    }
+   },
+   {
+    "state": "next",
+    "date": "",
+    "title": {
+     "es": "Aprobación de los accionistas de Braze",
+     "en": "Braze shareholder approval",
+     "fr": "Approbation des actionnaires de Braze",
+     "it": "Approvazione degli azionisti di Braze"
+    },
+    "note": {
+     "es": "Pendiente",
+     "en": "Pending",
+     "fr": "En attente",
+     "it": "In attesa"
+    }
+   },
+   {
+    "state": "todo",
+    "date": "",
+    "title": {
+     "es": "Aprobaciones regulatorias",
+     "en": "Regulatory approvals",
+     "fr": "Approbations réglementaires",
+     "it": "Approvazioni regolamentari"
+    },
+    "note": {
+     "es": "Pendiente",
+     "en": "Pending",
+     "fr": "En attente",
+     "it": "In attesa"
+    }
+   },
+   {
+    "state": "todo",
+    "date": "",
+    "title": {
+     "es": "Cierre de la operación",
+     "en": "Deal closes",
+     "fr": "Clôture de l'opération",
+     "it": "Chiusura dell'operazione"
+    },
+    "note": {
+     "es": "Año fiscal 2028 de Salesforce (feb 2027 – ene 2028)",
+     "en": "Salesforce fiscal 2028 (Feb 2027 – Jan 2028)",
+     "fr": "Exercice 2028 de Salesforce (févr. 2027 – janv. 2028)",
+     "it": "Anno fiscale 2028 di Salesforce (feb 2027 – gen 2028)"
+    }
+   }
+  ],
+  "items": [
+   {
+    "date": "2026-10-20",
+    "status": "anunciado",
+    "source": "Salesforce",
+    "url": "https://salesforce.com/news/press-releases/2026/10/20/salesforce-signs-definitive-agreement-to-acquire-braze",
+    "image": "",
+    "title": {
+     "es": "Salesforce firma el acuerdo para comprar Braze por unos 5.660 M$",
+     "en": "Salesforce signs an agreement to acquire Braze for about $5.66B",
+     "fr": "Salesforce signe l'accord de rachat de Braze pour environ 5,66 Md$",
+     "it": "Salesforce firma l'accordo per acquisire Braze per circa 5,66 mld $"
+    },
+    "text": {
+     "es": "47,50 $ por acción en efectivo. Cierre previsto en el año fiscal 2028 de Salesforce (desde febrero de 2027), pendiente de accionistas y reguladores.",
+     "en": "$47.50 per share in cash. Closing expected in Salesforce's fiscal 2028 (from February 2027), subject to shareholder and regulatory approval.",
+     "fr": "47,50 $ par action en numéraire. Clôture prévue sur l'exercice 2028 de Salesforce (dès février 2027), sous réserve des actionnaires et des régulateurs.",
+     "it": "47,50 $ per azione in contanti. Chiusura prevista nell'anno fiscale 2028 di Salesforce (da febbraio 2027), in attesa di azionisti e autorità."
+    }
+   },
+   {
+    "date": "2026-10-21",
+    "status": "anunciado",
+    "source": "CIO.com",
+    "url": "https://www.cio.com/article/4239043/salesforce-to-buy-braze-for-5-7-billion-to-boost-real-time-customer-engagement.html",
+    "image": "",
+    "title": {
+     "es": "Hasta el cierre, Braze y Salesforce siguen siendo empresas independientes",
+     "en": "Until closing, Braze and Salesforce remain independent companies",
+     "fr": "Jusqu'à la clôture, Braze et Salesforce restent indépendantes",
+     "it": "Fino alla chiusura, Braze e Salesforce restano aziende indipendenti"
+    },
+    "text": {
+     "es": "La integración de productos no empezará hasta que se cierre la operación.",
+     "en": "Product integration will not start until the deal closes.",
+     "fr": "L'intégration des produits ne commencera qu'après la clôture.",
+     "it": "L'integrazione dei prodotti non inizierà prima della chiusura."
+    }
+   },
+   {
+    "date": "2026-10-21",
+    "status": "analisis",
+    "source": "Constellation Research",
+    "url": "https://www.constellationr.com/insights/news/salesforce-buys-braze-566-billion",
+    "image": "",
+    "title": {
+     "es": "Los analistas sitúan a Braze dentro de Marketing Cloud, CRM y Data 360",
+     "en": "Analysts place Braze within Marketing Cloud, CRM and Data 360",
+     "fr": "Les analystes placent Braze dans Marketing Cloud, CRM et Data 360",
+     "it": "Gli analisti collocano Braze in Marketing Cloud, CRM e Data 360"
+    },
+    "text": {
+     "es": "Interpretación de analistas, no confirmada por las compañías.",
+     "en": "Analyst interpretation, not confirmed by the companies.",
+     "fr": "Interprétation d'analystes, non confirmée par les entreprises.",
+     "it": "Interpretazione degli analisti, non confermata dalle aziende."
+    }
+   }
+  ]
+ }
+}

@@ -144,26 +144,36 @@ a.tl:hover{transform:translateX(4px);box-shadow:0 18px 36px -24px rgba(4,0,102,.
 .pill.early{background:#fff;color:var(--jblue-3);box-shadow:inset 0 0 0 1px var(--jblue-3)}.pill.none{background:#f2f3f8;color:var(--muted-2)}
 .tl-note{margin:20px 0 0;font-size:14px;color:var(--muted-2)}
 
-/* Observatorio */
-.obs{position:relative;overflow:hidden;background:#000;color:#fff;min-height:620px}
+/* Actualidad Braze (diseño X2): carrusel a pantalla completa con filtros */
+.obs{position:relative;overflow:hidden;background:#000;color:#fff;min-height:640px}
 .slide{position:absolute;inset:0;opacity:0;transition:opacity 1s ease}
 .slide.on{opacity:1}
 .slide .img{position:absolute;inset:0;background:var(--jblue);background-size:cover;background-position:center}
-.slide.on .img{animation:kb 7s ease-out both}
-@keyframes kb{from{transform:scale(1)}to{transform:scale(1.1)}}
-.slide .shade{position:absolute;inset:0;background:linear-gradient(90deg,rgba(0,0,0,.9) 0%,rgba(0,0,0,.6) 45%,rgba(0,0,0,0) 78%)}
-.obs .wrap{position:relative;padding-top:104px;padding-bottom:104px;display:flex;flex-direction:column;gap:24px;min-height:620px}
+.slide.on .img{animation:kb 8s ease-out both}
+@keyframes kb{from{transform:scale(1)}to{transform:scale(1.08)}}
+.slide .art{position:absolute;right:6%;top:50%;width:min(440px,38vw);aspect-ratio:1/1.1547;transform:translateY(-50%);display:grid;place-items:center;background:rgba(140,170,255,.14);color:#c9d3ff;font-size:13px;font-weight:800;letter-spacing:.16em;text-transform:uppercase}
+.slide .art::before{content:"";position:absolute;inset:14%;background:rgba(140,170,255,.12);clip-path:inherit}
+.slide .art span{position:relative}
+.slide .shade{position:absolute;inset:0;background:linear-gradient(90deg,rgba(0,0,0,.92) 0%,rgba(0,0,0,.62) 48%,rgba(0,0,0,.08) 82%)}
+.obs .wrap{position:relative;padding-top:96px;padding-bottom:88px;display:flex;flex-direction:column;gap:22px;min-height:640px}
 .obs .num{-webkit-text-stroke-color:var(--sky)}
-.obs .over{margin:0;font-size:12px;font-weight:800;letter-spacing:.18em;text-transform:uppercase;color:var(--sky)}
-.story{display:flex;flex-direction:column;gap:18px;max-width:620px}
+.chips{display:flex;gap:10px;flex-wrap:wrap}
+.chips button{border:1px solid rgba(255,255,255,.4);background:transparent;color:#fff;padding:6px 14px;font:800 13px var(--font);cursor:pointer}
+.chips button[aria-pressed="true"]{background:#fff;color:#000;border-color:#fff}
+.story{display:flex;flex-direction:column;gap:16px;max-width:640px}
 .story .tags{display:flex;gap:12px;align-items:center;flex-wrap:wrap}
+.story .cat{font-size:11px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--sky)}
 .story .st{font-size:11px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;background:#fff;color:#000;padding:4px 9px}
 .story .src{font-size:13px;font-weight:600;color:#c4c4d4}
-.story h3{font-size:44px;line-height:1.1;font-weight:800;letter-spacing:-.015em}
-.story p{margin:0;font-size:17px;color:#d0d0dc}
+.story h3{font-size:clamp(30px,3.6vw,46px);line-height:1.08;font-weight:800;letter-spacing:-.015em}
+.story p{margin:0;font-size:17px;line-height:1.6;color:#d0d0dc}
+.story p b{color:#fff}
+.story a{font-size:14px;font-weight:800;color:var(--sky)}
 .obs-nav{margin-top:auto;display:flex;align-items:center;gap:18px;flex-wrap:wrap}
-.obs-nav button{border:0;background:transparent;padding:8px 0;cursor:pointer;font:800 13px var(--font);letter-spacing:.1em;color:#6b6b80;border-bottom:2px solid #6b6b80}
-.obs-nav button[aria-current="true"]{color:#fff;border-bottom-color:#fff}
+.bars{display:flex;gap:8px}
+.bars button{width:20px;height:4px;padding:0;border:0;background:#4a4a5c;cursor:pointer;transition:width .3s}
+.bars button[aria-current="true"]{width:48px;background:#fff}
+.obs-nav .all{margin-left:auto;font-size:14px;font-weight:800;color:#fff}
 
 footer{background:#000;border-top:4px solid var(--red);color:#b5b5c0;font-size:13px}
 footer .wrap{padding-top:32px;padding-bottom:32px;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
@@ -189,7 +199,7 @@ footer img{height:18px;display:block}
     <nav class="nav" aria-label="Secciones">
       <a href="sesiones/" data-t="nav1"></a>
       <a href="releases/" data-t="nav2"></a>
-      <a href="#observatorio" data-t="nav3"></a>
+      <a href="actualidad/" data-t="nav3"></a>
       <span class="langs" role="group" aria-label="Idioma / Language">
         <button type="button" data-lang="es">ES</button><button type="button" data-lang="en">EN</button><button type="button" data-lang="fr">FR</button><button type="button" data-lang="it">IT</button>
       </span>
@@ -256,13 +266,13 @@ footer img{height:18px;display:block}
   </div>
 </section>
 
-<section class="obs" id="observatorio">
+<section class="obs" id="actualidad">
   <div id="slides"></div>
   <div class="wrap">
     <span class="num" aria-hidden="true">03</span>
-    <p class="over" data-t="s3over"></p>
+    <div class="chips" id="chips" role="group" data-t-aria="s3over"></div>
     <div class="story" id="story" aria-live="polite"></div>
-    <div class="obs-nav"><span id="dots" style="display:flex;gap:18px"></span><a href="#observatorio" style="margin-left:auto;font-size:14px;font-weight:800;color:#fff" hidden id="obsAll"></a></div>
+    <div class="obs-nav"><span class="bars" id="dots"></span><a class="all" href="actualidad/" data-t="s3cta"></a></div>
   </div>
 </section>
 
@@ -277,50 +287,50 @@ footer img{height:18px;display:block}
 let INLINE = /*__SESSIONS__*/null;
 let RELEASES = /*__RELEASES__*/null;
 let RELNOTES = /*__RELNOTES__*/null;
-let OBS = /*__OBSERVATORIO__*/null;
+let ACT = /*__ACTUALIDAD__*/null;
 
 const I18N = {
- es:{ s2hl:"Destacados", s2nov:"novedades", s2cta:"Ver todas las releases", s2live:"Los cuatro últimos lanzamientos de Braze. Fuente: release notes oficiales.", lab:{"ga":"GA","beta":"Beta","early":"Early access","none":"Sin etiqueta"}, locale:"es-ES", nav1:"01 Formación", nav2:"02 Producto", nav3:"03 Observatorio", eyebrow:"Hub interno del grupo de referentes",
+ es:{ s2hl:"Destacados", s2nov:"novedades", s2cta:"Ver todas las releases", s2live:"Los cuatro últimos lanzamientos de Braze. Fuente: release notes oficiales.", lab:{"ga":"GA","beta":"Beta","early":"Early access","none":"Sin etiqueta"}, locale:"es-ES", nav1:"01 Formación", nav2:"02 Producto", nav3:"03 Actualidad", eyebrow:"Hub interno del grupo de referentes",
   h1:'Braze,<br><span class="thin">contado por</span><br><span class="stroke">quienes</span> lo<br>usamos.',
   lead:"Formación, novedades de producto y lo que se mueve alrededor de Braze, contado por y para el equipo de Jakala.",
   chroco:"Chroco, la mascota del grupo",
   s1t:"Sesiones de formación", s1d:"El calendario en directo de Braze Learning, en hora de Madrid y ordenado por área.", s1cta:"Ver todas las sesiones",
   s2t:"Releases de Braze", s2d:"Cada novedad explicada: qué es, para qué casos de uso sirve y si la tenemos en GA.", soon:"Próximamente",
   s2note:"Esta sección se conectará con las release notes oficiales de Braze.",
-  s3over:"Observatorio Braze + Salesforce", st:{anunciado:"Anunciado",rumoreado:"Rumoreado",disponible:"Disponible"}, readMore:"Leer la fuente →",
+  s3over:"Actualidad Braze", s3cta:"Ver toda la actualidad →", why:"Por qué nos importa", filters:["Todo", "Noticias", "Braze + Salesforce"], cats:{"producto": "Producto", "mercado": "Mercado", "eventos": "Eventos", "corporativo": "Corporativo", "salesforce": "Braze + Salesforce"}, st:{"anunciado": "Anunciado", "rumoreado": "Rumoreado", "disponible": "Disponible", "analisis": "Análisis"}, readMore:"Leer la fuente →", slide:"Noticia",
   noSessions:"No hay sesiones próximas en horario ES.", footer:"COE Braze Iberia · Uso interno del grupo",
   dow:["Dom","Lun","Mar","Mié","Jue","Vie","Sáb"],
   areas:{orq:"Orquestación",can:"Canales",dat:"Datos e integraciones",ia:"IA y personalización",uc:"Casos de uso",cert:"Certificación",otr:"Otros"} },
- en:{ s2hl:"Highlights", s2nov:"updates", s2cta:"See all releases", s2live:"Braze's four latest releases. Source: official release notes.", lab:{"ga":"GA","beta":"Beta","early":"Early access","none":"No label"}, locale:"en-GB", nav1:"01 Training", nav2:"02 Product", nav3:"03 Watch", eyebrow:"Internal hub of the Braze champions group",
+ en:{ s2hl:"Highlights", s2nov:"updates", s2cta:"See all releases", s2live:"Braze's four latest releases. Source: official release notes.", lab:{"ga":"GA","beta":"Beta","early":"Early access","none":"No label"}, locale:"en-GB", nav1:"01 Training", nav2:"02 Product", nav3:"03 News", eyebrow:"Internal hub of the Braze champions group",
   h1:'Braze,<br><span class="thin">told by</span><br><span class="stroke">those who</span><br>use it.',
   lead:"Training, product news and what is happening around Braze, by and for the Jakala team.",
   chroco:"Chroco, the group's mascot",
   s1t:"Training sessions", s1d:"Braze Learning's live calendar, in Madrid time and sorted by area.", s1cta:"See all sessions",
   s2t:"Braze releases", s2d:"Every new feature explained: what it is, which use cases it enables and whether we have it in GA.", soon:"Coming soon",
   s2note:"This section will connect to Braze's official release notes.",
-  s3over:"Braze + Salesforce watch", st:{anunciado:"Announced",rumoreado:"Rumoured",disponible:"Available"}, readMore:"Read the source →",
+  s3over:"Braze news", s3cta:"See all news →", why:"Why it matters", filters:["All", "News", "Braze + Salesforce"], cats:{"producto": "Product", "mercado": "Market", "eventos": "Events", "corporativo": "Corporate", "salesforce": "Braze + Salesforce"}, st:{"anunciado": "Announced", "rumoreado": "Rumoured", "disponible": "Available", "analisis": "Analysis"}, readMore:"Read the source →", slide:"Story",
   noSessions:"No upcoming sessions in Spain hours.", footer:"COE Braze Iberia · Internal use",
   dow:["Sun","Mon","Tue","Wed","Thu","Fri","Sat"],
   areas:{orq:"Orchestration",can:"Channels",dat:"Data & integrations",ia:"AI & personalisation",uc:"Use cases",cert:"Certification",otr:"Other"} },
- fr:{ s2hl:"À retenir", s2nov:"nouveautés", s2cta:"Voir toutes les releases", s2live:"Les quatre derniers lancements de Braze. Source : release notes officielles.", lab:{"ga":"GA","beta":"Bêta","early":"Early access","none":"Sans étiquette"}, locale:"fr-FR", nav1:"01 Formation", nav2:"02 Produit", nav3:"03 Observatoire", eyebrow:"Hub interne du groupe de référents",
+ fr:{ s2hl:"À retenir", s2nov:"nouveautés", s2cta:"Voir toutes les releases", s2live:"Les quatre derniers lancements de Braze. Source : release notes officielles.", lab:{"ga":"GA","beta":"Bêta","early":"Early access","none":"Sans étiquette"}, locale:"fr-FR", nav1:"01 Formation", nav2:"02 Produit", nav3:"03 Actualités", eyebrow:"Hub interne du groupe de référents",
   h1:'Braze,<br><span class="thin">raconté par</span><br><span class="stroke">ceux qui</span><br>l\'utilisent.',
   lead:"Formation, nouveautés produit et actualité autour de Braze, par et pour l'équipe Jakala.",
   chroco:"Chroco, la mascotte du groupe",
   s1t:"Sessions de formation", s1d:"Le calendrier en direct de Braze Learning, à l'heure de Madrid et classé par domaine.", s1cta:"Voir toutes les sessions",
   s2t:"Releases Braze", s2d:"Chaque nouveauté expliquée : ce que c'est, les cas d'usage possibles et si nous l'avons en GA.", soon:"Bientôt",
   s2note:"Cette section sera reliée aux release notes officielles de Braze.",
-  s3over:"Observatoire Braze + Salesforce", st:{anunciado:"Annoncé",rumoreado:"Rumeur",disponible:"Disponible"}, readMore:"Lire la source →",
+  s3over:"Actualités Braze", s3cta:"Voir toutes les actualités →", why:"Pourquoi c'est important", filters:["Tout", "Actualités", "Braze + Salesforce"], cats:{"producto": "Produit", "mercado": "Marché", "eventos": "Événements", "corporativo": "Entreprise", "salesforce": "Braze + Salesforce"}, st:{"anunciado": "Annoncé", "rumoreado": "Rumeur", "disponible": "Disponible", "analisis": "Analyse"}, readMore:"Lire la source →", slide:"Actualité",
   noSessions:"Aucune session à venir en horaire Espagne.", footer:"COE Braze Iberia · Usage interne",
   dow:["Dim","Lun","Mar","Mer","Jeu","Ven","Sam"],
   areas:{orq:"Orchestration",can:"Canaux",dat:"Données et intégrations",ia:"IA et personnalisation",uc:"Cas d'usage",cert:"Certification",otr:"Autres"} },
- it:{ s2hl:"In evidenza", s2nov:"novità", s2cta:"Vedi tutte le release", s2live:"Le ultime quattro release di Braze. Fonte: release notes ufficiali.", lab:{"ga":"GA","beta":"Beta","early":"Early access","none":"Senza etichetta"}, locale:"it-IT", nav1:"01 Formazione", nav2:"02 Prodotto", nav3:"03 Osservatorio", eyebrow:"Hub interno del gruppo di referenti",
+ it:{ s2hl:"In evidenza", s2nov:"novità", s2cta:"Vedi tutte le release", s2live:"Le ultime quattro release di Braze. Fonte: release notes ufficiali.", lab:{"ga":"GA","beta":"Beta","early":"Early access","none":"Senza etichetta"}, locale:"it-IT", nav1:"01 Formazione", nav2:"02 Prodotto", nav3:"03 Attualità", eyebrow:"Hub interno del gruppo di referenti",
   h1:'Braze,<br><span class="thin">raccontato da</span><br><span class="stroke">chi lo</span><br>usa.',
   lead:"Formazione, novità di prodotto e ciò che succede intorno a Braze, da e per il team Jakala.",
   chroco:"Chroco, la mascotte del gruppo",
   s1t:"Sessioni di formazione", s1d:"Il calendario dal vivo di Braze Learning, in orario di Madrid e ordinato per area.", s1cta:"Vedi tutte le sessioni",
   s2t:"Release di Braze", s2d:"Ogni novità spiegata: cos'è, quali casi d'uso abilita e se l'abbiamo in GA.", soon:"Prossimamente",
   s2note:"Questa sezione sarà collegata alle release notes ufficiali di Braze.",
-  s3over:"Osservatorio Braze + Salesforce", st:{anunciado:"Annunciato",rumoreado:"Indiscrezione",disponible:"Disponibile"}, readMore:"Leggi la fonte →",
+  s3over:"Attualità Braze", s3cta:"Vedi tutte le notizie →", why:"Perché ci interessa", filters:["Tutto", "Notizie", "Braze + Salesforce"], cats:{"producto": "Prodotto", "mercado": "Mercato", "eventos": "Eventi", "corporativo": "Azienda", "salesforce": "Braze + Salesforce"}, st:{"anunciado": "Annunciato", "rumoreado": "Indiscrezione", "disponible": "Disponibile", "analisis": "Analisi"}, readMore:"Leggi la fonte →", slide:"Notizia",
   noSessions:"Nessuna sessione in arrivo in orario Spagna.", footer:"COE Braze Iberia · Uso interno",
   dow:["Dom","Lun","Mar","Mer","Gio","Ven","Sab"],
   areas:{orq:"Orchestrazione",can:"Canali",dat:"Dati e integrazioni",ia:"IA e personalizzazione",uc:"Casi d'uso",cert:"Certificazione",otr:"Altro"} }
@@ -396,21 +406,37 @@ function renderReleases(){
   note.textContent=T().s2live;
 }
 
-/* Observatorio */
-let obsItems = (OBS && OBS.items) || [], obsI = 0, obsTimer = null;
+/* Actualidad Braze: noticias + seguimiento Braze + Salesforce, en un carrusel con filtros */
+let obsF = "all", obsI = 0, obsTimer = null;
+const tr = o => (o||{})[LANG] || (o||{}).es || "";
 function fmtDate(iso){ return new Date(iso+"T12:00:00Z").toLocaleDateString(T().locale,{day:"numeric",month:"long",year:"numeric",timeZone:"UTC"}); }
+function actItems(){
+  if(!ACT) return [];
+  const news = (ACT.noticias||[]).map(n => Object.assign({kind:"news"}, n));
+  const sf = ((ACT.salesforce||{}).items||[]).map(n => Object.assign({kind:"sf", cat:"salesforce"}, n));
+  const all = obsF==="news" ? news : obsF==="sf" ? sf : news.concat(sf);
+  return all.sort((a,b) => (b.date||"").localeCompare(a.date||"")).slice(0,6);
+}
 function renderObs(){
-  const sl = document.getElementById("slides"), st = document.getElementById("story"), dots = document.getElementById("dots");
-  if(!obsItems.length){ document.getElementById("observatorio").hidden = true; return; }
-  sl.innerHTML = obsItems.map((it,k) => `<div class="slide${k===obsI?" on":""}"><div class="img"${it.image?` style="background-image:url('${esc(it.image)}')"`:""}>${it.image?"":`<svg class="mesh" style="opacity:.3"><defs><pattern id="ob${k}" width="56" height="97" patternUnits="userSpaceOnUse"><path d="M28 0L56 16.2V48.5L28 64.7L0 48.5V16.2Z M28 64.7V97" fill="none" stroke="#8caaff" stroke-width="1"/></pattern></defs><rect width="100%" height="100%" fill="url(#ob${k})"/></svg>`}</div><div class="shade"></div></div>`).join("");
-  const it = obsItems[obsI];
-  st.innerHTML = `<div class="tags"><span class="st">${T().st[it.status]||it.status}</span><span class="src">${fmtDate(it.date)} · ${esc(it.source||"")}</span></div>
-    <h3>${esc((it.title||{})[LANG]||(it.title||{}).es||"")}</h3><p>${esc((it.text||{})[LANG]||(it.text||{}).es||"")}</p>
-    ${it.url?`<a href="${esc(it.url)}" target="_blank" rel="noopener" style="font-size:14px;font-weight:800;color:#8caaff">${T().readMore}</a>`:""}`;
-  dots.innerHTML = obsItems.length>1 ? obsItems.map((_,k)=>`<button type="button" data-k="${k}" aria-current="${k===obsI}">0${k+1}</button>`).join("") : "";
+  const sec = document.getElementById("actualidad");
+  if(!ACT || !((ACT.noticias||[]).length || ((ACT.salesforce||{}).items||[]).length)){ sec.hidden = true; return; }
+  sec.hidden = false;
+  const items = actItems(); if(obsI >= items.length) obsI = 0;
+  const ch = document.getElementById("chips");
+  ch.innerHTML = ["all","news","sf"].map((f,k) => `<button type="button" data-f="${f}" aria-pressed="${f===obsF}">${T().filters[k]}</button>`).join("");
+  ch.querySelectorAll("button").forEach(b => b.onclick = () => { obsF = b.dataset.f; obsI = 0; renderObs(); startObs(); });
+  document.getElementById("slides").innerHTML = items.map((it,k) => `<div class="slide${k===obsI?" on":""}"><div class="img"${it.image?` style="background-image:url('${esc(it.image)}')"`:""}>${it.image?"":`<svg class="mesh" style="opacity:.3" aria-hidden="true"><defs><pattern id="ob${k}" width="56" height="97" patternUnits="userSpaceOnUse"><path d="M28 0L56 16.2V48.5L28 64.7L0 48.5V16.2Z M28 64.7V97" fill="none" stroke="#8caaff" stroke-width="1"/></pattern></defs><rect width="100%" height="100%" fill="url(#ob${k})"/></svg><div class="art hex" aria-hidden="true"><span>${esc(T().cats[it.cat]||"")}</span></div>`}</div><div class="shade"></div></div>`).join("");
+  const it = items[obsI];
+  const badge = it.kind==="sf" ? `<span class="st">${esc(T().st[it.status]||it.status||"")}</span>` : `<span class="cat">${esc(T().cats[it.cat]||it.cat||"")}</span>`;
+  const body = it.kind==="sf" ? esc(tr(it.text)) : `<b>${T().why} · </b>${esc(tr(it.why))}`;
+  document.getElementById("story").innerHTML = `<div class="tags">${badge}<span class="src">${fmtDate(it.date)} · ${esc(it.source||"")}</span></div>
+    <h3>${esc(tr(it.title))}</h3><p>${body}</p>
+    ${it.url?`<a href="${esc(it.url)}" target="_blank" rel="noopener">${T().readMore}</a>`:""}`;
+  const dots = document.getElementById("dots");
+  dots.innerHTML = items.length>1 ? items.map((_,k)=>`<button type="button" data-k="${k}" aria-current="${k===obsI}" aria-label="${T().slide} ${k+1}"></button>`).join("") : "";
   dots.querySelectorAll("button").forEach(b => b.onclick = () => { obsI=+b.dataset.k; renderObs(); startObs(); });
 }
-function startObs(){ clearInterval(obsTimer); if(obsItems.length>1) obsTimer=setInterval(()=>{ obsI=(obsI+1)%obsItems.length; renderObs(); },7000); }
+function startObs(){ clearInterval(obsTimer); if(actItems().length>1) obsTimer=setInterval(()=>{ obsI=(obsI+1)%actItems().length; renderObs(); },8000); }
 
 /* Chroco: normal → dudando → normal → idea → contento */
 (function mood(){
@@ -435,7 +461,7 @@ renderAll(); startObs();
 if(!RELNOTES) fetch("data/releases_notas.json").then(r=>r.json()).then(j=>{ RELNOTES=j; renderReleases(); }).catch(()=>{});
 if(!RELEASES) fetch("data/releases.json").then(r=>r.json()).then(j=>{ RELEASES=j; renderReleases(); }).catch(()=>{});
 if(!INLINE) fetch("data/sessions.json").then(r=>r.json()).then(j=>{ INLINE=j; renderSessions(); }).catch(()=>{});
-if(!OBS) fetch("data/observatorio.json").then(r=>r.json()).then(j=>{ OBS=j; obsItems=j.items||[]; renderObs(); startObs(); }).catch(()=>{});
+if(!ACT) fetch("data/actualidad.json").then(r=>r.json()).then(j=>{ ACT=j; renderObs(); startObs(); }).catch(()=>{});
 </script>
 </body>
 </html>

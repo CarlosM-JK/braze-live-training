@@ -99,6 +99,11 @@ button{font-family:inherit}
 .eval dd{margin:0;color:var(--muted)}
 .pending{margin-top:auto;font-size:12px;font-weight:700;color:#9a9ab0}
 .foot{margin:16px 0 0;font-size:13px;font-weight:700;color:var(--muted-2)}
+.pod{display:flex;align-items:center;gap:18px;flex-wrap:wrap;margin:22px 0 0;padding:16px 20px;background:var(--jblue);color:var(--white)}
+.pod b{font-size:12px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--sky)}
+.pod span{font-size:14px;font-weight:600}
+.pod audio{flex:1 1 280px;min-width:0;height:36px}
+.rel-btn .pod-tag{font-size:10.5px;font-weight:800;letter-spacing:.12em;color:var(--jblue-3)}
 .empty{padding:40px;border:1px dashed #c9cdd8;color:var(--muted-2);text-align:center}
 
 footer{background:#000;border-top:4px solid var(--red);color:#b5b5c0;font-size:13px}
@@ -153,9 +158,10 @@ footer img{height:18px;display:block}
 <script>
 let DATA = /*__RELEASES__*/null;
 let NOTES = /*__RELNOTES__*/null;
+let PODS = /*__PODCASTS__*/null;
 
 const I18N = {
- es:{ locale:"es-ES", nav1:"01 Formación", nav2:"02 Producto", nav3:"03 Actualidad", indexLabel:"Índice de lanzamientos",
+ es:{ locale:"es-ES", pod:"PÓDCAST", podT:"Resumen en audio de esta release (generado con NotebookLM)", podTag:"PÓDCAST", nav1:"01 Formación", nav2:"02 Producto", nav3:"03 Actualidad", indexLabel:"Índice de lanzamientos",
   title:"Releases de Braze", lead:"Lanzamientos de producto publicados por Braze desde 2026. Despliega cada uno para ver sus novedades.",
   stR:"lanzamientos", stI:"funcionalidades", news:n=>`${n} novedades`, inGA:n=>`${n} en GA`, latest:"ÚLTIMO",
   labels:{ga:"GA",beta:"Beta",early:"Early access",none:"Sin etiqueta"},
@@ -163,7 +169,7 @@ const I18N = {
   pending:"Pendiente de valorar por el grupo", evUse:"Casos de uso", evInst:"¿La tenemos?", evAsk:"¿Pedirla?", evOwner:"Responsable", evNote:"Comentario",
   yes:"Sí", no:"No", unknown:"Por confirmar", noData:"Todavía no hay datos de releases. Se cargarán en la próxima actualización automática.",
   src:d=>`Fuente: release notes oficiales de Braze · Actualizado el ${d}` },
- en:{ locale:"en-GB", nav1:"01 Training", nav2:"02 Product", nav3:"03 News", indexLabel:"Release index",
+ en:{ locale:"en-GB", pod:"PODCAST", podT:"Audio summary of this release (generated with NotebookLM, in Spanish)", podTag:"PODCAST", nav1:"01 Training", nav2:"02 Product", nav3:"03 News", indexLabel:"Release index",
   title:"Braze releases", lead:"Product releases published by Braze since 2026. Expand each one to see what's new.",
   stR:"releases", stI:"features", news:n=>`${n} updates`, inGA:n=>`${n} in GA`, latest:"LATEST",
   labels:{ga:"GA",beta:"Beta",early:"Early access",none:"No label"},
@@ -171,7 +177,7 @@ const I18N = {
   pending:"Pending group assessment", evUse:"Use cases", evInst:"Do we have it?", evAsk:"Request it?", evOwner:"Owner", evNote:"Comment",
   yes:"Yes", no:"No", unknown:"To be confirmed", noData:"No release data yet. It will load on the next automatic update.",
   src:d=>`Source: official Braze release notes · Updated on ${d}` },
- fr:{ locale:"fr-FR", nav1:"01 Formation", nav2:"02 Produit", nav3:"03 Actualités", indexLabel:"Index des releases",
+ fr:{ locale:"fr-FR", pod:"PODCAST", podT:"Résumé audio de cette release (généré avec NotebookLM, en espagnol)", podTag:"PODCAST", nav1:"01 Formation", nav2:"02 Produit", nav3:"03 Actualités", indexLabel:"Index des releases",
   title:"Releases Braze", lead:"Les lancements produit publiés par Braze depuis 2026. Dépliez-en un pour voir ses nouveautés.",
   stR:"lancements", stI:"fonctionnalités", news:n=>`${n} nouveautés`, inGA:n=>`${n} en GA`, latest:"DERNIER",
   labels:{ga:"GA",beta:"Bêta",early:"Early access",none:"Sans étiquette"},
@@ -179,7 +185,7 @@ const I18N = {
   pending:"Évaluation du groupe en attente", evUse:"Cas d'usage", evInst:"L'avons-nous ?", evAsk:"La demander ?", evOwner:"Responsable", evNote:"Commentaire",
   yes:"Oui", no:"Non", unknown:"À confirmer", noData:"Pas encore de données. Elles arriveront à la prochaine mise à jour automatique.",
   src:d=>`Source : release notes officielles de Braze · Mis à jour le ${d}` },
- it:{ locale:"it-IT", nav1:"01 Formazione", nav2:"02 Prodotto", nav3:"03 Attualità", indexLabel:"Indice delle release",
+ it:{ locale:"it-IT", pod:"PODCAST", podT:"Riepilogo audio di questa release (generato con NotebookLM, in spagnolo)", podTag:"PODCAST", nav1:"01 Formazione", nav2:"02 Prodotto", nav3:"03 Attualità", indexLabel:"Indice delle release",
   title:"Release di Braze", lead:"Le release di prodotto pubblicate da Braze dal 2026. Espandine una per vedere le novità.",
   stR:"release", stI:"funzionalità", news:n=>`${n} novità`, inGA:n=>`${n} in GA`, latest:"ULTIMA",
   labels:{ga:"GA",beta:"Beta",early:"Early access",none:"Senza etichetta"},
@@ -228,7 +234,9 @@ function renderIndex(){
 function panel(r){
   const secs=sectionsOf(r), cur=state.tab[r.date]||secs[0][0];
   const its=r.items.filter(i=>i.section===cur);
+  const pod=PODS&&PODS.podcasts&&PODS.podcasts[r.date];
   return `<div class="panel">
+    ${pod?`<div class="pod"><b>${T().pod}</b><span>${T().podT}</span><audio controls preload="none" src="../${esc(pod.audio)}"></audio></div>`:""}
     <div class="tabs" role="tablist">${secs.map(([s,n])=>`<button type="button" class="tab" role="tab" data-d="${r.date}" data-s="${esc(s)}" aria-selected="${s===cur}">${esc(s)}<span>${n}</span></button>`).join("")}</div>
     <div class="grid" role="tabpanel">${its.map(it=>`
       <article class="item" id="${esc(r.date+"-"+it.id)}">
@@ -250,7 +258,7 @@ function renderTimeline(){
       <span class="node hex" aria-hidden="true"></span>
       <article class="card">
         <button type="button" class="rel-btn" data-d="${r.date}" aria-expanded="${open}">
-          <span class="when"><b>${monthName(r.date)} ${dt(r.date).getUTCDate()}</b><span>${T().news(r.items.length)} · ${T().inGA(ga)}</span>${i===0?`<span class="new">${T().latest}</span>`:""}</span>${CHEV}
+          <span class="when"><b>${monthName(r.date)} ${dt(r.date).getUTCDate()}</b><span>${T().news(r.items.length)} · ${T().inGA(ga)}</span>${i===0?`<span class="new">${T().latest}</span>`:""}${PODS&&PODS.podcasts&&PODS.podcasts[r.date]?`<span class="pod-tag">♪ ${T().podTag}</span>`:""}</span>${CHEV}
         </button>
         ${open?panel(r):""}
       </article></div>`;
@@ -287,6 +295,7 @@ function init(){
 window.addEventListener("hashchange",()=>{const h=decodeURIComponent(location.hash.slice(1)); if(/^\d{4}-\d{2}-\d{2}$/.test(h)&&REL().some(r=>r.date===h)) openRel(h,true);});
 init();
 if(!DATA) fetch("../data/releases.json").then(r=>r.json()).then(j=>{DATA=j;init();}).catch(()=>{});
+if(!PODS) fetch("../data/podcasts.json").then(r=>r.json()).then(j=>{PODS=j;renderTimeline();}).catch(()=>{});
 if(!NOTES) fetch("../data/releases_notas.json").then(r=>r.json()).then(j=>{NOTES=j;renderTimeline();}).catch(()=>{});
 </script>
 </body>

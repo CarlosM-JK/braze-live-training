@@ -74,3 +74,16 @@ Cada funcionalidad de la página de releases muestra "Pendiente de valorar por e
   }
 }
 ```
+
+## Pódcast de cada release (NotebookLM)
+
+Cuando sale una release nueva (desde la del 12/11/2026), el robot diario:
+
+1. Monta la ficha en `data/podcasts/ficha-AAAA-MM-DD.md` con las novedades y las valoraciones del grupo.
+2. Con **notebooklm-py** (librería no oficial) crea un cuaderno en la cuenta de Google dedicada, sube la ficha y la página oficial de la release y genera el resumen de audio con las instrucciones de `scripts/podcast_instrucciones.txt`.
+3. Guarda el audio en `assets/podcasts/` y lo apunta en `data/podcasts.json`. En la página de releases aparece un reproductor.
+
+- Necesita el secreto `NOTEBOOKLM_MASTER_TOKEN_JSON` (sesión de la cuenta dedicada). Sin él, el paso se salta.
+- Si falla (la librería no es oficial y puede romperse), la web se publica igual y se reintenta al día siguiente. Como plan B, la ficha se puede subir a mano a NotebookLM.
+- Para cambiar el enfoque del audio, edita `scripts/podcast_instrucciones.txt`.
+- Los audios no quedan protegidos por la contraseña de la web: quien tenga el enlace directo puede escucharlos.

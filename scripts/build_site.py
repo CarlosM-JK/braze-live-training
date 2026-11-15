@@ -17,6 +17,7 @@ DATA = {
     "/*__RELEASES__*/null": "releases.json",
     "/*__RELNOTES__*/null": "releases_notas.json",
     "/*__ACTUALIDAD__*/null": "actualidad.json",
+        "/*__PODCASTS__*/null": "podcasts.json",
 }
 
 

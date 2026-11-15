@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Genera el pódcast de la última release de Braze con NotebookLM.
 
-1. Busca en data/releases.json la release más reciente (desde PRIMERA) sin pódcast.
+1. Busca en data/releases.json las releases (desde PRIMERA) sin pódcast, de la más reciente a la más antigua.
 2. Monta la ficha en Markdown (data/podcasts/ficha-AAAA-MM-DD.md) con sus novedades,
    las valoraciones del grupo (data/releases_notas.json) y el contexto del COE.
 3. Con notebooklm-py (librería NO oficial): crea un cuaderno, sube la ficha, genera el
@@ -24,7 +24,7 @@ FICHAS = ROOT / "data" / "podcasts"
 AUDIO = ROOT / "assets" / "podcasts"
 PROMPT = ROOT / "scripts" / "podcast_instrucciones.txt"
 
-PRIMERA = "2026-11-12"      # no se generan pódcasts de releases anteriores
+PRIMERA = "2026-08-20"      # no se generan pódcasts de releases anteriores
 IDIOMA = "es"               # NotebookLM solo ofrece es / es_419 / es_MX
 FORMATO = "deep-dive"       # "Información detallada"
 DURACION = "default"
@@ -128,13 +128,28 @@ def main():
     if not pend:
         print("Todas las releases tienen pódcast.")
         return
-    rel = max(pend, key=lambda r: r["date"])
+    notas = load(NOTAS, {})
+    hechas = 0
+    for rel in sorted(pend, key=lambda r: r["date"], reverse=True):
+        try:
+            if generar(rel, notas, index, solo_ficha):
+                hechas += 1
+        except Exception as e:  # noqa: BLE001
+            # Lo más probable es el límite diario de NotebookLM: el resto se hace mañana
+            print(f"Aviso: pódcast de {rel['date']} pendiente ({e}).")
+            if not hechas:
+                raise
+            break
+    print(f"Pódcasts generados en esta ejecución: {hechas}")
+
+
+def generar(rel, notas, index, solo_ficha):
     FICHAS.mkdir(parents=True, exist_ok=True)
     fpath = FICHAS / f"ficha-{rel['date']}.md"
-    fpath.write_text(ficha(rel, load(NOTAS, {})), encoding="utf-8")
+    fpath.write_text(ficha(rel, notas), encoding="utf-8")
     print(f"Ficha: {fpath.relative_to(ROOT)}")
     if solo_ficha:
-        return
+        return False
 
     nb = find_id(nlm("create", f"Braze release {rel['date']} · COE Braze Iberia"))
     src = find_id(nlm("source", "add", str(fpath), "--type", "file", "--title", f"Release {rel['date']}", "-n", nb), ("source_id", "id"))
@@ -161,6 +176,7 @@ def main():
     }
     INDEX.write_text(json.dumps(index, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
     print(f"Pódcast listo: {apath.relative_to(ROOT)} ({apath.stat().st_size // 1024} KB)")
+    return True
 
 
 if __name__ == "__main__":

@@ -1,0 +1,11 @@
+{
+ "_ayuda": "Pódcasts de releases generados con NotebookLM. Lo mantiene scripts/podcast_release.py.",
+ "podcasts": {
+  "2026-11-12": {
+   "audio": "assets/podcasts/release-2026-11-12.m4a",
+   "ficha": "data/podcasts/ficha-2026-11-12.md",
+   "generado": "2026-11-15",
+   "notebook": "5836708f-3aab-494e-aa4c-6966165b2919"
+  }
+ }
+}

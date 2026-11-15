@@ -6,6 +6,18 @@
    "ficha": "data/podcasts/ficha-2026-11-12.md",
    "generado": "2026-11-15",
    "notebook": "5836708f-3aab-494e-aa4c-6966165b2919"
+  },
+  "2026-10-15": {
+   "audio": "assets/podcasts/release-2026-10-15.m4a",
+   "ficha": "data/podcasts/ficha-2026-10-15.md",
+   "generado": "2026-11-15",
+   "notebook": "87c5285d-1e3e-453e-ac77-2b0862873d9d"
+  },
+  "2026-09-17": {
+   "audio": "assets/podcasts/release-2026-09-17.m4a",
+   "ficha": "data/podcasts/ficha-2026-09-17.md",
+   "generado": "2026-11-15",
+   "notebook": "0953ae24-e6c7-4fcf-87bb-4a423d7a05c8"
   }
  }
 }

@@ -53,18 +53,39 @@ jobs:
         continue-on-error: true   # si no encuentra imagen, la web pone una ilustración de marca
         run: python scripts/fetch_images.py
 
+      - name: Pódcast de la nueva release (NotebookLM)
+        id: podcast
+        if: github.event_name != 'push'
+        continue-on-error: true   # si falla, la web se publica igual y se reintenta al día siguiente
+        env:
+          NOTEBOOKLM_MASTER_TOKEN_JSON: ${{ secrets.NOTEBOOKLM_MASTER_TOKEN_JSON }}
+        run: |
+          if [ -z "$NOTEBOOKLM_MASTER_TOKEN_JSON" ]; then
+            echo "Sin el secreto NOTEBOOKLM_MASTER_TOKEN_JSON: no se generan pódcasts."
+            exit 0
+          fi
+          pip install --quiet "notebooklm-py[headless]==0.8.6"
+          mkdir -p ~/.notebooklm/profiles/default
+          umask 077
+          printf '%s' "$NOTEBOOKLM_MASTER_TOKEN_JSON" > ~/.notebooklm/profiles/default/master_token.json
+          unset NOTEBOOKLM_MASTER_TOKEN_JSON
+          notebooklm auth refresh
+          python scripts/podcast_release.py
+
       - name: Guardar datos nuevos en el repositorio
         if: github.event_name != 'push'
         run: |
           git add -N data/releases.json 2>/dev/null || true
-          if git diff --quiet -- data/sessions.json data/releases.json data/actualidad.json; then
-            echo "Sin cambios en sesiones, releases ni actualidad."
+          for f in data/podcasts.json data/podcasts assets/podcasts; do [ -e "$f" ] && git add -N "$f"; done
+          if git diff --quiet -- data/sessions.json data/releases.json data/actualidad.json data/podcasts.json data/podcasts assets/podcasts; then
+            echo "Sin cambios en sesiones, releases, actualidad ni pódcasts."
             exit 0
           fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add data/sessions.json data/releases.json data/actualidad.json
-          git commit -m "Actualizar sesiones, releases e imágenes de actualidad"
+          for f in data/podcasts.json data/podcasts assets/podcasts; do [ -e "$f" ] && git add "$f"; done
+          git commit -m "Actualizar sesiones, releases, actualidad y pódcasts"
           git push
 
       - name: Montar la web
@@ -105,7 +126,7 @@ jobs:
         uses: actions/deploy-pages@v4
 
       - name: Avisar si falló alguna descarga de Braze
-        if: steps.fetch.outcome == 'failure' || steps.releases.outcome == 'failure'
+        if: steps.fetch.outcome == 'failure' || steps.releases.outcome == 'failure' || steps.podcast.outcome == 'failure'
         run: |
-          echo "La web se ha publicado, pero falló la descarga de sesiones o de releases de Braze. Revisa los pasos 'Descargar ...' de esta ejecución." >&2
+          echo "La web se ha publicado, pero falló la descarga de sesiones o releases de Braze, o la generación del pódcast. Revisa los pasos 'Descargar ...' de esta ejecución." >&2
           exit 1

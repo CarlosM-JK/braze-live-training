@@ -148,6 +148,20 @@ def main() -> int:
         releases.append({"date": date.isoformat(), "url": url, "items": items})
         time.sleep(1)
 
+    # Nunca perder releases ya conocidas: si Braze las saca de su historial
+    # (por ejemplo, al mover un año a otra página), se conservan las guardadas.
+    previas = []
+    if OUT.exists():
+        try:
+            previas = json.loads(OUT.read_text(encoding="utf-8")).get("releases", [])
+        except json.JSONDecodeError:
+            previas = []
+    nuevas = {r["date"] for r in releases}
+    conservadas = [r for r in previas if r.get("date") not in nuevas]
+    if conservadas:
+        print(f"Conservadas {len(conservadas)} releases que ya no aparecen en el historial.")
+        releases = sorted(releases + conservadas, key=lambda r: r["date"], reverse=True)
+
     total = sum(len(r["items"]) for r in releases)
     if OUT.exists():
         try:

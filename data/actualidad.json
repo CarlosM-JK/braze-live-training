@@ -95,7 +95,8 @@
     "en": "New AI pieces announced in beta, with Decisioning Studio Go expected in GA on 14 October; use-case candidates.",
     "fr": "Nouvelles briques IA annoncées en bêta, Decisioning Studio Go prévu en GA le 14 octobre ; candidates pour des cas d'usage.",
     "it": "Nuovi elementi IA annunciati in beta, con Decisioning Studio Go previsto in GA il 14 ottobre; candidati per casi d'uso."
-   }
+   },
+   "sin_imagen": true
   }
  ],
  "salesforce": {
@@ -177,7 +178,7 @@
     "status": "anunciado",
     "source": "Salesforce",
     "url": "https://salesforce.com/news/press-releases/2026/10/20/salesforce-signs-definitive-agreement-to-acquire-braze",
-    "image": "",
+    "image": "https://www.salesforce.com/news/wp-content/uploads/sites/3/2026/10/Braze-Salesforce_3-2.png",
     "title": {
      "es": "Salesforce firma el acuerdo para comprar Braze por unos 5.660 M$",
      "en": "Salesforce signs an agreement to acquire Braze for about $5.66B",

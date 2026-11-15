@@ -1,0 +1,2070 @@
+{
+ "updated": "2026-11-15T06:06:27+00:00",
+ "source": "https://www.braze.com/docs/releases/history",
+ "releases": [
+  {
+   "date": "2026-11-12",
+   "url": "https://www.braze.com/docs/releases/2026/11_12_26/",
+   "items": [
+    {
+     "id": "segment-reporting",
+     "title": "Segment reporting",
+     "section": "Data & Reporting",
+     "label": "ga",
+     "summary": "Segment reporting adds segments as a primary reporting dimension and a drilldown in Report Builder. You can measure how segments perform over time, see which campaigns and Canvases target a segment, and compare engagement across segments for a single campaign or Canvas.",
+     "doc": "https://www.braze.com/docs/user_guide/analytics/reports/report_builder/segment_reporting"
+    },
+    {
+     "id": "query-builder-date-range-and-expanded-exports",
+     "title": "Query Builder date range and expanded exports",
+     "section": "Data & Reporting",
+     "label": "ga",
+     "summary": "Query Builder reports include a date range filter. You can query up to one year of history, or up to two years when your workspace has Snowflake Data Sharing or Currents. CSV exports can include up to 100,000 rows.",
+     "doc": "https://www.braze.com/docs/user_guide/analytics/reports/query_builder"
+    },
+    {
+     "id": "account-objects",
+     "title": "Account objects",
+     "section": "Data & Reporting",
+     "label": "ga",
+     "summary": "Account objects let you model the businesses behind your users, such as companies, franchises, properties, or households. Link users to accounts with a role, connect accounts to each other to model hierarchies, and then segment and personalize messages with account data instead of copying it to every user profile. Send account data to Braze through the Data Objects API or Cloud Data Ingestion, or edit accounts in…",
+     "doc": "https://www.braze.com/docs/user_guide/data/activation/accounts"
+    },
+    {
+     "id": "calculated-attributes",
+     "title": "Calculated attributes",
+     "section": "Data & Reporting",
+     "label": "early",
+     "summary": "Calculated attributes turn event data into profile attributes with a no-code formula builder. Choose an aggregation, a purchase or eCommerce event, and a time frame of up to two years, then activate the attribute so Braze refreshes values daily and writes them to user profiles for segmentation. Each workspace can have up to 25 active calculated attributes.",
+     "doc": "https://www.braze.com/docs/user_guide/data/activation/attributes/calculated_attributes"
+    },
+    {
+     "id": "cloud-data-ingestion-visual-mapper",
+     "title": "Cloud Data Ingestion visual mapper",
+     "section": "Data & Reporting",
+     "label": "ga",
+     "summary": "The Cloud Data Ingestion visual mapper is a no-code way to sync data. Instead of writing SQL or building a separate table for Braze to sync, load an existing table or view from your warehouse, then map its columns to Braze fields. The visual mapper is available for all Cloud Data Ingestion warehouse sources and for the attributes, events, and Canvas trigger sync types.",
+     "doc": "https://www.braze.com/docs/user_guide/data/unification/cloud_ingestion/visual_mapper"
+    },
+    {
+     "id": "cloud-data-ingestion-workload-identity-federation-for-google-sources",
+     "title": "Cloud Data Ingestion: Workload Identity Federation for Google sources",
+     "section": "Data & Reporting",
+     "label": "ga",
+     "summary": "Cloud Data Ingestion supports authenticating with Workload Identity Federation (WIF) for Google Cloud Storage and Google BigQuery sources. When you create a source, select Workload Identity Federation as the authentication method and enter its configuration.",
+     "doc": "https://www.braze.com/docs/user_guide/data/unification/cloud_ingestion/sources/google_bigquery#workload-identity-federation"
+    },
+    {
+     "id": "cloud-data-ingestion-to-brazeai-decisioning-studio",
+     "title": "Cloud Data Ingestion to BrazeAI Decisioning Studio",
+     "section": "Data & Reporting",
+     "label": "ga",
+     "summary": "Cloud Data Ingestion has a BrazeAI Decisioning Studio destination that sends data from your data warehouse directly to Decisioning Studio, so you don't need custom ETL jobs that drop raw files into GCS buckets. Decisioning Studio uses the data for reinforcement learning and AI decisioning. Only data warehouse sources are supported, and the destination is available only to Braze and BrazeAI Decisioning Studio…",
+     "doc": "https://www.braze.com/docs/user_guide/data/unification/cloud_ingestion/decisioning_studio"
+    },
+    {
+     "id": "api-request-log",
+     "title": "API request log",
+     "section": "Data & Reporting",
+     "label": "ga",
+     "summary": "The API request log shows the API requests sent to Braze, so you can validate an initial integration or troubleshoot an existing one. Braze keeps logged requests for 14 days and includes the request payload when available, up to 8 KiB. Filter requests by date, time, API key, endpoint, status, and request body contents.",
+     "doc": "https://www.braze.com/docs/user_guide/administer/global/workspace_settings/logs_and_alerts/api_request_log"
+    },
+    {
+     "id": "databricks-opensharing-for-eu-clusters",
+     "title": "Databricks OpenSharing for EU clusters",
+     "section": "Data & Reporting",
+     "label": "ga",
+     "summary": "Databricks OpenSharing (formerly Delta Sharing) is available for customers hosted on EU clusters. It securely shares Braze event and campaign data with your Databricks account without copying or replicating data. Shared data is read-only, and you can query it with Databricks SQL to create reports, perform attribution modeling, and join Braze data with other data in Databricks. It includes the same engagement data…",
+     "doc": "https://www.braze.com/docs/opensharing"
+    },
+    {
+     "id": "data-distribution-monthly-release",
+     "title": "Data Distribution monthly release",
+     "section": "Data & Reporting",
+     "label": "ga",
+     "summary": "Version 14 of the Data Distribution release (Currents, Data Sharing, and OpenSharing) went out on November 4, 2026. It adds events for Data Objects and for tracking API request completion, and it adds canvas_entry_id to various channel events. For details, see Currents Event Changelogs.",
+     "doc": "https://www.braze.com/docs/user_guide/data/distribution/braze_currents/event_glossary/currents_changelogs"
+    },
+    {
+     "id": "workload-identity-federation-for-currents",
+     "title": "Workload Identity Federation for Currents",
+     "section": "Data & Reporting",
+     "label": "",
+     "summary": "Workload Identity Federation (WIF) is an additional way to authenticate a Currents integration for Google Cloud Storage or Azure Blob Storage. Braze authenticates with a short-lived identity token instead of a long-lived credential such as a service account key, so there's no static secret to leak or rotate. Existing options, such as service account keys and certificates, remain available.",
+     "doc": "https://www.braze.com/docs/partners/data_and_analytics/cloud_storage/google_cloud_storage_for_currents#workload-identity-federation-auth-method"
+    },
+    {
+     "id": "verified-mcp-clients",
+     "title": "Verified MCP clients",
+     "section": "BrazeAI",
+     "label": "ga",
+     "summary": "On the MCP Clients page, admins can approve Braze-verified MCP clients by name—including ChatGPT, Claude, Claude Code, Cursor, OpenAI Codex, and Visual Studio Code—instead of entering each client's redirect URIs by hand.",
+     "doc": "https://www.braze.com/docs/user_guide/administer/global/admin_settings/oauth_admin/#manage-mcp-clients"
+    },
+    {
+     "id": "remote-mcp-server-support-for-ip-allowlisting",
+     "title": "Remote MCP server support for IP allowlisting",
+     "section": "BrazeAI",
+     "label": "ga",
+     "summary": "Companies that use IP allowlisting can use the remote Braze MCP server and Operator Connect. Braze lets MCP server and Operator Connect requests through your IP allowlist, so admins don't need to add Braze IP addresses to their allowlist.",
+     "doc": "https://www.braze.com/docs/user_guide/administer/global/admin_settings/security_settings/#dashboard-ip-allowlisting"
+    },
+    {
+     "id": "workspace-endpoints-for-the-braze-mcp-server",
+     "title": "Workspace endpoints for the Braze MCP server",
+     "section": "BrazeAI",
+     "label": "ga",
+     "summary": "MCP clients connected to Braze can list, look up, create, update, and delete workspaces, within the connected user's permissions. The Braze MCP server includes workspace tools. You see only the workspaces you belong to, and look-ups return only the fields you can view. You can update a workspace's name, time zone, and email settings within your permissions. Creating and deleting a workspace requires a company admin.…",
+     "doc": "https://www.braze.com/docs/user_guide/brazeai/mcp_server/available_api_functions"
+    },
+    {
+     "id": "agent-console-enhancements",
+     "title": "Agent Console enhancements",
+     "section": "BrazeAI",
+     "label": "",
+     "summary": "You can do the following in the Agent Console: Agentic Standards are generally available. Free workspaces include 25 evaluation runs per month. Paid workspaces have no monthly run-count limit. Create a Campaign or Canvas Standard from a Braze template or from scratch. Copy Canvas Step Agents and Agentic Standards to another workspace in the same company. Format agent instructions with Markdown, and switch between…",
+     "doc": "https://www.braze.com/docs/user_guide/brazeai/agents"
+    },
+    {
+     "id": "brand-guidelines",
+     "title": "Brand guidelines",
+     "section": "BrazeAI",
+     "label": "ga",
+     "summary": "You can generate brand guidelines from uploaded files, such as a brand book, and from website URLs, or write them yourself. Guidelines can be up to 100,000 characters. Test a guideline by generating example copy or by validating existing content, then add it as context for Operator or an agent.",
+     "doc": "https://www.braze.com/docs/user_guide/administer/global/workspace_settings/brand_guidelines"
+    },
+    {
+     "id": "skills",
+     "title": "Skills",
+     "section": "BrazeAI",
+     "label": "ga",
+     "summary": "Skills are reusable instructions Operator follows when they fit the task, such as a naming convention or a required email footer. Create a skill on the Skills page, ask Operator to remember a rule, or create and edit skills from another AI tool through the Braze MCP server. Operator applies skills for everyone in the workspace, including through Operator Connect.",
+     "doc": "https://www.braze.com/docs/user_guide/brazeai/operator/capabilities/skills"
+    },
+    {
+     "id": "external-mcp-servers",
+     "title": "External MCP servers",
+     "section": "BrazeAI",
+     "label": "early",
+     "summary": "External MCP servers let Operator use tools from other products, such as Jira, Notion, or GitHub. An admin adds a remote server and chooses which tools Operator can use. You sign in with your own account. Operator asks for approval before it takes action in the other product. Contact your Braze account manager to participate in the early access.",
+     "doc": "https://www.braze.com/docs/user_guide/brazeai/operator/capabilities/mcp_servers"
+    },
+    {
+     "id": "agents-and-context",
+     "title": "Agents and Context",
+     "section": "BrazeAI",
+     "label": "ga",
+     "summary": "The Agent Console entry in the navigation is now Agents. A Context section in that menu brings together Skills, brand guidelines, Agentic Standards, knowledge sources, and external MCP servers. Existing pages keep their permissions, and previous URLs redirect.",
+     "doc": ""
+    },
+    {
+     "id": "optimize-with-brazeai-and-intelligent-timing-improvements",
+     "title": "Optimize with BrazeAI and Intelligent Timing improvements",
+     "section": "BrazeAI",
+     "label": "ga",
+     "summary": "Optimize with BrazeAI (formerly Intelligent Selection) uses a fixed control group as the baseline for lift, and you can choose whether optimization continues indefinitely or stops when BrazeAI is 95% confident. Intelligent Timing now adjusts for daylight saving time so sends stay on the correct local time when clocks change.",
+     "doc": "https://www.braze.com/docs/user_guide/brazeai/intelligence_suite/variant_selection"
+    },
+    {
+     "id": "ai-item-recommendations-improved-creation-flow",
+     "title": "AI item recommendations: improved creation flow",
+     "section": "BrazeAI",
+     "label": "ga",
+     "summary": "The AI item recommendation creation flow shows which catalog and events produce the best recommendations before you commit. After you pick a catalog, Braze shows automatic mapping results as selectable cards ranked by match quality, so you don't have to choose between Order Placed and a custom event and then find out at the last step whether the fields mapped well. Each card shows when matches were last updated.…",
+     "doc": "https://www.braze.com/docs/user_guide/brazeai/item_recommendations/creating_recommendations/ai"
+    },
+    {
+     "id": "more-flexible-experiments",
+     "title": "More flexible experiments",
+     "section": "BrazeAI",
+     "label": "",
+     "summary": "Experiments are more flexible across campaigns and Canvases, including Experiment Paths: You can turn off Winning Variant or Personalized Variant on a campaign during the experiment phase. The holdout group still receives messages at their originally scheduled time. Control group and variant percentages stay the same when you turn Optimize with BrazeAI on or off. Optimization Event is the label across campaign A/B…",
+     "doc": "https://www.braze.com/docs/user_guide/messaging/canvas/canvas_components/experiment_step"
+    },
+    {
+     "id": "decisioning-studio-go-agent-status-indicators",
+     "title": "Decisioning Studio Go agent status indicators",
+     "section": "BrazeAI",
+     "label": "ga",
+     "summary": "Decisioning Studio Go reporting shows which stage an agent is in after launch, from the first send through training and personalization, so you can tell whether the agent is still preparing or already learning.",
+     "doc": "https://www.braze.com/docs/user_guide/brazeai/decisioning_studio_go/setup#training-period"
+    },
+    {
+     "id": "self-serve-action-banks-for-decisioning-studio-pro",
+     "title": "Self-serve action banks for Decisioning Studio Pro",
+     "section": "BrazeAI",
+     "label": "beta",
+     "summary": "An action bank is the library of options Decisioning Studio chooses from for each customer, such as messages, offers, and send times. Decisioning Studio Pro customers can view and edit their action bank in the Braze dashboard, with help from BrazeAI Operator. Your account team chooses which action bank fields you can edit, such as subject line or offer code, separately for each dimension. You can add actions, turn…",
+     "doc": "https://www.braze.com/docs/user_guide/brazeai/decisioning_studio/design_agents"
+    },
+    {
+     "id": "braze-email-stats-in-decisioning-studio-go-agent-reporting",
+     "title": "Braze email stats in Decisioning Studio Go agent reporting",
+     "section": "BrazeAI",
+     "label": "ga",
+     "summary": "Decisioning Studio Go agents show the standard Braze email stats you use on campaigns: sends, opens, clicks, unsubscribes, and bounces. The numbers are summed across everything the agent has sent, so you can see how the agent performs in the same metrics you use elsewhere in Braze.",
+     "doc": "https://www.braze.com/docs/user_guide/brazeai/decisioning_studio_go/measuring"
+    },
+    {
+     "id": "partner-app-governance",
+     "title": "Partner app governance",
+     "section": "Orchestration",
+     "label": "ga",
+     "summary": "Admins can approve or block OAuth Partner Apps—such as creative studio partners—and choose which workspaces each app can reach.",
+     "doc": "https://www.braze.com/docs/user_guide/administer/global/admin_settings/oauth_admin/#oauth-partner-apps"
+    },
+    {
+     "id": "sign-in-to-braze-bonfire-community-with-braze",
+     "title": "Sign in to Braze Bonfire Community with Braze",
+     "section": "Orchestration",
+     "label": "ga",
+     "summary": "Dashboard users can open Community and select Sign in to Braze Bonfire Community to sign in with their Braze account. Braze Bonfire Community appears under OAuth Partner Apps and defaults to approved.",
+     "doc": "https://www.braze.com/docs/user_guide/administer/global/admin_settings/oauth_admin/#braze-bonfire-community"
+    },
+    {
+     "id": "terminate-roaming-sessions",
+     "title": "Terminate roaming sessions",
+     "section": "Orchestration",
+     "label": "ga",
+     "summary": "Under Dashboard IP allowlisting, turn on Terminate roaming sessions so Braze ends a dashboard session as soon as it continues from an IP outside your allowlist.",
+     "doc": "https://www.braze.com/docs/user_guide/administer/global/admin_settings/security_settings/#terminate-roaming-sessions"
+    },
+    {
+     "id": "suspend-dormant-accounts",
+     "title": "Suspend dormant accounts",
+     "section": "Orchestration",
+     "label": "ga",
+     "summary": "In Security Settings, turn on Suspend dormant accounts to automatically suspend dashboard users after 180 days without a sign-in. Braze emails users 15 days and one day before suspension, then sends a suspension notice.",
+     "doc": "https://www.braze.com/docs/user_guide/administer/global/admin_settings/security_settings/#dormant-accounts"
+    },
+    {
+     "id": "workspace-quiet-hours",
+     "title": "Workspace quiet hours",
+     "section": "Orchestration",
+     "label": "ga",
+     "summary": "Workspace quiet hours set a default quiet hours window for a messaging channel across the workspace. Campaigns and Canvases on that channel follow the window automatically, and you can still opt individual campaigns or Canvases out or set campaign-level quiet hours.",
+     "doc": "https://www.braze.com/docs/user_guide/messaging/messaging_fundamentals/quiet_hours/workspace_quiet_hours"
+    },
+    {
+     "id": "multi-channel-support-in-message-prioritization",
+     "title": "Multi-channel support in Message Prioritization",
+     "section": "Orchestration",
+     "label": "ga",
+     "summary": "Message Prioritization applies to multi-channel campaigns and multi-channel Canvases. You can opt multi-channel campaigns in to Message Prioritization, and bring prioritization to the multi-channel steps in your Canvases.",
+     "doc": "https://www.braze.com/docs/user_guide/messaging/messaging_fundamentals/message_prioritization"
+    },
+    {
+     "id": "send-to-destination",
+     "title": "Send to Destination",
+     "section": "Orchestration",
+     "label": "ga",
+     "summary": "The Send to Destination step sends users from one Canvas to another as soon as they reach the step. Users who meet the destination audience enter immediately, including when that Canvas uses scheduled or action-based entry. They continue in the source Canvas. The step follows the destination Canvas re-entry rules and isn't subject to API rate limits.",
+     "doc": "https://www.braze.com/docs/user_guide/messaging/canvas/canvas_components/send_to_destination"
+    },
+    {
+     "id": "send-to-a-decisioning-studio-go-agent",
+     "title": "Send to a Decisioning Studio Go agent",
+     "section": "Orchestration",
+     "label": "ga",
+     "summary": "In a Send to Destination step, set Destination type to Decisioning Studio agent to add users to a Decisioning Studio Go agent. On the agent, select Add directly to the audience, and include that agent with the segment's Decisioning Studio Agent filter. Users continue in the source Canvas.",
+     "doc": "https://www.braze.com/docs/user_guide/messaging/canvas/canvas_components/send_to_destination#send-users-to-a-decisioning-studio-go-agent"
+    },
+    {
+     "id": "workspace-canvas-alerts",
+     "title": "Workspace Canvas alerts",
+     "section": "Orchestration",
+     "label": "early",
+     "summary": "Workspace Canvas alerts set default alerts for every Canvas in a workspace. Braze provisions alerts for user entries, message sends, and archived Canvases. Each alert starts off. When you turn one on, it covers active Canvases and new Canvases unless a Canvas opts out. Notify recipients by email, webhook, or a Slack incoming webhook. Contact your Braze account manager to participate in the early access.",
+     "doc": "https://www.braze.com/docs/user_guide/messaging/canvas/managing_canvases/workspace_canvas_alerts#notifications"
+    },
+    {
+     "id": "slack-notifications-for-canvas-alerts",
+     "title": "Slack notifications for Canvas alerts",
+     "section": "Orchestration",
+     "label": "",
+     "summary": "Custom Canvas alerts are generally available, and workspace Canvas alerts are in early access. Both can post a notification to Slack with an incoming webhook URL. The channel is set when you create the webhook in Slack. You can enable email, Slack, a webhook, or any combination.",
+     "doc": "https://www.braze.com/docs/user_guide/messaging/canvas/managing_canvases/custom_canvas_alerts"
+    },
+    {
+     "id": "whatsapp-bsuid-request-contact-info-flow",
+     "title": "WhatsApp BSUID Request Contact Info flow",
+     "section": "Channels & Touchpoints",
+     "label": "ga",
+     "summary": "You can send WhatsApp messages that use Meta's Share Contact Info button, then capture the phone number a user shares. This identifies users who reach you with only a business-scoped user ID (BSUID) and connects them to existing profiles. For the workflow, see Request contact info for WhatsApp BSUID-only users.",
+     "doc": "https://www.braze.com/docs/user_guide/channels/whatsapp/use_cases/request_contact_info_bsuid"
+    },
+    {
+     "id": "key-value-pairs-for-drag-and-drop-in-app-messages",
+     "title": "Key-value pairs for drag-and-drop in-app messages",
+     "section": "Channels & Touchpoints",
+     "label": "ga",
+     "summary": "You can add key-value pairs to in-app messages in both the traditional editor and the drag-and-drop editor.",
+     "doc": "https://www.braze.com/docs/user_guide/messaging/design_and_edit/personalize/sources/key_value_pairs/#in-app-messages"
+    },
+    {
+     "id": "email-subscription-liquid-tags-in-landing-pages",
+     "title": "Email subscription Liquid tags in landing pages",
+     "section": "Channels & Touchpoints",
+     "label": "ga",
+     "summary": "You can use email subscription Liquid tags in the click actions of buttons and links on landing pages. Tags such as ${email_unsubscribe_url}, ${set_user_to_subscribed_url}, and ${set_user_to_unsubscribed_url} work on landing pages the same way they do in email.",
+     "doc": "https://www.braze.com/docs/user_guide/channels/email/subscriptions"
+    },
+    {
+     "id": "webhook-credentials",
+     "title": "Webhook credentials",
+     "section": "Channels & Touchpoints",
+     "label": "ga",
+     "summary": "Webhooks can authenticate with a saved credential instead of an API key typed into the message. This matches Connected Content, which uses the same stored credentials. Credentials are stored once at Settings > Credential Management, referenced by name in the composer, and never shown again after you save them. They belong to one workspace, and each credential needs an allowed domain to be used with webhooks.",
+     "doc": "https://www.braze.com/docs/user_guide/channels/webhooks/create_a_webhook#use-a-saved-credential-optional"
+    },
+    {
+     "id": "shopify-configurable-attributes-and-customer-metafields-sync",
+     "title": "Shopify configurable attributes and customer metafields sync",
+     "section": "Channels & Touchpoints",
+     "label": "ga",
+     "summary": "With the Shopify standard integration, you can sync up to 20 Shopify customer metafield definitions to Braze user profiles as nested custom attributes, then use them for segmentation and personalization. For how values are typed, updated, and used in messaging, see Shopify customer metafields.",
+     "doc": "https://www.braze.com/docs/partners/ecommerce/shopify/shopify_standard_integration/#sync-customer-metafields-as-user-attributes"
+    },
+    {
+     "id": "shopify-attribute-sync-empty-value-handling",
+     "title": "Shopify attribute sync: empty value handling",
+     "section": "Channels & Touchpoints",
+     "label": "ga",
+     "summary": "When Shopify sends an empty value for a synced user attribute, choose whether Braze keeps or clears the value already on the profile. Integrations default to keeping the existing value.",
+     "doc": "https://www.braze.com/docs/partners/ecommerce/shopify/shopify_data_features/#empty-values-from-shopify"
+    },
+    {
+     "id": "shopify-order-events-enrichment-and-order-placed-opt-out",
+     "title": "Shopify order events: enrichment and Order Placed opt-out",
+     "section": "Channels & Touchpoints",
+     "label": "ga",
+     "summary": "Add up to 20 Shopify order metafields to supported order events for segmentation and personalization. If another system is the source of truth for orders, you can turn off Shopify Order Placed events for a store so each order is counted once.",
+     "doc": "https://www.braze.com/docs/partners/ecommerce/shopify/shopify_data_features/order_metafields"
+    },
+    {
+     "id": "shopify-whatsapp-consent-collection",
+     "title": "Shopify WhatsApp consent collection",
+     "section": "Channels & Touchpoints",
+     "label": "ga",
+     "summary": "Sync WhatsApp marketing opt-ins from Shopify into Braze WhatsApp subscription groups, alongside email and SMS consent. Configure this in the Shopify standard integration setup, and see WhatsApp marketing opt-ins for how states map to Braze.",
+     "doc": "https://www.braze.com/docs/partners/ecommerce/shopify/shopify_standard_integration"
+    },
+    {
+     "id": "ip-pools-and-ip-addresses",
+     "title": "IP pools and IP addresses",
+     "section": "Channels & Touchpoints",
+     "label": "ga",
+     "summary": "Amazon SES customers with verified domains can create IP pools and add dedicated IP addresses on the Sender Verification page. The sender profile questionnaire recommends a setup from your sending volume, or you can create IP pools yourself. Braze assigns the dedicated IP addresses from your contract.",
+     "doc": "https://www.braze.com/docs/user_guide/channels/email/email_setup/setting_up_ips_and_domains/ip_pools"
+    },
+    {
+     "id": "intelligent-ip-warming",
+     "title": "Intelligent IP warming",
+     "section": "Channels & Touchpoints",
+     "label": "early",
+     "summary": "Automated IP warming has an Intelligent audience option. Upload your engagement history from your previous email provider, and Braze prioritizes sending to the users most likely to engage. New IPs build reputation on your best users, without you building or ranking segments by hand.",
+     "doc": "https://www.braze.com/docs/user_guide/channels/email/email_setup/ip_warming/automated_ip_warming?tab=intelligent"
+    },
+    {
+     "id": "microsoft-ads--canvas-audience-sync",
+     "title": "Microsoft Ads – Canvas Audience Sync",
+     "section": "Partnerships",
+     "label": "beta",
+     "summary": "Audience Sync to Microsoft Ads lets you add or remove Braze users from Microsoft Advertising customer lists from Canvas, so you can retarget and suppress across Bing, MSN, and the Microsoft Audience Network.",
+     "doc": "https://www.braze.com/docs/partners/canvas_audience_sync/microsoft_audience_sync"
+    },
+    {
+     "id": "feedotter---message-orchestration---templates",
+     "title": "FeedOtter - Message Orchestration - Templates",
+     "section": "Partnerships",
+     "label": "",
+     "summary": "FeedOtter is a content-to-email automation platform that turns content from CMSs, websites, feeds, APIs, databases, and spreadsheets into polished emails. The Braze and FeedOtter integration lets you collect and build newsletter content in FeedOtter, then publish each issue to a Braze email template and send it to the segment you choose.",
+     "doc": "https://www.braze.com/docs/partners/message_orchestration/templates/feedotter"
+    },
+    {
+     "id": "zendesk-support-handoff---instant-chat",
+     "title": "Zendesk Support Handoff - Instant Chat",
+     "section": "Partnerships",
+     "label": "",
+     "summary": "Zendesk is a customer service platform for omnichannel support. With this integration, your Braze Conversational AI agent can hand a live conversation to a human support agent in Zendesk when it needs to. After the handoff, a person takes over in the Zendesk Agent Workspace, and messages flow both ways until the agent closes the conversation.",
+     "doc": "https://www.braze.com/docs/partners/additional_channels_and_extensions/additional_channels/instant_chat/zendesk_support_handoff"
+    },
+    {
+     "id": "sdk-breaking-updates",
+     "title": "SDK breaking updates",
+     "section": "SDK",
+     "label": "",
+     "summary": "The following major SDK releases include breaking changes: Android SDK 45.0.0 changes BannerView so it hosts a WebView instead of being one. WebView methods called on BannerView no longer compile. Jetpack Compose ContentCardsList calls cardUpdateHandler when the list resumes, when cached cards load, and after a card is dismissed, and shows cards once the host lifecycle reaches RESUMED.…",
+     "doc": ""
+    },
+    {
+     "id": "summary-of-recent-sdk-features-and-fixes",
+     "title": "Summary of recent SDK features and fixes",
+     "section": "SDK",
+     "label": "",
+     "summary": "Android SDK 45.0.0 adds Kotlin Flow subscriptions for Content Cards, Feature Flags, Banners, and changeUser events. Reported control impressions may decrease. It also fixes crashes (Android 16 BannerView and some Honor devices), dropped or backlogged custom events, and dismissed banners reappearing. Android SDK 45.0.1 fixes a freeze when the SDK blocked the shared IO thread pool, and adds BrazeLogger.redactSecrets…",
+     "doc": "https://www.braze.com/docs/developer_guide/banners/web_targeting"
+    }
+   ]
+  },
+  {
+   "date": "2026-10-15",
+   "url": "https://www.braze.com/docs/releases/2026/10_15_26/",
+   "items": [
+    {
+     "id": "industry-benchmarks-dashboard",
+     "title": "Industry Benchmarks dashboard",
+     "section": "Data & Reporting",
+     "label": "ga",
+     "summary": "The Industry Benchmarks dashboard compares your email, push, Content Card, and SMS performance against aggregated benchmarks from your industry, region, and sub-industry.",
+     "doc": "https://www.braze.com/docs/user_guide/analytics/dashboards/dashboard_builder/industry_benchmarks_dashboard"
+    },
+    {
+     "id": "teams-support-for-catalogs",
+     "title": "Teams support for Catalogs",
+     "section": "Data & Reporting",
+     "label": "ga",
+     "summary": "You can assign a catalog to a Team. Admins can grant the View Catalogs, Edit Catalogs, Export Catalogs, and Delete Catalogs Team-level permissions. Users with these permissions see and manage only their Team's catalogs, so admins don't need to grant workspace-wide catalog access.",
+     "doc": "https://www.braze.com/docs/user_guide/administer/global/user_management/teams#available-team-level-permissions"
+    },
+    {
+     "id": "brazeai-decisioning-studio-go",
+     "title": "BrazeAI Decisioning Studio™ Go",
+     "section": "BrazeAI",
+     "label": "ga",
+     "summary": "BrazeAI Decisioning Studio™ Go is an AI decisioning agent for recurring email programs. Instead of picking one winning subject line, send time, or image for the whole audience, the agent selects the best combination for each recipient based on their past engagement, with a random control group so you can measure lift.",
+     "doc": "https://www.braze.com/docs/user_guide/brazeai/decisioning_studio_go"
+    },
+    {
+     "id": "content-optimizer",
+     "title": "Content Optimizer",
+     "section": "BrazeAI",
+     "label": "ga",
+     "summary": "Content Optimizer is a Canvas step that tests high volumes of content variants for email, push notifications, SMS, MMS, and RCS, and automatically optimizes toward better-performing combinations.",
+     "doc": "https://www.braze.com/docs/user_guide/messaging/canvas/canvas_components/content_optimizer_step"
+    },
+    {
+     "id": "agentic-standards",
+     "title": "Agentic Standards",
+     "section": "BrazeAI",
+     "label": "beta",
+     "summary": "Agentic Standards let you define Campaign Standards and Canvas Standards. These are rules and rulesets for brand guidelines, organizational conventions, and technical requirements—then run an agentic evaluation before launch. Operator can help draft rules as you configure a standard, so you can reduce manual oversight and check that campaigns and Canvases are ready to launch.",
+     "doc": "https://www.braze.com/docs/user_guide/brazeai/agents/agentic_standards"
+    },
+    {
+     "id": "message-prioritization",
+     "title": "Message Prioritization",
+     "section": "Orchestration",
+     "label": "ga",
+     "summary": "Message Prioritization is an optional layer on top of frequency capping. When multiple opted-in campaigns or Canvas Message steps compete for the same user, categories and ranked rules decide which message sends—not which was scheduled first. Braze can hold back a lower-priority send to preserve cap space for a higher-priority one, and retry windows let deprioritized messages compete again later.",
+     "doc": "https://www.braze.com/docs/user_guide/messaging/messaging_fundamentals/message_prioritization"
+    },
+    {
+     "id": "messaging-observability",
+     "title": "Messaging Observability",
+     "section": "Data & Reporting",
+     "label": "ga",
+     "summary": "Messaging Observability now traces events across a Canvas or campaign so you can audit entries, suppressions, failures, and sends in one place. For Canvases, progression events show how users move through the journey separately from send outcomes.",
+     "doc": "https://www.braze.com/docs/user_guide/analytics/dashboards/dashboard_builder/messaging_observability"
+    },
+    {
+     "id": "twilio-rcs-support",
+     "title": "Twilio RCS support",
+     "section": "Channels & Touchpoints",
+     "label": "ga",
+     "summary": "RCS is available for customers using Twilio as their SMS service provider, in addition to Infobip. Feature availability differs by provider; for information, see Provider differences.",
+     "doc": "https://www.braze.com/docs/user_guide/channels/sms_mms_and_rcs/message_setup/rcs_setup"
+    },
+    {
+     "id": "email-nps-survey-block",
+     "title": "Email NPS Survey block",
+     "section": "Channels & Touchpoints",
+     "label": "ga",
+     "summary": "Add a 0–10 NPS Survey block to drag-and-drop emails. Recipients select a score in their inbox and land on a Braze survey landing page.",
+     "doc": "https://www.braze.com/docs/user_guide/channels/email/drag_and_drop/nps_survey"
+    },
+    {
+     "id": "apex-proxying-for-new-custom-domains",
+     "title": "Apex proxying for new custom domains",
+     "section": "Channels & Touchpoints",
+     "label": "ga",
+     "summary": "New custom domains for link shortening use A and AAAA records that point directly to the Braze link infrastructure, instead of a CNAME to a shared domain. Existing custom domains keep working as they are.",
+     "doc": "https://www.braze.com/docs/user_guide/channels/sms_mms_and_rcs/message_features_and_optimization/custom_domains"
+    },
+    {
+     "id": "ip-based-bot-click-filtering",
+     "title": "IP-based bot click filtering",
+     "section": "Channels & Touchpoints",
+     "label": "ga",
+     "summary": "SMS and RCS bot click filtering checks the IP address and user agent of each click. Clicks from known automated link scanners are flagged as suspected bot clicks and excluded from reported click metrics.",
+     "doc": "https://www.braze.com/docs/user_guide/channels/sms_mms_and_rcs/message_features_and_optimization/bot_click_filtering"
+    },
+    {
+     "id": "web-targeting-for-banners",
+     "title": "Web Targeting for Banners",
+     "section": "Channels & Touchpoints",
+     "label": "early",
+     "summary": "Web Targeting for Banners lets you place a Banner on your website from the dashboard using a CSS selector and insertion method, without a code change for each placement. After a one-time Web SDK auto-insertion setup, you can update targeting entirely from Braze.",
+     "doc": "https://www.braze.com/docs/user_guide/channels/banners/web_targeting"
+    },
+    {
+     "id": "real-time-updates-for-content-cards",
+     "title": "Real-time updates for Content Cards",
+     "section": "Channels & Touchpoints",
+     "label": "ga",
+     "summary": "Content Cards now reach a user's device as soon as they happen during a session, with no manual refresh required. Real-time delivery covers campaign eligibility, Canvas step entry, card removals, and API-triggered sends. The SDK keeps a live connection open for the session, so Braze pushes updates to the device instead of waiting for the next session or refresh. Real-time delivery requires Swift SDK 18.0.0 or later…",
+     "doc": "https://www.braze.com/docs/developer_guide/content_cards/customizing_cards/feed#real-time-delivery"
+    },
+    {
+     "id": "shopify-historical-backfill-updates",
+     "title": "Shopify historical backfill updates",
+     "section": "Channels & Touchpoints",
+     "label": "ga",
+     "summary": "During Shopify historical backfill setup, choose how much history to bring into Braze at setup, instead of the fixed 90 days of orders and one year of customers. For Orders, you can choose 90 days, 1 year, or 2 years; for customers, you can choose the past year, 2 years, or all time.",
+     "doc": "https://www.braze.com/docs/partners/ecommerce/shopify/shopify_data_features/#historical-backfill"
+    },
+    {
+     "id": "google-dv360--canvas-audience-sync",
+     "title": "Google DV360 – Canvas Audience Sync",
+     "section": "Partnerships",
+     "label": "beta",
+     "summary": "Using Audience Sync to Google DV360, you can sync Braze audiences to Google Display & Video 360 to target, trigger, and suppress ads across DV360 inventory such as YouTube, connected TV, and the open web.",
+     "doc": "https://www.braze.com/docs/partners/canvas_audience_sync/dv360_audience_sync"
+    },
+    {
+     "id": "bidease---message-orchestration---retargeting",
+     "title": "Bidease - Message Orchestration - Retargeting",
+     "section": "Partnerships",
+     "label": "",
+     "summary": "Bidease is a mobile demand-side platform (DSP) for app user acquisition and retargeting. The Braze and Bidease integration lets you use your Braze segments as audiences in Bidease campaigns, so you can re-engage lapsed users, reach high-value users, or exclude existing users from acquisition campaigns, with audiences kept in sync with your segments automatically.",
+     "doc": "https://www.braze.com/docs/partners/message_orchestration/retargeting/bidease"
+    },
+    {
+     "id": "sdk-breaking-updates",
+     "title": "SDK breaking updates",
+     "section": "SDK",
+     "label": "",
+     "summary": "The following major SDK releases include breaking changes: Swift SDK 19.0.0 raises the minimum supported versions to iOS 15.0 and tvOS 15.0, and removes BrazeInAppMessageUI.DisplayChoice.later in favor of BrazeInAppMessageUI.DisplayChoice.reenqueue. It also changes requestBannersRefresh to merge into the existing Banner cache instead of replacing it. Android SDK 44.0.0 changes requestBannersRefresh to merge into the…",
+     "doc": ""
+    },
+    {
+     "id": "summary-of-recent-sdk-features-and-fixes",
+     "title": "Summary of recent SDK features and fixes",
+     "section": "SDK",
+     "label": "",
+     "summary": "Swift SDK 19.0.0 adds subscribeToEvents(_:) and eventsStream for Content Cards, Banners, and Feature Flags, and deprecates subscribeToUpdates(_:). Banner refreshes now merge into the existing cache. Android SDK 43.2.0 fixes crashes when calling wipeData(), disableSdk(), or logout() during SDK initialization, and fixes the Content Cards feed rendering under the system bars. Android SDK 44.0.0 adds…",
+     "doc": ""
+    }
+   ]
+  },
+  {
+   "date": "2026-09-17",
+   "url": "https://www.braze.com/docs/releases/2026/9_17_26/",
+   "items": [
+    {
+     "id": "push-performance-dashboards-push-analytics-hub",
+     "title": "Push Performance dashboards: Push Analytics Hub",
+     "section": "Data & Reporting",
+     "label": "ga",
+     "summary": "The Push Performance dashboards provide a channel-wide view of performance, insights, and deliverability across campaigns and Canvases. Compare key rates with industry benchmarks, rank campaigns, and analyze engagement trends. Frequency and cadence reports roll out by the end of September.",
+     "doc": "https://www.braze.com/docs/user_guide/analytics/dashboards/channel_performance/push#push-performance-dashboard"
+    },
+    {
+     "id": "cloud-data-ingestion-visual-mapper",
+     "title": "Cloud Data Ingestion visual mapper",
+     "section": "Data & Reporting",
+     "label": "early",
+     "summary": "The Cloud Data Ingestion visual mapper lets you create User Attributes syncs by mapping columns from existing warehouse tables or views to Braze fields. This no-code option supports Snowflake, Redshift, BigQuery, Databricks, and Fabric; use the SQL editor for advanced transformations.",
+     "doc": "https://www.braze.com/docs/user_guide/data/unification/cloud_ingestion/visual_mapper"
+    },
+    {
+     "id": "ecommerce-recommended-events-basic-and-nested-properties",
+     "title": "eCommerce recommended events (basic and nested properties)",
+     "section": "Data & Reporting",
+     "label": "ga",
+     "summary": "Filter eCommerce recommended events by their event properties, both basic (for example, order total) and nested (for example, products[0].metadata.category), in triggers, action paths, conversion events, exit criteria, and more.",
+     "doc": "https://www.braze.com/docs/user_guide/data/activation/events/recommended_events/ecommerce_events#property-filters"
+    },
+    {
+     "id": "usage-alerts",
+     "title": "Usage alerts",
+     "section": "Data & Reporting",
+     "label": "early",
+     "summary": "Usage alerts notify dashboard users when Action Credit consumption crosses 50%, 75%, 90%, or 100% of your allotment for the current credits period. The Credits Usage Overview tab also shows a banner at 90% or higher usage.",
+     "doc": "https://www.braze.com/docs/user_guide/administer/global/billing/usage_alerts"
+    },
+    {
+     "id": "braze-mcp-server",
+     "title": "Braze MCP server",
+     "section": "BrazeAI",
+     "label": "ga",
+     "summary": "The remote-hosted Braze MCP server connects AI agents to Braze analytics and content workflows through OAuth, with no local package, configuration file, or API key. Access is limited by the signed-in user's permissions and OAuth scopes, and includes beta support for the Campaigns and Segments API and Operator Connect.",
+     "doc": "https://www.braze.com/docs/user_guide/brazeai/mcp_server"
+    },
+    {
+     "id": "operator-can-create-and-edit-drag-and-drop-designs",
+     "title": "Operator can create and edit drag-and-drop designs",
+     "section": "BrazeAI",
+     "label": "ga",
+     "summary": "Operator can create complete drag-and-drop designs or edit individual blocks from natural-language prompts while preserving Liquid and personalization. This is available across message editors, templates, Content Blocks, landing pages, Banners, and the email preference center.",
+     "doc": "https://www.braze.com/docs/user_guide/brazeai/operator/capabilities"
+    },
+    {
+     "id": "knowledge-sources",
+     "title": "Knowledge sources",
+     "section": "BrazeAI",
+     "label": "ga",
+     "summary": "Knowledge sources give Canvas Step Agents and Catalog Agents focused catalog context, improving data retrieval compared with referencing an entire catalog in agent instructions.",
+     "doc": "https://www.braze.com/docs/user_guide/brazeai/agents/knowledge_sources"
+    },
+    {
+     "id": "content-optimizer-step-updates",
+     "title": "Content Optimizer step updates",
+     "section": "BrazeAI",
+     "label": "beta",
+     "summary": "The Content Optimizer now optimizes email preheaders, sender names, and images. It also supports up to four email components (625 combinations) or three SMS/MMS/RCS components (125 combinations) per step.",
+     "doc": "https://www.braze.com/docs/user_guide/messaging/canvas/canvas_components/content_optimizer_step"
+    },
+    {
+     "id": "custom-canvas-alerts",
+     "title": "Custom Canvas alerts",
+     "section": "Orchestration",
+     "label": "early",
+     "summary": "Custom Canvas alerts support percentage thresholds based on the previous seven days. Combine percentage and volume rules with AND or OR logic to identify unexpected changes in Canvas entries or sends.",
+     "doc": "https://www.braze.com/docs/user_guide/messaging/canvas/managing_canvases/custom_canvas_alerts"
+    },
+    {
+     "id": "connected-content-debugger",
+     "title": "Connected Content debugger",
+     "section": "Channels & Touchpoints",
+     "label": "ga",
+     "summary": "The Connected Content debugger shows live request and response details in Preview & Test, helping you verify endpoints, headers, payloads, and Liquid before launch. It's available across Banners, Canvas Context steps, and messaging channels.",
+     "doc": "https://www.braze.com/docs/user_guide/messaging/design_and_edit/personalize/connected_content/debugger"
+    },
+    {
+     "id": "multi-language-support-for-webhooks",
+     "title": "Multi-language support for webhooks",
+     "section": "Channels & Touchpoints",
+     "label": "ga",
+     "summary": "Multi-language messaging for webhooks lets you localize payload values from one campaign, Canvas step, or template using translation tags. This replaces complex Liquid logic and separate webhooks for each language.",
+     "doc": "https://www.braze.com/docs/user_guide/messaging/messaging_fundamentals/localization/locales_in_messages"
+    },
+    {
+     "id": "scim-provisioning-for-okta-and-microsoft-entra-id",
+     "title": "SCIM Provisioning for Okta and Microsoft Entra ID",
+     "section": "Channels & Touchpoints",
+     "label": "early",
+     "summary": "SCIM provisioning can sync groups from Okta and Microsoft Entra ID to Braze custom roles, keeping dashboard access aligned with identity provider group membership.",
+     "doc": "https://www.braze.com/docs/user_guide/administer/global/user_management/automated_user_provisioning#accessing-scim-provisioning-settings"
+    },
+    {
+     "id": "shopify-segments",
+     "title": "Shopify segments",
+     "section": "Channels & Touchpoints",
+     "label": "beta",
+     "summary": "Manage Shopify segment syncs from the Shopify integration page, including one-time syncs, status tracking, and pause or resume controls.",
+     "doc": "https://www.braze.com/docs/partners/ecommerce/shopify/shopify_segments_sync"
+    },
+    {
+     "id": "shopify-sms-double-opt-in",
+     "title": "Shopify SMS double opt-in",
+     "section": "Channels & Touchpoints",
+     "label": "ga",
+     "summary": "Use SMS double opt-in to send a branded confirmation text through Braze instead of Shopify's confirmation email.",
+     "doc": "https://www.braze.com/docs/partners/ecommerce/shopify/shopify_overview#sms-double-opt-in"
+    },
+    {
+     "id": "banners-in-shopify-standard-integrations",
+     "title": "Banners in Shopify standard integrations",
+     "section": "Channels & Touchpoints",
+     "label": "early",
+     "summary": "Enable Banners for Shopify standard integrations from your integration settings without additional development.",
+     "doc": "https://www.braze.com/docs/partners/ecommerce/shopify/shopify_standard_integration#step-6-activate-channels-optional"
+    },
+    {
+     "id": "manage-subscriptions-block",
+     "title": "Manage Subscriptions block",
+     "section": "Channels & Touchpoints",
+     "label": "ga",
+     "summary": "The Manage Subscriptions block on landing pages now supports email, SMS, and WhatsApp subscription groups.",
+     "doc": "https://www.braze.com/docs/user_guide/messaging/landing_pages/manage_subscriptions"
+    },
+    {
+     "id": "liquid-tags-for-subscription-group-unsubscribes-and-whatsapp-username",
+     "title": "Liquid tags for subscription group unsubscribes and WhatsApp username",
+     "section": "Channels & Touchpoints",
+     "label": "ga",
+     "summary": "Use the {% subscription_group_unsubscribe_url %} Liquid tag for one-click email subscription group unsubscribes without changing global subscription state. You can also use {{whats_app.${inbound_username}}} to retrieve a contact's username from inbound WhatsApp messages.",
+     "doc": "https://www.braze.com/docs/user_guide/messaging/design_and_edit/personalize/liquid/supported_personalization_tags"
+    },
+    {
+     "id": "whatsapp-carousel-messagesapi-sending",
+     "title": "WhatsApp carousel messages—API sending",
+     "section": "Channels & Touchpoints",
+     "label": "ga",
+     "summary": "Send WhatsApp carousel messages through the Braze API using the carousel card object.",
+     "doc": "https://www.braze.com/docs/api/objects_filters/messaging/whats_app_object#carousel-card-object"
+    },
+    {
+     "id": "multiple-link-shortening-domains",
+     "title": "Multiple link shortening domains",
+     "section": "Channels & Touchpoints",
+     "label": "ga",
+     "summary": "Add multiple link shortening domains for SMS, MMS, and RCS so your messages don't depend on one shared domain.",
+     "doc": "https://www.braze.com/docs/user_guide/channels/sms_mms_and_rcs/message_features_and_optimization/custom_domains#assign-custom-domains-to-subscription-groups"
+    },
+    {
+     "id": "globalization-partners-international-gpi---message-personalization---localization",
+     "title": "Globalization Partners International (GPI) - Message Personalization - Localization",
+     "section": "Partnerships",
+     "label": "",
+     "summary": "Globalization Partners International (GPI) connects Braze content with human and AI-powered translation services across more than 200 languages, then returns completed translations through the Translation API.",
+     "doc": "https://www.braze.com/docs/partners/gpi"
+    },
+    {
+     "id": "growsurf---message-personalization---referrals",
+     "title": "GrowSurf - Message Personalization - Referrals",
+     "section": "Partnerships",
+     "label": "",
+     "summary": "GrowSurf sends referral and affiliate program data to Braze as custom attributes for segmentation and Liquid personalization.",
+     "doc": "https://www.braze.com/docs/partners/growsurf"
+    },
+    {
+     "id": "sdk-breaking-updates",
+     "title": "SDK breaking updates",
+     "section": "SDK",
+     "label": "",
+     "summary": "The following major SDK releases include breaking changes: Cordova SDK 17.0.0 updates the native Android and Swift bridges. On iOS, Content Card extras are now JavaScript objects instead of JSON-encoded strings. Xamarin SDK 10.0.0 updates the native bindings and Kotlin dependencies. It also deprecates compatibility-layer symbols and introduces non-blocking initialization and identifier access. Segment Swift SDK…",
+     "doc": ""
+    },
+    {
+     "id": "summary-of-recent-sdk-features-and-fixes",
+     "title": "Summary of recent SDK features and fixes",
+     "section": "SDK",
+     "label": "",
+     "summary": "Vega SDK 0.5.0 supports the latest Vega OS and React Native 0.83. Android SDK 43.1.1 fixes issues with Banners, unregisterPush, DUST, and stability. Swift SDK 18.2.0 adds public protocols for Braze modules and deprecates BrazeKitCompat and BrazeUICompat symbols. Swift SDK 18.2.1 fixes HTML in-app message closing, custom attribute syncing, and early data requests. React Native SDK 23.0.0 updates native bindings and…",
+     "doc": ""
+    }
+   ]
+  },
+  {
+   "date": "2026-08-20",
+   "url": "https://www.braze.com/docs/releases/2026/8_20_26/",
+   "items": [
+    {
+     "id": "cloud-data-ingestion-sql-editor",
+     "title": "Cloud Data Ingestion SQL editor",
+     "section": "Data & Reporting",
+     "label": "ga",
+     "summary": "The SQL editor lets you create and edit Cloud Data Ingestion (CDI) syncs by writing a SQL query against any table or view in your data warehouse, rather than building and maintaining a dedicated Braze-specific table. It's available for all sync data types across all CDI data warehouse sources: Snowflake, Redshift, BigQuery, Databricks, and Fabric.",
+     "doc": "https://www.braze.com/docs/user_guide/data/unification/cloud_ingestion/sql_editor"
+    },
+    {
+     "id": "cloud-data-ingestion-visual-mapper",
+     "title": "Cloud Data Ingestion visual mapper",
+     "section": "Data & Reporting",
+     "label": "beta",
+     "summary": "The visual mapper lets you create a Cloud Data Ingestion (CDI) sync by mapping an existing data warehouse table's columns to Braze fields directly in the dashboard, with no SQL or dedicated table required. This beta release supports User Attributes syncs across all CDI data warehouse sources. The visual mapper and the SQL editor are complementary: use the visual mapper for direct column-to-field mapping, and the SQL…",
+     "doc": "https://www.braze.com/docs/user_guide/data/unification/cloud_ingestion/visual_mapper"
+    },
+    {
+     "id": "cloud-data-ingestion-for-google-cloud-storage-and-azure-blob-storage",
+     "title": "Cloud Data Ingestion for Google Cloud Storage and Azure Blob Storage",
+     "section": "Data & Reporting",
+     "label": "ga",
+     "summary": "Cloud Data Ingestion (CDI) supports two new file storage sources: Google Cloud Storage, generally available now, and Azure Blob Storage, coming the week of August 31, 2026. Both sources work like the existing Amazon S3 source—Braze ingests files as soon as they're written to the bucket or container—so customers on Google Cloud or Azure get the same speed and reliability without replicating files into S3 or building…",
+     "doc": ""
+    },
+    {
+     "id": "cloud-data-ingestion-to-brazeai-decisioning-studio",
+     "title": "Cloud Data Ingestion to BrazeAI Decisioning Studio",
+     "section": "Data & Reporting",
+     "label": "early",
+     "summary": "Cloud Data Ingestion (CDI) can now sync data warehouse data directly to BrazeAI Decisioning Studio for customers using both products, so you can bring in data beyond your Braze workspace for reinforcement learning and AI decisioning without building custom ETL jobs. This early access release supports Snowflake sources, with additional data warehouse sources coming soon.",
+     "doc": ""
+    },
+    {
+     "id": "operator-can-navigate-the-dashboard-for-you",
+     "title": "Operator can navigate the dashboard for you",
+     "section": "BrazeAI",
+     "label": "ga",
+     "summary": "Operator can navigate to a different dashboard page to complete your request. When a prompt needs a different part of the dashboard, Operator identifies the destination, proposes the navigation, and takes you there before continuing its work.",
+     "doc": "https://www.braze.com/docs/user_guide/brazeai/operator#navigate-the-dashboard"
+    },
+    {
+     "id": "operator-can-act-on-more-dashboard-pages",
+     "title": "Operator can act on more dashboard pages",
+     "section": "BrazeAI",
+     "label": "ga",
+     "summary": "Operator can complete work from additional dashboard pages when you describe the outcome in natural language. Examples include building reports and dashboards, working from email template and Content Block list pages, importing or managing users, creating predictions, and updating more admin and settings surfaces.",
+     "doc": "https://www.braze.com/docs/user_guide/brazeai/operator/capabilities"
+    },
+    {
+     "id": "operator-can-create-and-edit-canvases",
+     "title": "Operator can create and edit Canvases",
+     "section": "BrazeAI",
+     "label": "ga",
+     "summary": "Operator can create a draft Canvas from a natural-language description, and edit an existing Canvas the same way. Describe the journey you want—entry criteria, delays, and messages—and Operator assembles a draft you review and refine before you launch it.",
+     "doc": "https://www.braze.com/docs/user_guide/brazeai/operator/capabilities"
+    },
+    {
+     "id": "content-optimizer-step-updates",
+     "title": "Content Optimizer step updates",
+     "section": "BrazeAI",
+     "label": "beta",
+     "summary": "The Content Optimizer step includes the following updates: Step states: Content Optimizer steps show whether they're in Learning, Optimizing, or Action Recommended, so you can see where each step stands. Pre-launch setup checks: Content Optimizer checks for key misconfigurations while you draft, so you can catch issues before you launch. Track which combination each user received: A new Liquid tag and user profile…",
+     "doc": "https://www.braze.com/docs/user_guide/brazeai/content_optimizer"
+    },
+    {
+     "id": "workspace-quiet-hours",
+     "title": "Workspace quiet hours",
+     "section": "Orchestration",
+     "label": "early",
+     "summary": "Workspace quiet hours let you set a default quiet hours window for a messaging channel across your entire workspace. Every campaign and Canvas on that channel respects the window in each recipient's local time zone. You can keep the workspace default, or opt out and apply a campaign or Canvas-specific window instead.",
+     "doc": "https://www.braze.com/docs/user_guide/messaging/messaging_fundamentals/quiet_hours/workspace_quiet_hours"
+    },
+    {
+     "id": "custom-canvas-alerts",
+     "title": "Custom Canvas alerts",
+     "section": "Orchestration",
+     "label": "early",
+     "summary": "Custom Canvas alerts notify you when user entries or messages sent fall outside the volume you expect. Set a threshold, choose how often Braze checks it (every 3 to 12 hours, or every 24 hours), and get notified by email, webhook, or both when a rule is met. You can create multiple alerts for the same Canvas, including on drafts—the alert starts checking after the Canvas launches.",
+     "doc": "https://www.braze.com/docs/user_guide/messaging/canvas/managing_canvases/custom_canvas_alerts"
+    },
+    {
+     "id": "automatic-team-assignment",
+     "title": "Automatic Team assignment",
+     "section": "Orchestration",
+     "label": "ga",
+     "summary": "For users with Team-level permissions only, Braze can assign a Teams automatically during object creation.",
+     "doc": "https://www.braze.com/docs/user_guide/administer/global/user_management/teams#automatic-team-assignment"
+    },
+    {
+     "id": "connected-content-debugger",
+     "title": "Connected Content debugger",
+     "section": "Channels & Touchpoints",
+     "label": "early",
+     "summary": "The Connected Content debugger shows the live request and response for each Connected Content call in Preview & Test, so you can verify your endpoint, headers, and Liquid tags before you launch a campaign or Canvas. Open View details to inspect the URL, method, status code, request and response headers, payload, duration, and whether the response was served from cache.",
+     "doc": "https://www.braze.com/docs/user_guide/messaging/design_and_edit/personalize/connected_content/debugger"
+    },
+    {
+     "id": "in-app-message-and-landing-page-surveys",
+     "title": "In-app message and landing page surveys",
+     "section": "Channels & Touchpoints",
+     "label": "ga",
+     "summary": "Braze surveys collect feedback in in-app messages and landing pages that you can analyze and use in follow-up messaging.",
+     "doc": "https://www.braze.com/docs/user_guide/channels/in_app_messages/drag_and_drop/surveys/"
+    },
+    {
+     "id": "kakaotalk-carousel-message",
+     "title": "KakaoTalk carousel message",
+     "section": "Channels & Touchpoints",
+     "label": "ga",
+     "summary": "A KakaoTalk carousel message includes up to six scrollable cards. Each card has an image, header, message, optional Website URL, and at least one button.",
+     "doc": "https://www.braze.com/docs/user_guide/channels/kakaotalk/create_kakaotalk_message#step-2-compose-your-kakaotalk-message"
+    },
+    {
+     "id": "whatsapp-template-builder-improvements",
+     "title": "WhatsApp Template Builder improvements",
+     "section": "Channels & Touchpoints",
+     "label": "ga",
+     "summary": "WhatsApp Template Builder supports more creation paths and template options: Create templates while building campaigns and Canvases: Create a new WhatsApp template directly in the composer instead of only selecting existing templates from Content. Carousel response messages: Build carousel layouts as response messages, not only as outbound templates. New template types: Utility and Flow: Template Builder supports…",
+     "doc": "https://www.braze.com/docs/user_guide/channels/whatsapp/message_features_and_optimization/template_builder/"
+    },
+    {
+     "id": "custom-form-blocks-and-javascript-bridge-for-landing-pages",
+     "title": "Custom form blocks and JavaScript bridge for landing pages",
+     "section": "Channels & Touchpoints",
+     "label": "ga",
+     "summary": "Landing pages now support custom form blocks and a JavaScript bridge, so you can capture custom form input and sync client-side events and attributes through your landing page experience.",
+     "doc": "https://www.braze.com/docs/user_guide/messaging/landing_pages/custom_form_blocks"
+    },
+    {
+     "id": "multi-step-landing-page-forms",
+     "title": "Multi-step landing page forms",
+     "section": "Channels & Touchpoints",
+     "label": "ga",
+     "summary": "Multi-step landing page forms let you split a long form across multiple steps in a single Form row, with a built-in confirmation step after submission.",
+     "doc": "https://www.braze.com/docs/user_guide/messaging/landing_pages/create_landing_pages/multi_step_forms"
+    },
+    {
+     "id": "manage-subscriptions-block-for-landing-pages",
+     "title": "Manage Subscriptions block for landing pages",
+     "section": "Channels & Touchpoints",
+     "label": "ga",
+     "summary": "The Manage Subscriptions block lets users view, opt in to, and update email subscription groups on a landing page.",
+     "doc": "https://www.braze.com/docs/user_guide/messaging/landing_pages/manage_subscriptions"
+    },
+    {
+     "id": "audience-sync-google-data-manager-api",
+     "title": "Audience Sync: Google Data Manager API",
+     "section": "Partnerships",
+     "label": "early",
+     "summary": "Audience Sync to Google supports Google Data Manager API in early access.",
+     "doc": "https://www.braze.com/docs/partners/canvas_audience_sync/google_audience_sync"
+    },
+    {
+     "id": "amazon-bedrock---ai-model-provider",
+     "title": "Amazon Bedrock - AI Model Provider",
+     "section": "Partnerships",
+     "label": "",
+     "summary": "Amazon Bedrock is a fully managed AWS service that provides access to foundation models from leading AI companies through a unified API, so brands can build and scale generative AI applications on AWS.",
+     "doc": "https://www.braze.com/docs/partners/amazon_bedrock"
+    },
+    {
+     "id": "bynder---message-orchestration---cms-and-dam",
+     "title": "Bynder - Message Orchestration - CMS and DAM",
+     "section": "Partnerships",
+     "label": "",
+     "summary": "Bynder is a digital asset management (DAM) platform that helps customers create, manage, find, and distribute approved digital assets (images, videos, and other creative) from a single source of truth. When integrated with Braze, Bynder's Universal Compact View (UCV) Google Chrome extension lets marketers search for and select Bynder assets without leaving the Braze dashboard. Insert links to those assets directly…",
+     "doc": "https://www.braze.com/docs/partners/bynder"
+    },
+    {
+     "id": "multiplied-media---message-personalization---visual-and-interactive-content",
+     "title": "Multiplied Media - Message Personalization - Visual and Interactive Content",
+     "section": "Partnerships",
+     "label": "",
+     "summary": "Multiplied Media is a creative and automation studio that uses your CRM data to create personalized images, GIFs, and video—a unique asset for each customer. The Multiplied Media and Braze integration lets you send this media through email, push notifications, in-app messages, Content Cards, and WhatsApp.",
+     "doc": "https://www.braze.com/docs/partners/multiplied_media"
+    },
+    {
+     "id": "sdk-breaking-updates",
+     "title": "SDK breaking updates",
+     "section": "SDK",
+     "label": "",
+     "summary": "The latest SDK updates have been released. Breaking updates are listed in the SDK updates section; all other updates can be found in the corresponding SDK changelogs.",
+     "doc": ""
+    },
+    {
+     "id": "summary-of-recent-sdk-features-and-fixes",
+     "title": "Summary of recent SDK features and fixes",
+     "section": "SDK",
+     "label": "",
+     "summary": "Swift SDK v18.1.0: Adds push token logout methods, in addition to the existing push logout method, to support additional logout use cases. Also updates the eCommerce event type. Flutter SDK v22.0.0: Updates the native bridge to inherit functionality from the Android and Swift SDKs. Unity SDK v12.0.0: Updates the native bridge to inherit functionality from the Android and Swift SDKs.",
+     "doc": "https://www.braze.com/docs/developer_guide/changelogs"
+    }
+   ]
+  },
+  {
+   "date": "2026-07-23",
+   "url": "https://www.braze.com/docs/releases/2026/7_23_26/",
+   "items": [
+    {
+     "id": "messaging-observability",
+     "title": "Messaging Observability",
+     "section": "Data & Reporting",
+     "label": "ga",
+     "summary": "Messaging Observability provides a high-level breakdown of message sending outcomes, allowing you to spot trends and diagnose potential issues in your messaging setup. This dashboard can help you understand why messages from your campaigns or Canvases may not have been sent as expected. Contact your customer success manager for access to the feature.",
+     "doc": "https://www.braze.com/docs/user_guide/analytics/dashboards/dashboard_builder/messaging_observability"
+    },
+    {
+     "id": "csv-custom-events-mapper",
+     "title": "CSV Custom Events mapper",
+     "section": "Data & Reporting",
+     "label": "ga",
+     "summary": "The CSV import flow for custom events now includes a mapper that lets you map event names and event property headers to Braze fields before import. This update brings the custom events experience in line with the custom attributes flow and reduces the need to reformat files before upload. The flow includes uploading a CSV, mapping required fields and events, mapping event properties, and then selecting targeting…",
+     "doc": "https://www.braze.com/docs/user_guide/audience/manage_audience/import_users/csv_import#about-csv-import"
+    },
+    {
+     "id": "catalogs-free-storage-now-supports-up-to-500-mb",
+     "title": "Catalogs free storage now supports up to 500 MB",
+     "section": "Data & Reporting",
+     "label": "ga",
+     "summary": "The free version of catalogs now supports up to 500 MB of storage across all CSV files.",
+     "doc": "https://www.braze.com/docs/user_guide/data/activation/catalogs/create#tiers"
+    },
+    {
+     "id": "operator-can-now-update-settings-pages-for-you",
+     "title": "Operator can now update Settings pages for you",
+     "section": "BrazeAI",
+     "label": "ga",
+     "summary": "Operator can now make changes directly on more Settings pages, so you can describe a change in natural language instead of clicking through configuration screens. Supported pages include: Quiet hours Push settings Messaging rate limits Messaging rules and always-on approval workflows Other identifiers and API limits Contact information",
+     "doc": "https://www.braze.com/docs/user_guide/brazeai/operator/capabilities"
+    },
+    {
+     "id": "remote-braze-mcp-server",
+     "title": "Remote Braze MCP server",
+     "section": "BrazeAI",
+     "label": "early",
+     "summary": "The Braze MCP server is a remote-hosted connection that lets you connect AI agents such as Claude, ChatGPT, Cursor, VSCode, Codex, Google Antigravity, and Claude Code directly to Braze. Through natural language, agents can read campaign, Canvas, and segment analytics, custom attributes, events, KPIs, and catalogs, and create or update email templates, Content Blocks, and media library assets. No user-profile PII is…",
+     "doc": "https://www.braze.com/docs/user_guide/brazeai/mcp_server"
+    },
+    {
+     "id": "teams-audience-scoping",
+     "title": "Teams audience scoping",
+     "section": "Orchestration",
+     "label": "ga",
+     "summary": "The Teams audience configuration now supports multiple filters.",
+     "doc": "https://www.braze.com/docs/user_guide/administer/global/user_management/teams/"
+    },
+    {
+     "id": "survey-rating-scale-for-in-app-messages-and-landing-pages",
+     "title": "Survey rating scale for in-app messages and landing pages",
+     "section": "Channels & Touchpoints",
+     "label": "early",
+     "summary": "Add a numeric rating scale to a form block in both landing page surveys and in-app message surveys to capture sentiment, satisfaction, and likelihood-to-recommend without any custom code. Three ranges are supported: 1–10, 1–5, and 0–10 (the standard NPS range).",
+     "doc": "https://www.braze.com/docs/user_guide/messaging/landing_pages/create_landing_pages/surveys#rating-scale"
+    },
+    {
+     "id": "whatsapp-limited-time-offer-templates",
+     "title": "WhatsApp limited time offer templates",
+     "section": "Channels & Touchpoints",
+     "label": "ga",
+     "summary": "WhatsApp limited time offer templates display a time-sensitive promotional offer with an optional countdown as the offer nears expiration. Use this layout for time-boxed promotions, such as seasonal sales or offers personalized to a user attribute.",
+     "doc": "https://www.braze.com/docs/user_guide/channels/whatsapp/create_a_whatsapp_message/message_and_image_formats#limited-time-offer-templates"
+    },
+    {
+     "id": "shopify-self-serve-sdk-version-upgrade",
+     "title": "Shopify self-serve SDK version upgrade",
+     "section": "Channels & Touchpoints",
+     "label": "ga",
+     "summary": "New Shopify customers are provisioned on the latest Braze Web SDK and JavaScript SDK versions during setup. Existing customers can view their current SDK version in integration settings, get notified when a newer version is available, and self-serve upgrades from integration settings.",
+     "doc": "https://www.braze.com/docs/partners/ecommerce/shopify/"
+    },
+    {
+     "id": "html-editor-for-banners",
+     "title": "HTML editor for Banners",
+     "section": "Channels & Touchpoints",
+     "label": "ga",
+     "summary": "When you compose a Banner, you can now build it using the HTML editor. The HTML editor is best for teams that already maintain their own HTML templates or want full control over markup and styling for Banners. You can write or paste custom HTML directly into the editor.",
+     "doc": "https://www.braze.com/docs/user_guide/channels/banners/create_a_banner#compose-a-banner"
+    },
+    {
+     "id": "replace-a-file-in-the-media-library",
+     "title": "Replace a file in the media library",
+     "section": "Channels & Touchpoints",
+     "label": "ga",
+     "summary": "You can now replace the file of an existing media library asset while keeping its URL and asset ID stable. Because the URL doesn't change, any campaign, Canvas, Content Block, or template that references that asset automatically reflects the updated file, so you don't have to manually re-upload or re-link it everywhere it's used.",
+     "doc": "https://www.braze.com/docs/user_guide/messaging/design_and_edit/media_library#replace-a-file"
+    },
+    {
+     "id": "grid-view-for-the-media-library",
+     "title": "Grid view for the media library",
+     "section": "Channels & Touchpoints",
+     "label": "ga",
+     "summary": "The media library and select template libraries now offer a grid view alongside the existing list view. Grid view displays assets as thumbnails with key metadata (name, type, last modified), making it faster to find images and creative by sight instead of by filename. Filtering and search work the same in both views.",
+     "doc": ""
+    },
+    {
+     "id": "shareable-preview-support-for-more-channels",
+     "title": "Shareable Preview support for more channels",
+     "section": "Channels & Touchpoints",
+     "label": "ga",
+     "summary": "Shareable Preview now supports the following additional channels: SMS, MMS, and RCS WhatsApp Push Content Cards LINE",
+     "doc": "https://www.braze.com/docs/user_guide/channels/email/html_editor#step-3b-preview-and-test-your-message"
+    },
+    {
+     "id": "push-credentials-update-api",
+     "title": "Push credentials update API",
+     "section": "Channels & Touchpoints",
+     "label": "ga",
+     "summary": "You can now update push credentials programmatically with the Update push credentials endpoint. Each request updates one app and one platform (apple, firebase, huawei, or kindle) and accepts credential payloads as Base64-encoded values. This helps teams manage large app portfolios and credential rotation policies without relying on manual dashboard uploads.",
+     "doc": "https://www.braze.com/docs/api/endpoints/apps/post_update_push_credential"
+    },
+    {
+     "id": "refiner---surveys",
+     "title": "Refiner - Surveys",
+     "section": "Partnerships",
+     "label": "",
+     "summary": "Refiner is an in-app survey platform for SaaS and mobile apps. It enables product and voice-of-customer teams to launch targeted in-app surveys and continuously collect NPS, CSAT, CES, product feedback, and zero-party user data.",
+     "doc": ""
+    },
+    {
+     "id": "stayfilm---visual-and-interactive-content",
+     "title": "Stayfilm - Visual and Interactive Content",
+     "section": "Partnerships",
+     "label": "",
+     "summary": "Stayfilm is a REST API for automated, personalized video production at scale. The platform integrates data, images, text, soundtracks, narration, and visual effects to generate customized video content for eCommerce, marketplaces, CRM workflows, and marketing campaigns.",
+     "doc": ""
+    },
+    {
+     "id": "validity---data-and-analytics",
+     "title": "Validity - Data and Analytics",
+     "section": "Partnerships",
+     "label": "",
+     "summary": "Validity Everest is an email deliverability platform that helps you measure inbox placement and protect your sending reputation. The Braze and Validity integration syncs your Everest seed list to Braze, automatically seeds qualifying campaigns and Canvases, and pulls engagement metrics back into Validity Inbox so you can compare seed-based placement with real subscriber engagement.",
+     "doc": ""
+    },
+    {
+     "id": "sdk-breaking-updates",
+     "title": "SDK breaking updates",
+     "section": "SDK",
+     "label": "",
+     "summary": "The latest SDK updates have been released. Breaking updates are listed in the SDK updates section; all other updates can be found in the corresponding SDK changelogs.",
+     "doc": ""
+    }
+   ]
+  },
+  {
+   "date": "2026-06-25",
+   "url": "https://www.braze.com/docs/releases/2026/6_25_26/",
+   "items": [
+    {
+     "id": "metric-name-update-for-content-cards-and-banners",
+     "title": "Metric name update for Content Cards and Banners",
+     "section": "Data & Reporting",
+     "label": "",
+     "summary": "The _Unique Recipients_ metric has been renamed to _Unique Daily Impressions_ for Content Cards and Banners. _Unique Daily Impressions_ refer to the number received from Braze and is based on the user_id. Unique daily impressions are counted at the campaign or Canvas step level. For more details, refer to the Metrics glossary.",
+     "doc": "https://www.braze.com/docs/user_guide/analytics/metrics_glossary"
+    },
+    {
+     "id": "user-deletion",
+     "title": "User deletion",
+     "section": "Data & Reporting",
+     "label": "ga",
+     "summary": "User deletion lets you manage your database by removing profiles that are no longer needed, created in error, or required to be deleted for compliance (such as GDPR or CCPA).",
+     "doc": "https://www.braze.com/docs/user_guide/audience/manage_audience/user_profiles/delete_users/"
+    },
+    {
+     "id": "data-point-exclusions",
+     "title": "Data point exclusions",
+     "section": "Data & Reporting",
+     "label": "ga",
+     "summary": "eCommerce recommended events no longer count toward billable data points. You can adopt Braze eCommerce events (ecommerce.product_viewed, ecommerce.cart_updated, ecommerce.checkout_started, ecommerce.order_placed, ecommerce.order_cancelled, ecommerce.order_refunded) without data point consumption.",
+     "doc": "https://www.braze.com/docs/user_guide/data/activation/events/recommended_events/ecommerce_events/"
+    },
+    {
+     "id": "event-history-tab",
+     "title": "Event History tab",
+     "section": "Data & Reporting",
+     "label": "ga",
+     "summary": "The Event History tab on user profiles lists the user's custom events and purchases from the past 30 days (up to 100 most recent). Use it to confirm an SDK or API integration is sending events as expected, debug why a user did (or didn't) enter an event-triggered campaign or Canvas, or investigate a support escalation about a specific user.",
+     "doc": "https://www.braze.com/docs/user_guide/audience/manage_audience/user_profiles/"
+    },
+    {
+     "id": "deliverability-center-surfaces-microsoft-snds-data-for-amazon-ses-customers",
+     "title": "Deliverability Center surfaces Microsoft SNDS data for Amazon SES customers",
+     "section": "Data & Reporting",
+     "label": "",
+     "summary": "For workspaces that send email through Amazon SES, the Deliverability Center displays Microsoft SNDS metrics for your dedicated sending IPs. Braze backfills up to 90 days of historical SNDS data when this feature is turned on for your workspace.",
+     "doc": "https://www.braze.com/docs/deliverability_center/"
+    },
+    {
+     "id": "unified-brazeai-assistants-in-operator",
+     "title": "Unified BrazeAI assistants in Operator",
+     "section": "BrazeAI",
+     "label": "",
+     "summary": "The standalone BrazeAI assistants found throughout the dashboard are unified into BrazeAI Operator, establishing Operator as the single AI assistant for marketer-facing generative AI assistance across the dashboard. The following assistants now route through Operator: AI Liquid Agent AI Copywriter AI HTML Email Template agent AI Image generator Content QA with AI AI Copilot for Data Transformations",
+     "doc": "https://www.braze.com/docs/user_guide/brazeai/operator/"
+    },
+    {
+     "id": "operator-support-for-campaign-creation-and-editing",
+     "title": "Operator support for campaign creation and editing",
+     "section": "BrazeAI",
+     "label": "",
+     "summary": "Operator can now create and edit entire campaigns, not just compose messages. From a single natural-language prompt or campaign brief, Operator builds a ready-to-review campaign end to end—composing the message, scheduling delivery, targeting an audience, and assigning conversion events—then recaps what it built in the review step. Previously, Operator could compose the message (one of the five campaign creation…",
+     "doc": "https://www.braze.com/docs/user_guide/brazeai/operator/"
+    },
+    {
+     "id": "operator-support-for-content-blocks",
+     "title": "Operator support for Content Blocks",
+     "section": "BrazeAI",
+     "label": "",
+     "summary": "Operator can now create and edit Content Blocks—the reusable snippets you build once and reference across multiple messages—directly from a natural-language prompt. From the Content Blocks page, ask Operator to create a Content Block with a new design or edit an existing one, and Operator generates or updates the content for you to review.",
+     "doc": "https://www.braze.com/docs/user_guide/brazeai/operator/"
+    },
+    {
+     "id": "agent-console-templates-built-with-operator",
+     "title": "Agent Console templates built with Operator",
+     "section": "BrazeAI",
+     "label": "",
+     "summary": "When building an agent in Agent Console, you can choose to create a custom agent or select an option in Create an agent with Operator to use BrazeAI Operator to apply a starting template. Operator can pre-configure instructions, output fields, and context for the following Agent Console starting templates.",
+     "doc": "https://www.braze.com/docs/user_guide/brazeai/agents/creating_agents/#agent-templates-built-with-operator"
+    },
+    {
+     "id": "agent-console-enhancements",
+     "title": "Agent Console enhancements",
+     "section": "BrazeAI",
+     "label": "",
+     "summary": "You can do the following in the Agent Console: Configure pre-set use cases with Operator through the Create agent button dropdown. Duplicate existing agents from the agent list. Save agents as drafts during creation and complete configurations later. Set fallback output values for Canvas agents to prevent output variables from setting to null if the agent errors out. Set required input fields for a Catalog agentic…",
+     "doc": "https://www.braze.com/docs/user_guide/brazeai/agents/"
+    },
+    {
+     "id": "edit-a-launched-content-optimizer-step",
+     "title": "Edit a launched Content Optimizer step",
+     "section": "BrazeAI",
+     "label": "beta",
+     "summary": "After your Canvas is launched, you can now update a Content Optimizer step to: Add new variants to any existing component, either manually or using AI-generated suggestions, up to the five-variant limit per component. Deactivate variants to stop sending them to users. Re-activate previously deactivated variants, as long as doing so keeps the component at or below the five-variant limit.",
+     "doc": "https://www.braze.com/docs/user_guide/messaging/canvas/canvas_components/content_optimizer_step/#edit-a-launched-step"
+    },
+    {
+     "id": "user-dismissals-for-banners",
+     "title": "User dismissals for Banners",
+     "section": "Channels & Touchpoints",
+     "label": "ga",
+     "summary": "You can allow users to manually dismiss a Banner by selecting Banner can be dismissed when configuring dismissal behavior. This option is beneficial in scenarios where you want to promote a limited-time sale for all app users, but allow them to dismiss the message if they aren't interested.",
+     "doc": "https://www.braze.com/docs/user_guide/channels/banners/create_a_banner/#dismiss-behavior"
+    },
+    {
+     "id": "custom-click-tracking-for-banners",
+     "title": "Custom click tracking for Banners",
+     "section": "Channels & Touchpoints",
+     "label": "ga",
+     "summary": "For more granular click tracking for Banners, you can assign a custom identifier to each interactive element using the Identifier for Reporting field in its properties panel.",
+     "doc": "https://www.braze.com/docs/user_guide/channels/banners/create_a_banner/#step-32-define-on-click-behavior-optional"
+    },
+    {
+     "id": "re-eligibility-for-banners",
+     "title": "Re-eligibility for Banners",
+     "section": "Channels & Touchpoints",
+     "label": "",
+     "summary": "When re-eligibility is enabled for Banner campaigns, users who dismiss a Banner can become eligible again after a configurable cooldown window that starts at dismissal. If re-eligibility isn't turned on, dismissed users remain ineligible. To configure re-eligibility, see Configure re-eligibility. Note that Canvas Banner steps use Canvas re-entry settings instead.",
+     "doc": "https://www.braze.com/docs/user_guide/channels/banners/create_a_banner/#re-eligibility"
+    },
+    {
+     "id": "quick-push-ab-testing",
+     "title": "Quick Push A/B Testing",
+     "section": "Channels & Touchpoints",
+     "label": "ga",
+     "summary": "Quick Push A/B Testing now supports multi-platform push campaigns and Canvas steps through variant groups, so you can test aligned iOS and Android message variations in one workflow. For more information, refer to Multiple platform push messages.",
+     "doc": "https://www.braze.com/docs/user_guide/channels/push/create_a_push_message/multiple_platform_push/#use-cases"
+    },
+    {
+     "id": "optimize-with-brazeai",
+     "title": "Optimize with BrazeAI™",
+     "section": "Channels & Touchpoints",
+     "label": "early",
+     "summary": "Optimize with BrazeAI™ automatically turns on when you add multiple push variants, applies recommended experiment defaults, and optimizes toward the highest-performing variant. You can turn it off if you need to send immediately. For more information, see Optimizing A/B tests with BrazeAI.",
+     "doc": "https://www.braze.com/docs/user_guide/brazeai/intelligence_suite/variant_selection"
+    },
+    {
+     "id": "whatsapp-test-send-results",
+     "title": "WhatsApp test send results",
+     "section": "Channels & Touchpoints",
+     "label": "",
+     "summary": "After sending a test WhatsApp message, you can view a detailed delivery report directly in the message composer. This helps you confirm your message reached the intended recipient and troubleshoot failures before launch.",
+     "doc": "https://www.braze.com/docs/user_guide/channels/whatsapp/create_a_whatsapp_message/#step-4-view-test-send-results"
+    },
+    {
+     "id": "convercus---data-and-analytics---loyalty",
+     "title": "Convercus - Data and Analytics - Loyalty",
+     "section": "Partnerships",
+     "label": "",
+     "summary": "Convercus is a SaaS loyalty and coupon platform that helps brands and retailers grow customer frequency, basket value, and repurchase rates through omnichannel loyalty programs and personalized coupon campaigns.",
+     "doc": "https://www.braze.com/docs/partners/data_and_analytics/loyalty/convercus/"
+    },
+    {
+     "id": "copy-pastd---message-orchestration---templates",
+     "title": "Copy Pastd - Message Orchestration - Templates",
+     "section": "Partnerships",
+     "label": "",
+     "summary": "Copy Pastd Building Blocks is a drag-and-drop email builder that pushes Liquid-powered Content Blocks and full templates directly into your Braze workspace. Design once, sync to Braze, and reuse the same components across campaigns, Canvases, and triggered flows without rebuilding HTML each time.",
+     "doc": "https://www.braze.com/docs/partners/copy_pastd/"
+    },
+    {
+     "id": "databricks-mosaic---ai-model-providers",
+     "title": "Databricks Mosaic - AI Model Providers",
+     "section": "Partnerships",
+     "label": "",
+     "summary": "Databricks Mosaic is Databricks' unified platform for building, deploying, and managing AI and machine learning models at scale on the Databricks Data Intelligence Platform.",
+     "doc": "https://www.braze.com/docs/partners/databricks_mosaic/"
+    },
+    {
+     "id": "dinmo---data-and-analytics---reverse-etl",
+     "title": "DinMo - Data and Analytics - Reverse ETL",
+     "section": "Partnerships",
+     "label": "",
+     "summary": "DinMo is a composable customer data platform (CDP) that connects your cloud data warehouse to Braze through reverse Extract, Transform, Load (ETL). Marketing teams can build audience segments from warehouse data, sync user attributes and events into Braze, and keep subscription statuses up to date without CSV uploads or engineering support.",
+     "doc": "https://www.braze.com/docs/partners/dinmo/"
+    },
+    {
+     "id": "emailshepherd---message-orchestration---templates",
+     "title": "EmailShepherd - Message Orchestration - Templates",
+     "section": "Partnerships",
+     "label": "",
+     "summary": "EmailShepherd is an agentic email creation platform built on your Email Design System that allows your whole marketing team—and AI agents—to produce on-brand, production-ready emails without bottlenecks. The Braze integration publishes approved emails directly to your Braze workspace, so marketers can scale email production in Braze without sacrificing brand consistency.",
+     "doc": "https://www.braze.com/docs/partners/emailshepherd/"
+    },
+    {
+     "id": "talkable---message-personalization---referrals",
+     "title": "Talkable - Message Personalization - Referrals",
+     "section": "Partnerships",
+     "label": "",
+     "summary": "Talkable helps consumer brands turn happy customers into a scalable referral channel. With the Braze integration, marketing email opt-ins captured in Talkable referral campaigns flow into Braze in real time, giving your team the consent, context, and campaign data you need to welcome, segment, and engage every new advocate and friend.",
+     "doc": "https://www.braze.com/docs/partners/talkable/"
+    },
+    {
+     "id": "sdk-breaking-updates",
+     "title": "SDK breaking updates",
+     "section": "SDK",
+     "label": "",
+     "summary": "The latest SDK updates have been released. Breaking updates are listed in the SDK updates section; all other updates can be found in the corresponding SDK changelogs.",
+     "doc": ""
+    }
+   ]
+  },
+  {
+   "date": "2026-05-28",
+   "url": "https://www.braze.com/docs/releases/2026/5_28_26/",
+   "items": [
+    {
+     "id": "push-performance-dashboard",
+     "title": "Push Performance dashboard",
+     "section": "Data & Reporting",
+     "label": "",
+     "summary": "The Push Performance dashboard gives you a single, channel-level view of push engagement, including sends, bounces, deliveries, and direct, influenced, and total open rates over a configurable time window. Use it to understand the overall health of your push channel without rolling up data from individual campaigns or Canvases.",
+     "doc": "https://www.braze.com/docs/user_guide/analytics/dashboards/channel_performance/push#push-performance-dashboard"
+    },
+    {
+     "id": "geolocation-fields-in-catalog-selections",
+     "title": "Geolocation fields in catalog selections",
+     "section": "Data & Reporting",
+     "label": "ga",
+     "summary": "Catalogs now support distance-based filtering with the new geolocation field type and Catalog Selection operators. This helps you create more relevant location-aware experiences, such as showing each user their nearest restaurant, filtering open properties within 50 km for a real estate campaign, or targeting stores near a specific event. Instead of approximating geographic targeting with city or region codes, you…",
+     "doc": "https://www.braze.com/docs/user_guide/data/activation/catalogs/selections"
+    },
+    {
+     "id": "banner-and-rcs-for-report-builder",
+     "title": "Banner and RCS for Report Builder",
+     "section": "Data & Reporting",
+     "label": "",
+     "summary": "Report Builder supports Banner as a channel and RCS as a sub-category under SMS, so you can measure performance for both directly in your custom reports alongside every other Braze channel.",
+     "doc": "https://www.braze.com/docs/report_builder/"
+    },
+    {
+     "id": "ecommercecart_updated-event-actions",
+     "title": "`ecommerce.cart_updated` event actions",
+     "section": "Data & Reporting",
+     "label": "",
+     "summary": "The ecommerce.cart_updated event supports add and remove actions alongside replace, allowing you to send incremental cart changes instead of a full cart snapshot on every update.",
+     "doc": "https://www.braze.com/docs/user_guide/data/activation/events/recommended_events/?tab=ecommerce.cart_updated#code-examples"
+    },
+    {
+     "id": "content-optimizer-for-sms-mms-and-rcs-messages",
+     "title": "Content Optimizer for SMS, MMS, and RCS messages",
+     "section": "BrazeAI",
+     "label": "beta",
+     "summary": "You can use Content Optimizer to optimize hooks, bodies, and CTAs for SMS, MMS, and RCS messages. Content Optimizer helps you test and optimize message content at scale, using AI to generate and evaluate high volumes of content variants automatically.",
+     "doc": "https://www.braze.com/docs/user_guide/brazeai/content_optimizer"
+    },
+    {
+     "id": "workspace-time-zones",
+     "title": "Workspace time zones",
+     "section": "Orchestration",
+     "label": "ga",
+     "summary": "Use workspace time zones to define specific time zones for individual workspaces. This makes scheduled campaigns and Canvases (that don’t use local time or Intelligent Timing) send according to the workspace's designated time zone, rather than the overarching company time zone.",
+     "doc": "https://www.braze.com/docs/user_guide/administer/global/admin_settings/workspace_time_zone"
+    },
+    {
+     "id": "whatsapp-inbound_profile_name",
+     "title": "WhatsApp `inbound_profile_name`",
+     "section": "Channels & Touchpoints",
+     "label": "",
+     "summary": "You can automatically capture a user's WhatsApp display name from Meta's inbound messaging webhook and write it to the user's Braze profile. When an inbound WhatsApp message is received, Braze exposes the profile name as a new WhatsApp Liquid attribute, {{whats_app.${inbound_profile_name}}}, which you can reference in a Canvas User Update step to save to a profile field.",
+     "doc": "https://www.braze.com/docs/user_guide/messaging/design_and_edit/personalize/liquid/supported_personalization_tags/"
+    },
+    {
+     "id": "orphaned-sms-subscription-states",
+     "title": "Orphaned SMS subscription states",
+     "section": "Channels & Touchpoints",
+     "label": "",
+     "summary": "Braze automatically manages orphaned subscription state records (subscription data stored for a phone number or email address not tied to any user profile) to prevent unintended subscription state inheritance. This protects users from scenarios where a newly created user profile incorrectly inherits subscription state from a previously deleted or unrelated user.",
+     "doc": "https://www.braze.com/docs/user_guide/channels/sms_mms_and_rcs/message_setup/subscription_groups/#how-braze-handles-orphaned-subscription-states"
+    },
+    {
+     "id": "chord---customer-data-platform",
+     "title": "Chord - Customer Data Platform",
+     "section": "Partnerships",
+     "label": "",
+     "summary": "Chord provides a customer data platform that captures and standardizes events from your eCommerce storefront. When you connect Chord to Braze, purchase activity, behavioral events, and identity updates flow into Braze so you can trigger campaigns and keep profiles current without building those pipelines yourself.",
+     "doc": "https://www.braze.com/docs/partners/chord/"
+    },
+    {
+     "id": "better-email---templates",
+     "title": "Better Email - Templates",
+     "section": "Partnerships",
+     "label": "",
+     "summary": "Better Email is a collaborative email creation platform built around an Email Design System. Teams can design, manage, and export production-ready emails from a shared system of blocks and styles, ensuring brand consistency at scale without relying on developers or agencies.",
+     "doc": "https://www.braze.com/docs/partners/better_email/"
+    },
+    {
+     "id": "dailyplay---dynamic-content",
+     "title": "DailyPlay - Dynamic Content",
+     "section": "Partnerships",
+     "label": "",
+     "summary": "DailyPlay is a gamification platform. Use it to launch personalized, branded games and built-in reward systems that deepen engagement and improve retention.",
+     "doc": "https://www.braze.com/docs/partners/dailyplay/"
+    },
+    {
+     "id": "sdk-breaking-updates",
+     "title": "SDK breaking updates",
+     "section": "SDK",
+     "label": "",
+     "summary": "The latest SDK updates have been released. Breaking updates are listed in the SDK updates section; all other updates can be found in the corresponding SDK changelogs.",
+     "doc": ""
+    }
+   ]
+  },
+  {
+   "date": "2026-04-30",
+   "url": "https://www.braze.com/docs/releases/2026/4_30_26/",
+   "items": [
+    {
+     "id": "quick-user-add-for-individual-profile-creation",
+     "title": "Quick User Add for individual profile creation",
+     "section": "Data & Reporting",
+     "label": "ga",
+     "summary": "You can now create an individual user profile from Import Users by selecting Quick User Add and entering an email or external ID.",
+     "doc": "https://www.braze.com/docs/user_guide/audience/manage_audience/import_users/csv_import/"
+    },
+    {
+     "id": "zero-copy-cdi-syncs-for-canvas-triggers",
+     "title": "Zero-copy CDI syncs for Canvas triggers",
+     "section": "Data & Reporting",
+     "label": "ga",
+     "summary": "CDI now supports the Canvas triggers data type for zero-copy personalization. You can trigger Canvases from warehouse or S3 data and pass context fields without persisting those fields on Braze user profiles.",
+     "doc": "https://www.braze.com/docs/user_guide/data/unification/cloud_ingestion/zero_copy_sync/"
+    },
+    {
+     "id": "ecommerce-recommended-events",
+     "title": "eCommerce recommended events",
+     "section": "Data & Reporting",
+     "label": "ga",
+     "summary": "eCommerce recommended events cover six steps in the purchase journey: product_viewed, cart_updated, checkout_started, order_placed, order_cancelled, and order_refunded. When you successfully send these events, Braze validates the data and makes it available to a growing set of platform features.",
+     "doc": "https://www.braze.com/docs/user_guide/data/activation/events/recommended_events/"
+    },
+    {
+     "id": "new-banner-and-whatsapp-currents-updates",
+     "title": "New Banner and WhatsApp Currents updates",
+     "section": "Currents and Datashare",
+     "label": "ga",
+     "summary": "Currents and Datashare now include a new Banner.Dismiss event and additional fields for existing WhatsApp events.",
+     "doc": "https://www.braze.com/docs/user_guide/data/distribution/braze_currents/event_glossary/currents_changelogs"
+    },
+    {
+     "id": "multi-language-translations",
+     "title": "Multi-language translations",
+     "section": "Orchestration",
+     "label": "ga",
+     "summary": "Compose multi-language messages with quick, one-time locale setup that doesn't require complex code and enables you to send to all of your markets with confidence.",
+     "doc": "https://www.braze.com/docs/user_guide/messaging/messaging_fundamentals/localization/locales_in_messages/"
+    },
+    {
+     "id": "granular-permissions-migration",
+     "title": "Granular permissions migration",
+     "section": "Orchestration",
+     "label": "ga",
+     "summary": "Managing who can access your account and perform specific actions is critical for both security and operational efficiency. To give you more control, Braze is introducing granular permissions, a more flexible and precise way to manage user access across your account.",
+     "doc": "https://www.braze.com/docs/user_guide/administer/global/user_management/permissions"
+    },
+    {
+     "id": "send-to-destination-canvas-component",
+     "title": "Send to Destination Canvas component",
+     "section": "Orchestration",
+     "label": "ga",
+     "summary": "The Send to Destination step allows you to send users from one Canvas to another. For example, if you have two Canvases that share messaging for promotional offers, you can use Send to Destination to connect these Canvases.",
+     "doc": "https://www.braze.com/docs/user_guide/messaging/canvas/canvas_components/send_to_destination"
+    },
+    {
+     "id": "canvas-context-enhancements",
+     "title": "Canvas Context enhancements",
+     "section": "Orchestration",
+     "label": "ga",
+     "summary": "In Canvas, you can now reference context variables to set: A removal event for Content Cards The expiration of Content Cards",
+     "doc": "https://www.braze.com/docs/user_guide/channels/content_cards/create_a_content_card/card_creation/?tab=canvas"
+    },
+    {
+     "id": "delivery-validation-advancement-behavior-for-message-steps",
+     "title": "Delivery validation advancement behavior for Message steps",
+     "section": "Orchestration",
+     "label": "ga",
+     "summary": "Delivery validations provide an additional check to confirm your audience meets the delivery criteria at message send. If a user doesn’t meet the set delivery validations for a Message step, you can use the Delivery validations advancement behavior setting to determine if the user should advance to the next step or exit the Canvas.",
+     "doc": "https://www.braze.com/docs/user_guide/messaging/canvas/canvas_components/message_step/#delivery-validations"
+    },
+    {
+     "id": "workspace-messaging-rate-limits",
+     "title": "Workspace messaging rate limits",
+     "section": "Orchestration",
+     "label": "ga",
+     "summary": "Use workspace messaging rate limits to regulate the delivery rate of your outgoing messages from your platform to make sure your users are receiving the messages they need to. Workspace messaging rate limits are rolling out gradually, so you may not see these settings in your dashboard yet.",
+     "doc": "https://www.braze.com/docs/user_guide/administer/global/workspace_settings/messaging_rate_limits"
+    },
+    {
+     "id": "whatsapp-template-builder",
+     "title": "WhatsApp Template Builder",
+     "section": "Channels & Touchpoints",
+     "label": "early",
+     "summary": "The WhatsApp Template Builder lets you create and submit WhatsApp message templates directly in Braze—no need to switch between Braze and the Meta Business Manager. After Meta approves your template, use it in as many campaigns and Canvases as you’d like.",
+     "doc": "https://www.braze.com/docs/user_guide/channels/whatsapp/message_features_and_optimization/"
+    },
+    {
+     "id": "shopify-product-tags-metafields-and-collections",
+     "title": "Shopify product tags, metafields, and collections",
+     "section": "Channels & Touchpoints",
+     "label": "ga",
+     "summary": "You can now sync Shopify product tags, collections, and metafields from your Shopify store into your Braze catalog. This provides richer product data for personalization, segmentation, and catalog-based messaging without custom workarounds.",
+     "doc": "https://www.braze.com/docs/partners/ecommerce/shopify/shopify_catalogs/"
+    },
+    {
+     "id": "gravty---data-and-analytics---loyalty",
+     "title": "GRAVTY - Data and Analytics - Loyalty",
+     "section": "Partnerships",
+     "label": "ga",
+     "summary": "GRAVTY® is an enterprise-grade loyalty platform from Loyalty Juggernaut Inc. (LJI) that enables brands across retail, travel, restaurants (including quick-service restaurants), and financial services to design, manage, and scale next-generation programs—driving measurable growth in engagement, retention, and customer lifetime value through personalized, data-led experiences.",
+     "doc": "https://www.braze.com/docs/partners/data_and_analytics/loyalty/lji"
+    },
+    {
+     "id": "sdk-breaking-updates",
+     "title": "SDK breaking updates",
+     "section": "SDK",
+     "label": "ga",
+     "summary": "The latest SDK updates have been released. Breaking updates are listed in the SDK updates section; all other updates can be found in the corresponding SDK changelogs.",
+     "doc": ""
+    }
+   ]
+  },
+  {
+   "date": "2026-04-02",
+   "url": "https://www.braze.com/docs/releases/2026/4_2_26/",
+   "items": [
+    {
+     "id": "new-banner-channel-fields-in-currents-and-datashare-events",
+     "title": "New Banner channel fields in Currents and Datashare events",
+     "section": "Data & Reporting",
+     "label": "",
+     "summary": "Braze added fields for existing Banner channel events in Currents and Datashare exports. For a list of these event and field updates, see Changes in Version 7.",
+     "doc": "https://www.braze.com/docs/user_guide/data/distribution/braze_currents/event_glossary/currents_changelogs/#changes-for-storage"
+    },
+    {
+     "id": "mixpanel-eu-and-india-data-center-support-for-currents",
+     "title": "Mixpanel EU and India data center support for Currents",
+     "section": "Data & Reporting",
+     "label": "",
+     "summary": "The Currents Mixpanel integration now supports Mixpanel's EU and India data centers. When you configure a Mixpanel integration, you can choose which Mixpanel region Braze sends your data to. This update supports Mixpanel's growing international footprint for mutual customers. For more information, see Mixpanel.",
+     "doc": "https://www.braze.com/docs/partners/data_and_analytics/analytics/mixpanel"
+    },
+    {
+     "id": "reusable-cloud-data-ingestion-cdi-sources-and-syncs",
+     "title": "Reusable Cloud Data Ingestion (CDI) sources and syncs",
+     "section": "Data & Reporting",
+     "label": "early",
+     "summary": "Cloud Data Ingestion (CDI) has a new design that separates sources and syncs, so you can reuse one source across multiple syncs. Existing syncs migrate automatically to the new sources and syncs model with no downtime. Go to Cloud Data Ingestion > Sources to view, edit, or create sources, then select a source from the dropdown when creating a sync. This change reduces repetitive setup, and creates a foundation for…",
+     "doc": "https://www.braze.com/docs/user_guide/data/unification/cloud_ingestion/sources"
+    },
+    {
+     "id": "file-support-tickets-from-brazeai-operatortm",
+     "title": "File support tickets from BrazeAI Operator",
+     "section": "BrazeAI",
+     "label": "ga",
+     "summary": "BrazeAI Operator now includes a flow to file Braze support tickets without leaving the dashboard. For steps, auto-included context, and tips for faster resolution, see File support tickets with BrazeAI Operator.",
+     "doc": "https://www.braze.com/docs/user_guide/brazeai/operator/"
+    },
+    {
+     "id": "multi-language-translations",
+     "title": "Multi-language translations",
+     "section": "Orchestration",
+     "label": "ga",
+     "summary": "After adding locales to your workspace, use multi-language translations to target users in different languages all within a single push, email, Banner, in-app message, or Content Block.",
+     "doc": "https://www.braze.com/docs/user_guide/messaging/messaging_fundamentals/localization/locales_in_messages"
+    },
+    {
+     "id": "canvas-context-enhancements",
+     "title": "Canvas Context enhancements",
+     "section": "Orchestration",
+     "label": "ga",
+     "summary": "In Canvas, you can now reference context variables to set: An expiration for Banners and in-app messages in a Message step A personalized delays for Action Paths steps",
+     "doc": "https://www.braze.com/docs/user_guide/messaging/design_and_edit/personalize/sources/context_variables#set-an-expiration"
+    },
+    {
+     "id": "kakaotalk",
+     "title": "KakaoTalk",
+     "section": "Channels & Touchpoints",
+     "label": "ga",
+     "summary": "KakaoTalk is a messaging channel that enables broadcast messaging and 1:1 chat with users. Create a personalized user experience by using Liquid and other dynamic content to build an environment that fosters and enhances a rich user experience with your brand.",
+     "doc": "https://www.braze.com/docs/kakaotalk"
+    },
+    {
+     "id": "banners-in-canvas",
+     "title": "Banners in Canvas",
+     "section": "Channels & Touchpoints",
+     "label": "ga",
+     "summary": "You can use Banners as a messaging channel in Canvas Message steps. Banners allow you to personalize app or website content dynamically, reflecting real-time user eligibility and behavior.",
+     "doc": "https://www.braze.com/docs/user_guide/channels/banners"
+    },
+    {
+     "id": "cataboom---message-personalization---visual-and-interactive-content",
+     "title": "CataBoom - Message Personalization - Visual and Interactive Content",
+     "section": "Partnerships",
+     "label": "",
+     "summary": "CataBoom is a gamification platform. Brands use it to build and launch interactive digital experiences, including spin-to-win games, quizzes, and instant-win games. Those experiences deepen engagement and collect first-party data.",
+     "doc": "https://www.braze.com/docs/partners/cataboom"
+    },
+    {
+     "id": "denada---message-orchestration---templates",
+     "title": "Denada - Message Orchestration - Templates",
+     "section": "Partnerships",
+     "label": "",
+     "summary": "Denada is an AI-powered marketing creative platform that lets subject matter experts create on-brand marketing materials through natural conversation. With Denada, teams can go from ideation to finished email content without needing design expertise.",
+     "doc": "https://www.braze.com/docs/partners/denada"
+    },
+    {
+     "id": "poq---ecommerce---mobile-app-platform",
+     "title": "Poq - eCommerce - Mobile app platform",
+     "section": "Partnerships",
+     "label": "",
+     "summary": "Poq enables enterprise businesses to rapidly launch, manage, and scale fully native iOS and Android apps—delivering high-performance mobile experiences that drive commerce and bring your brand promise to life.",
+     "doc": "https://www.braze.com/docs/partners/poq"
+    },
+    {
+     "id": "the-trade-desk--canvas-audience-sync",
+     "title": "The Trade Desk – Canvas Audience Sync",
+     "section": "Partnerships",
+     "label": "",
+     "summary": "Using the Braze Audience Sync to The Trade Desk, you can dynamically sync your first-party user data from Braze directly into The Trade Desk for ad retargeting, lookalike modeling, and suppression.",
+     "doc": "https://www.braze.com/docs/partners/canvas_audience_sync/trade_desk_audience_sync/"
+    },
+    {
+     "id": "connect-your-integrated-development-environment-ide-to-the-docs-mcp",
+     "title": "Connect your Integrated Development Environment (IDE) to the Docs MCP",
+     "section": "SDK",
+     "label": "",
+     "summary": "Use AI coding assistants to accelerate your Braze integration workflow by connecting your Integrated Development Environment (IDE) to the Braze Docs MCP through Context7. This gives your assistant direct access to current Braze documentation, so it can generate more accurate SDK guidance, code examples, and troubleshooting help in your development environment. For setup steps in Cursor, Claude Desktop, and VS Code…",
+     "doc": "https://www.braze.com/docs/developer_guide/getting_started/build_with_llm/#connecting-to-the-braze-docs-mcp"
+    },
+    {
+     "id": "sdk-breaking-updates",
+     "title": "SDK breaking updates",
+     "section": "SDK",
+     "label": "",
+     "summary": "The latest SDK updates have been released. Breaking updates are listed in the SDK updates section; all other updates can be found in the corresponding SDK changelogs.",
+     "doc": ""
+    }
+   ]
+  },
+  {
+   "date": "2026-03-05",
+   "url": "https://www.braze.com/docs/releases/2026/3_5_26/",
+   "items": [
+    {
+     "id": "new-data-center",
+     "title": "New data center",
+     "section": "Data & Reporting",
+     "label": "ga",
+     "summary": "Braze has launched a new data center: JP-01. You can sign up for region-specific data centers when setting up your Braze account.",
+     "doc": "https://www.braze.com/docs/user_guide/data/infrastructure/data_centers/"
+    },
+    {
+     "id": "context-variables",
+     "title": "Context variables",
+     "section": "Data & Reporting",
+     "label": "ga",
+     "summary": "Context variables are temporary pieces of data you can create and use within a user’s journey through a specific Canvas. Each time a user enters the Canvas—even if they have entered it before—the context variables will be redefined based on the latest entry data and Canvas setup. This approach allows each Canvas entry to maintain its own independent context, allowing users to have multiple active states within the…",
+     "doc": "https://www.braze.com/docs/user_guide/messaging/design_and_edit/personalize/sources/context_variables/"
+    },
+    {
+     "id": "cloud-data-ingestion-sources",
+     "title": "Cloud Data Ingestion sources",
+     "section": "Data & Reporting",
+     "label": "early",
+     "summary": "Cloud Data Ingestion has a new UI that separates sources from syncs, letting you reuse a single source across any number of syncs. This reduces duplicate configuration and simplifies setup when you have multiple syncs. If you have existing syncs, they're automatically migrated to the new sources-and-syncs structure with no downtime. To get started, go to Cloud Data Ingestion > Sources to view, edit, or create…",
+     "doc": "https://www.braze.com/docs/user_guide/data/unification/cloud_ingestion/sources/"
+    },
+    {
+     "id": "additional-fields-for-currents-and-data-share-events",
+     "title": "Additional fields for Currents and Data Share events",
+     "section": "Data & Reporting",
+     "label": "ga",
+     "summary": "Currents and Data Share events now include the following new fields to deepen the data available for analytics and downstream systems: agentconsole.AgentExecuted: Added error (string)—a description of any error that occurred. agentconsole.ToolInvocation: Added request_id (string)—a unique ID for the overall LLM request and complete execution. users.messages.rcs.InboundReceive: Added canvas_variation_name…",
+     "doc": "https://www.braze.com/docs/user_guide/data/distribution/braze_currents/event_glossary/currents_changelogs#changes-in-version-5-release-date-2026-02-04"
+    },
+    {
+     "id": "campaign-and-canvas-fields-for-snowflake-data-share",
+     "title": "Campaign and Canvas fields for Snowflake Data Share",
+     "section": "Data & Reporting",
+     "label": "ga",
+     "summary": "Snowflake Data Share now includes additional fields reflecting Campaign and Canvas information across 66 existing tables, including: campaign_name canvas_name canvas_step_name canvas_variation_name message_variation_name conversion_behavior experiment_split_name",
+     "doc": "https://www.braze.com/docs/user_guide/data/distribution/braze_currents/event_glossary/currents_changelogs"
+    },
+    {
+     "id": "csv-pre-import-validation-and-error-reporting",
+     "title": "CSV pre-import validation and error reporting",
+     "section": "Data & Reporting",
+     "label": "ga",
+     "summary": "CSV user imports now support pre-import validation and detailed error reporting. Before importing, select Validate file before importing on the Import Users page—Braze will scan your file and generate a report identifying rows that will fail entirely (errors) and rows that will succeed with some values skipped (warnings). You can download the report, fix your CSV, and re-upload, or proceed as-is. After the import…",
+     "doc": "https://www.braze.com/docs/user_guide/audience/manage_audience/import_users/"
+    },
+    {
+     "id": "messaging-observability",
+     "title": "Messaging Observability",
+     "section": "Data & Reporting",
+     "label": "early",
+     "summary": "Messaging Observability provides a high-level breakdown of message sending outcomes, allowing you to spot trends and diagnose potential issues in your messaging setup. This dashboard can help you understand why messages from your campaigns or Canvases may not have been sent as expected.",
+     "doc": "https://www.braze.com/docs/user_guide/analytics/dashboards/dashboard_builder/messaging_observability"
+    },
+    {
+     "id": "braze-agents-in-agent-console",
+     "title": "Braze Agents in Agent Console",
+     "section": "BrazeAI",
+     "label": "ga",
+     "summary": "Braze Agents are AI-powered helpers you can create inside Braze. Agents can generate content, make intelligent decisions, and enrich your data so you can deliver more personalized customer experiences. When you create an agent, you define its purpose and set guardrails for how it should behave. After it’s live, the agent can be deployed in Braze to generate personalized copy, make real-time decisions, or update…",
+     "doc": "https://www.braze.com/docs/user_guide/brazeai/agents/"
+    },
+    {
+     "id": "granular-user-permissions",
+     "title": "Granular user permissions",
+     "section": "Orchestration",
+     "label": "early",
+     "summary": "Braze is introducing granular permissions, a more flexible way to manage user access. Refer to Migrating to granular permissions to learn about the migration process, including how legacy permissions map to granular permissions.",
+     "doc": "https://www.braze.com/docs/user_guide/administer/global/user_management/permissions/"
+    },
+    {
+     "id": "channel-based-rate-limiting",
+     "title": "Channel-based rate limiting",
+     "section": "Orchestration",
+     "label": "ga",
+     "summary": "When setting a delivery speed rate limit for a multi-channel campaign or Canvas, you can choose to set either a shared rate limit or a channel-based limit. When a multichannel campaign or Canvas uses channel-based rate limiting, the rate limit applies to each of the selected channels. For example, you can set your campaign or Canvas to send a maximum of 5,000 webhooks and 2,500 SMS messages per minute across the…",
+     "doc": "https://www.braze.com/docs/user_guide/messaging/messaging_fundamentals/frequency_capping/#multichannel-campaigns-and-canvases"
+    },
+    {
+     "id": "canvas-context-step",
+     "title": "Canvas Context step",
+     "section": "Orchestration",
+     "label": "ga",
+     "summary": "Canvas Context steps let you create and update one or more variables for a user as they move through a Canvas. For example, if you have a Canvas that manages seasonal discounts, you can use a context variable to store a different discount code each time a user enters the Canvas.",
+     "doc": "https://www.braze.com/docs/user_guide/messaging/canvas/canvas_components/context/"
+    },
+    {
+     "id": "translate-locales-in-content-blocks",
+     "title": "Translate locales in Content Blocks",
+     "section": "Channels & Touchpoints",
+     "label": "early",
+     "summary": "After adding locales to your workspace, you can target users in different languages all within a Content Block.",
+     "doc": "https://www.braze.com/docs/user_guide/messaging/messaging_fundamentals/localization/locales_in_messages/"
+    },
+    {
+     "id": "algolia---search-recommendations",
+     "title": "Algolia - Search Recommendations",
+     "section": "Partnerships",
+     "label": "",
+     "summary": "Algolia is a search and discovery platform that helps developers build fast, relevant, and scalable search experiences. With a powerful API-first approach, Algolia combines advanced ranking algorithms with AI-driven insights for seamless site search, navigation, and personalized content discovery.",
+     "doc": "https://www.braze.com/docs/partners/ecommerce/product_search_recommendations/algolia"
+    },
+    {
+     "id": "anthropic---ai-model-provider",
+     "title": "Anthropic - AI Model Provider",
+     "section": "Partnerships",
+     "label": "",
+     "summary": "Anthropic is an AI safety and research company developing Claude, a next-generation AI assistant built to be helpful, honest, and safe for a wide range of language tasks.",
+     "doc": "https://www.braze.com/docs/partners/ai_model_providers/anthropic"
+    },
+    {
+     "id": "canva---message-personalization---creative-studio",
+     "title": "Canva - Message Personalization - Creative Studio",
+     "section": "Partnerships",
+     "label": "",
+     "summary": "Canva syncs your images in Canva directly to the Braze Media library, streamlining your creative workflow and keeping your visual assets up to date across all your messaging channels.",
+     "doc": "https://www.braze.com/docs/partners/canva"
+    },
+    {
+     "id": "dotseco---rewards",
+     "title": "DOTS.ECO - Rewards",
+     "section": "Partnerships",
+     "label": "",
+     "summary": "DOTS.ECO lets you reward users with real-world environmental impact through trackable digital certificates. Each certificate can include metadata like a shareable certificate URL and image URL, so users can view (and revisit) their proof of impact.",
+     "doc": "https://www.braze.com/docs/partners/additional_channels_and_extensions/extensions/rewards/dots_eco"
+    },
+    {
+     "id": "figma---message-personalization---creative-studio",
+     "title": "Figma - Message Personalization - Creative Studio",
+     "section": "Partnerships",
+     "label": "",
+     "summary": "Figma is a collaborative design platform that allows you to build, design, and prototype products. Use this integration to send images and visual assets from Figma directly into the Braze media library.",
+     "doc": "https://www.braze.com/docs/partners/figma"
+    },
+    {
+     "id": "flybuy---message-personalization---location",
+     "title": "Flybuy - Message Personalization - Location",
+     "section": "Partnerships",
+     "label": "",
+     "summary": "Flybuy by Radius Networks is the leading omnichannel location platform leveraging AI-powered technology to optimize speed of service across pickup, delivery, drive-thru, and dine-in. Through its integrated Marketing Suite, Flybuy also enables brands to deliver hyper-targeted, moment-based messages, helping to drive engagement, increase check size, and support broader loyalty initiatives.",
+     "doc": "https://www.braze.com/docs/partners/message_personalization/location/flybuy"
+    },
+    {
+     "id": "google-gemini---ai-model-provider",
+     "title": "Google Gemini - AI Model Provider",
+     "section": "Partnerships",
+     "label": "",
+     "summary": "Google Gemini is Google’s family of AI models that combines advanced reasoning across text, code, and images to help brands deliver smarter, more personalized experiences.",
+     "doc": "https://www.braze.com/docs/partners/ai_model_providers/google_gemini"
+    },
+    {
+     "id": "limbik---message-personalization---personalization-engines",
+     "title": "Limbik - Message Personalization - Personalization Engines",
+     "section": "Partnerships",
+     "label": "",
+     "summary": "Limbik is your AI resonance layer—predicting how real audiences interpret and respond to messages, concepts, and AI outputs before they reach the market. Powered by continuous primary research across 60+ countries and 25+ languages, Limbik delivers human-validated synthetic audiences—digital populations that simulate real audience response at machine speed and with research-grade accuracy (95% confidence, 1.5% to 3%…",
+     "doc": "https://www.braze.com/docs/partners/message_personalization/dynamic_content/personalization_engines/limbik"
+    },
+    {
+     "id": "linkrunner---message-orchestration---attribution",
+     "title": "Linkrunner - Message Orchestration - Attribution",
+     "section": "Partnerships",
+     "label": "",
+     "summary": "Linkrunner is a mobile attribution and analytics platform that helps you track and analyze your user acquisition campaigns.",
+     "doc": "https://www.braze.com/docs/partners/message_orchestration/attribution/linkrunner"
+    },
+    {
+     "id": "mailizio---message-orchestration---templates",
+     "title": "Mailizio - Message Orchestration - Templates",
+     "section": "Partnerships",
+     "label": "",
+     "summary": "Mailizio is an email creation and management platform that makes it easy to design reusable, brand-safe content using an intuitive visual editor. With Mailizio's integration to Braze, you can export your content blocks and email templates, then automatically generate in-app messages from those same assets, enabling fast and fully controlled campaign deployment.",
+     "doc": "https://www.braze.com/docs/partners/message_orchestration/templates/Mailizio"
+    },
+    {
+     "id": "open-loyalty---data-and-analytics---loyalty",
+     "title": "Open Loyalty - Data and Analytics - Loyalty",
+     "section": "Partnerships",
+     "label": "",
+     "summary": "Open Loyalty is a cloud-based loyalty program platform that lets you build and manage customer loyalty and rewards programs. The Braze and Open Loyalty integration syncs loyalty data—such as points balance, tier changes, and expiry warnings—directly into Braze in real-time. This lets you trigger personalized messages (Email, Push, SMS) when a user's loyalty status changes.",
+     "doc": "https://www.braze.com/docs/partners/data_and_analytics/loyalty/openloyalty"
+    },
+    {
+     "id": "openai---ai-model-provider",
+     "title": "OpenAI - AI Model Provider",
+     "section": "Partnerships",
+     "label": "",
+     "summary": "OpenAI creates advanced AI models, like GPT, that enable natural language understanding and generation, empowering brands to build and scale meaningful customer interactions.",
+     "doc": "https://www.braze.com/docs/partners/ai_model_providers/openai"
+    },
+    {
+     "id": "shopgate---channels",
+     "title": "Shopgate - Channels",
+     "section": "Partnerships",
+     "label": "",
+     "summary": "Shopgate is a mobile commerce and omnichannel platform that helps merchants create shopping apps and improve the efficiency of brick-and-mortar stores through fulfillment tools and clienteling, meaning personalized in-store customer support based on customer data.",
+     "doc": "https://www.braze.com/docs/partners/additional_channels_and_extensions/additional_channels/shopgate"
+    },
+    {
+     "id": "splio---data-and-analytics---cohort-import",
+     "title": "Splio - Data and Analytics - Cohort Import",
+     "section": "Partnerships",
+     "label": "",
+     "summary": "Splio is an audience-building tool that lets you increase the number of campaigns and revenue without harming customer experience, and provides analytics to track the performance of CRM campaigns both online and offline.",
+     "doc": "https://www.braze.com/docs/partners/data_and_analytics/cohort_import/splio"
+    },
+    {
+     "id": "sdk-breaking-updates",
+     "title": "SDK breaking updates",
+     "section": "SDK",
+     "label": "",
+     "summary": "The latest SDK updates have been released. Breaking updates are listed in the SDK updates section; all other updates can be found in the corresponding SDK changelogs.",
+     "doc": ""
+    }
+   ]
+  },
+  {
+   "date": "2026-02-05",
+   "url": "https://www.braze.com/docs/releases/2026/2_5_26/",
+   "items": [
+    {
+     "id": "content-optimizer",
+     "title": "Content Optimizer",
+     "section": "BrazeAI",
+     "label": "beta",
+     "summary": "Content Optimizer is a continuous, high-variant content testing Canvas step that delivers automated engagement optimization. Using a drag-and-droppable interface similar to the message step, you can define the components you want to test, generate variants using AI (or enter them manually), and use Liquid tags to map these components to your message content.",
+     "doc": "https://www.braze.com/docs/user_guide/brazeai/content_optimizer"
+    },
+    {
+     "id": "ecommerce-recommended-events",
+     "title": "eCommerce recommended events",
+     "section": "Data & Reporting",
+     "label": "early",
+     "summary": "To match eCommerce recommended events with the existing purchase event, we added the \"Places Order\" conversion event, which is similar to \"Makes Purchase\".",
+     "doc": "https://www.braze.com/docs/user_guide/messaging/messaging_fundamentals/conversion_events/"
+    },
+    {
+     "id": "translate-locales-in-banners",
+     "title": "Translate locales in banners",
+     "section": "Channels & Touchpoints",
+     "label": "early",
+     "summary": "After adding locales to your workspace, you can target users in different languages all within a single banner.",
+     "doc": "https://www.braze.com/docs/user_guide/messaging/messaging_fundamentals/localization/locales_in_messages"
+    },
+    {
+     "id": "configure-width-for-drag-and-drop-content-blocks",
+     "title": "Configure width for drag-and-drop Content Blocks",
+     "section": "Channels & Touchpoints",
+     "label": "",
+     "summary": "Adjust the width of your Content Block by selecting the button in the navigation menu. The default width is 100% when not specified in your email global style settings; otherwise, the global settings will be honored.",
+     "doc": "https://www.braze.com/docs/user_guide/messaging/design_and_edit/editor_blocks?sdktab=email"
+    },
+    {
+     "id": "use-automated-ip-warming",
+     "title": "Use automated IP warming",
+     "section": "Channels & Touchpoints",
+     "label": "early",
+     "summary": "You can use automated IP warming to gradually increase your daily send volume, allowing inbox providers to learn and trust your sending patterns. Braze sends to your most engaged subscribers first, which allows daily volume to grow at a pace that matches best practices.",
+     "doc": "https://www.braze.com/docs/user_guide/message_building_by_channel/email/email_setup/ip_warming/#automated-ip-warming"
+    },
+    {
+     "id": "linkedin--canvas-audience-sync",
+     "title": "LinkedIn – Canvas Audience Sync",
+     "section": "Partnerships",
+     "label": "",
+     "summary": "Using the Braze Audience Sync to LinkedIn, you can add user data from your Braze integration to LinkedIn customer lists to deliver advertisements based on behavioral triggers, segmentation, and more. Any criteria you’d normally use to trigger a message (such as push, email, SMS, and webhook) in a Braze Canvas based on your user data can now trigger an ad to that user in your LinkedIn customer lists.",
+     "doc": "https://www.braze.com/docs/partners/canvas_audience_sync/linkedin_audience_sync/"
+    },
+    {
+     "id": "oracle-crowdtwist---data--analytics",
+     "title": "Oracle Crowdtwist - Data & analytics",
+     "section": "Partnerships",
+     "label": "",
+     "summary": "Oracle Crowdtwist is a leading cloud-native customer loyalty solution to empower brands to offer personalized customer experiences. Their solution offers over 100 default engagement paths, providing rapid time-to-value for marketers to develop a more complete view of the customer.",
+     "doc": "https://www.braze.com/docs/partners/crowdtwist"
+    },
+    {
+     "id": "fullstory---dynamic-content",
+     "title": "Fullstory - Dynamic Content",
+     "section": "Partnerships",
+     "label": "",
+     "summary": "Fullstory’s behavioral data platform helps technology leaders make better, more informed decisions. By injecting digital behavioral data into their analytics stack, Fullstory's patented technology unlocks the power of quality behavioral data at scale–transforming every digital visit into actionable insights.",
+     "doc": "https://www.braze.com/docs/partners/fullstory/"
+    },
+    {
+     "id": "open-loyalty---data--analytics",
+     "title": "Open Loyalty - Data & analytics",
+     "section": "Partnerships",
+     "label": "",
+     "summary": "Open Loyalty is a cloud-based loyalty program platform that lets you build and manage customer loyalty and rewards programs. The Braze and Open Loyalty integration syncs loyalty data—such as points balance, tier changes, and expiry warnings—directly into Braze in real-time. This lets you trigger personalized messages (Email, Push, SMS) when a user's loyalty status changes.",
+     "doc": "https://www.braze.com/docs/partners/openloyalty"
+    },
+    {
+     "id": "dotseco---extensions",
+     "title": "DOTS.ECO - Extensions",
+     "section": "Partnerships",
+     "label": "",
+     "summary": "DOTS.ECO lets you reward users with real-world environmental impact through trackable digital certificates. Each certificate can include metadata like a shareable certificate URL and image URL, so users can view (and revisit) their proof of impact.",
+     "doc": "https://www.braze.com/docs/partners/dots.eco"
+    },
+    {
+     "id": "mailizio---message-orchestration",
+     "title": "Mailizio - Message orchestration",
+     "section": "Partnerships",
+     "label": "",
+     "summary": "Mailizio is an email creation and management platform that makes it easy to design reusable, brand-safe content using an intuitive visual editor. With Mailizio's integration to Braze, you can export your content blocks and email templates, then automatically generate in-app messages from those same assets, enabling fast and fully controlled campaign deployment.",
+     "doc": "https://www.braze.com/docs/partners/mailizio/"
+    },
+    {
+     "id": "media-library-post-apis",
+     "title": "Media Library POST APIs",
+     "section": "APIs",
+     "label": "ga",
+     "summary": "Media Library assets can now be added via API, enabling customers, partners, and agencies to automate more of their message creation workflows. You can use the API to upload an asset file directly or copy a file from an existing URL. This feature unlocks integration and automation capabilities.",
+     "doc": "https://www.braze.com/docs/api/endpoints/media_library/manage_assets/create"
+    },
+    {
+     "id": "agent-console-events-for-storage-destinations-and-datashare",
+     "title": "Agent Console Events for Storage destinations and Datashare",
+     "section": "Currents and Datashare",
+     "label": "ga",
+     "summary": "Two new events are now available for Storage destinations (AWS S3, GCS, and Azure Blob Storage) and Snowflake Datashare: agentconsole.AgentExecuted and agentconsole.ToolInvocation. These events enable you to analyze Agent Console usage and details in your downstream systems, helping you understand and get the most out of your agent usage. Agents allow you to create and deploy intelligent agents that can perform…",
+     "doc": "https://www.braze.com/docs/user_guide/data/distribution/braze_currents/event_glossary/customer_behavior_events"
+    },
+    {
+     "id": "new-retry-events-for-individual-channels",
+     "title": "New 'Retry' events for individual channels",
+     "section": "Currents and Datashare",
+     "label": "ga",
+     "summary": "New retry events are now available for email, LINE, push notifications, SMS, webhooks, and WhatsApp channels. These events provide visibility into when frequency capping results in a scheduled message being delayed rather than aborted. When a message is deprioritized or frequency capped, it can now be retried within a configured retry window, giving you better insight into message delivery patterns and frequency…",
+     "doc": "https://www.braze.com/docs/user_guide/data/distribution/braze_currents/event_glossary/message_engagement_events"
+    },
+    {
+     "id": "add-new-time_ms-field-to-tokenstatechange-event",
+     "title": "Add new 'time_ms' field to TokenStateChange event",
+     "section": "Currents and Datashare",
+     "label": "ga",
+     "summary": "A new time_ms field has been added to the users.behaviors.pushnotification.TokenStateChange event, providing millisecond-level granularity for tracking push token state changes. This enhanced precision helps you understand the latest status of a push token when multiple changes occur within the same second, giving you confidence in downstream systems that you have the correct subscription status. For more…",
+     "doc": "https://www.braze.com/docs/user_guide/data/distribution/braze_currents/event_glossary/customer_behavior_events"
+    },
+    {
+     "id": "send-anonymous-user-to-tealium-destinations",
+     "title": "Send Anonymous user to Tealium Destinations",
+     "section": "Currents and Datashare",
+     "label": "ga",
+     "summary": "Events that do not have an external user ID defined can now be streamed to Tealium destinations. When you select the \"Include events from anonymous users\" checkbox on your Currents integration, events without an external user ID will be sent to the destination instead of being suppressed. This capability is critical for downstream analytics and use cases involving non-identified and anonymous users.",
+     "doc": "https://www.braze.com/docs/partners/data_and_analytics/customer_data_platform/tealium/tealium_for_currents?redirected=1"
+    },
+    {
+     "id": "email-open-event--machine_open-field",
+     "title": "Email Open event — \"machine_open\" field",
+     "section": "Currents and Datashare",
+     "label": "",
+     "summary": "The Email Open event now generates the \"machine_open\" field value so you can report on the _Machine Open_ metric.",
+     "doc": "https://www.braze.com/docs/user_guide/data/distribution/braze_currents/event_glossary/message_engagement_events#email-open-events"
+    },
+    {
+     "id": "sdk-breaking-updates",
+     "title": "SDK breaking updates",
+     "section": "SDK",
+     "label": "",
+     "summary": "The latest SDK updates have been released. Breaking updates are listed in the SDK updates section; all other updates can be found in the corresponding SDK changelogs.",
+     "doc": ""
+    }
+   ]
+  },
+  {
+   "date": "2026-01-08",
+   "url": "https://www.braze.com/docs/releases/2026/1_8_26/",
+   "items": [
+    {
+     "id": "updates-to-currents-events",
+     "title": "Updates to Currents events",
+     "section": "Data & Reporting",
+     "label": "ga",
+     "summary": "The following changes were made to Currents in Version 4: Field changes to event type users.behaviors.pushnotification.TokenStateChange: Added new string field push_token: Push token of the event Field changes to event type users.messages.pushnotification.Bounce: Added new string field push_token: Push token of the event Field changes to event type users.messages.pushnotification.Send: Added new string field…",
+     "doc": "https://www.braze.com/docs/user_guide/data/distribution/braze_currents/event_glossary/currents_changelogs"
+    },
+    {
+     "id": "export-sync-logs-by-all-rows",
+     "title": "Export sync logs by all rows",
+     "section": "Data & Reporting",
+     "label": "early",
+     "summary": "In the Cloud Data Ingestion Sync Log dashboard, you can choose to export the row-level logs for a sync run by: Rows with errors: Downloads a file containing only the rows that had an Error status. All rows: Downloads a file containing every row processed in the run.",
+     "doc": "https://www.braze.com/docs/user_guide/data/unification/cloud_ingestion/sync_logs/#exporting-sync-logs"
+    },
+    {
+     "id": "bring-your-own-byo-whatsapp-connector",
+     "title": "Bring Your Own (BYO) WhatsApp connector",
+     "section": "Channels & Touchpoints",
+     "label": "",
+     "summary": "The Bring Your Own (BYO) WhatsApp connector offers a partnership between Braze and Infobip, in which you give Braze access to your Infobip WhatsApp Business Manager (WABA). This allows you to manage and pay for messaging costs directly with Infobip while using Braze for segmentation, personalization, and campaign orchestration.",
+     "doc": "https://www.braze.com/docs/user_guide/channels/whatsapp/whatsapp_setup/byo_connector/"
+    },
+    {
+     "id": "banners-in-canvas",
+     "title": "Banners in Canvas",
+     "section": "Channels & Touchpoints",
+     "label": "early",
+     "summary": "You can select Banners as a messaging channel in a Message step for Canvas. You can use the drag-and-drop editor to create personalized inline messages, providing non-intrusive, contextually relevant experiences that update automatically at the start of each user session.",
+     "doc": "https://www.braze.com/docs/user_guide/messaging/canvas/canvas_components/message_step/"
+    },
+    {
+     "id": "dynamic-bcc",
+     "title": "Dynamic BCC",
+     "section": "Channels & Touchpoints",
+     "label": "ga",
+     "summary": "With dynamic BCC, you can use Liquid in your BCC address. Note that this feature is only available in Email Preferences and can’t be set on the campaign itself. Only one BCC address per email recipient is allowed.",
+     "doc": "https://www.braze.com/docs/user_guide/administrative/app_settings/email_settings/?tab=bcc%20address#dynamic-bcc"
+    },
+    {
+     "id": "channel-based-rate-limits",
+     "title": "Channel-based rate limits",
+     "section": "Channels & Touchpoints",
+     "label": "",
+     "summary": "As an alternative to a rate limit that gets shared across an entire multi-channel campaign or Canvas, you can select a specific rate limit per channel. In this case, the rate limit will apply to each of your selected channels. For example, you can set your campaign or Canvas to send a maximum of 5,000 webhooks and 2,500 SMS messages per minute across the campaign or Canvas. For more details, see Rate limiting and…",
+     "doc": "https://www.braze.com/docs/user_guide/messaging/messaging_fundamentals/frequency_capping/"
+    },
+    {
+     "id": "lilt---localization",
+     "title": "LILT - Localization",
+     "section": "Partnerships",
+     "label": "",
+     "summary": "LILT is the complete AI solution for enterprise translation and content creation. LILT enables global organizations to scale and optimize their content, product, communications, and support operations, with AI agents and fully automated workflows.",
+     "doc": "https://www.braze.com/docs/partners/lilt/"
+    }
+   ]
+  }
+ ]
+}

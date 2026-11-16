@@ -1,29 +1,9 @@
 {
- "updated": "2026-11-15T07:06:12+01:00",
+ "updated": "2026-11-16T07:43:12+01:00",
  "source": "https://learning.braze.com/calendar",
  "timezone": "Europe/Madrid",
- "count": 50,
+ "count": 48,
  "events": [
-  {
-   "title": "Introduction to Liquid",
-   "start": "2026-11-06T03:00:00+01:00",
-   "end": "2026-11-06T04:30:00+01:00",
-   "url": "/introduction-to-liquid/1823536",
-   "tags": [
-    "english",
-    "apac-timezones"
-   ]
-  },
-  {
-   "title": "SMS Messaging with Braze",
-   "start": "2026-11-06T16:00:00+01:00",
-   "end": "2026-11-06T18:00:00+01:00",
-   "url": "/sms-messaging-with-braze/1542011",
-   "tags": [
-    "english",
-    "emea-timezones"
-   ]
-  },
   {
    "title": "Email Messaging with Braze",
    "start": "2026-11-09T21:00:00+01:00",

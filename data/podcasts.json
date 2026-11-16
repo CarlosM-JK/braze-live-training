@@ -18,6 +18,12 @@
    "ficha": "data/podcasts/ficha-2026-09-17.md",
    "generado": "2026-11-15",
    "notebook": "0953ae24-e6c7-4fcf-87bb-4a423d7a05c8"
+  },
+  "2026-08-20": {
+   "audio": "assets/podcasts/release-2026-08-20.m4a",
+   "ficha": "data/podcasts/ficha-2026-08-20.md",
+   "generado": "2026-11-16",
+   "notebook": "891bdb3b-249f-4e96-812e-4cead88faa8f"
   }
  }
 }

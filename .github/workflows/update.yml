@@ -123,6 +123,15 @@ jobs:
 
       - name: Publicar en GitHub Pages
         id: deploy
+        continue-on-error: true   # a veces GitHub aún no "ve" el paquete recién subido
+        uses: actions/deploy-pages@v4
+
+      - name: Esperar antes de reintentar la publicación
+        if: steps.deploy.outcome == 'failure'
+        run: sleep 30
+
+      - name: Publicar en GitHub Pages (segundo intento)
+        if: steps.deploy.outcome == 'failure'
         uses: actions/deploy-pages@v4
 
       - name: Avisar si falló alguna descarga de Braze

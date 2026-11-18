@@ -157,28 +157,28 @@ const I18N = {
  es:{ locale:"es-ES", nav1:"01 Formación", nav2:"02 Producto", nav3:"03 Actualidad", filtersLabel:"Filtrar por categoría",
   title:"Actualidad Braze", lead:"Lo más relevante alrededor de Braze, seleccionado y explicado cada semana por el COE. A la derecha, el seguimiento de la compra por Salesforce.",
   all:"Todas", why:"Por qué nos importa", read:s=>`Leer en ${s} ↗`, track:"SEGUIMIENTO", sfTitle:"Braze + Salesforce",
-  cats:{producto:"Producto",mercado:"Mercado",eventos:"Eventos",corporativo:"Corporativo",salesforce:"Braze + Salesforce"},
+  cats:{producto:"Producto",mercado:"Mercado",eventos:"Eventos",corporativo:"Corporativo",casos:"Casos de cliente",salesforce:"Braze + Salesforce"},
   st:{anunciado:"Anunciado",rumoreado:"Rumoreado",disponible:"Disponible",analisis:"Análisis"},
   noData:"Todavía no hay noticias. Llegarán con la próxima selección semanal.",
   src:d=>`Selección semanal del COE · Actualizado el ${d}` },
  en:{ locale:"en-GB", nav1:"01 Training", nav2:"02 Product", nav3:"03 News", filtersLabel:"Filter by category",
   title:"Braze news", lead:"The most relevant news around Braze, selected and explained every week by the COE. On the right, tracking of the Salesforce acquisition.",
   all:"All", why:"Why it matters", read:s=>`Read on ${s} ↗`, track:"TRACKING", sfTitle:"Braze + Salesforce",
-  cats:{producto:"Product",mercado:"Market",eventos:"Events",corporativo:"Corporate",salesforce:"Braze + Salesforce"},
+  cats:{producto:"Product",mercado:"Market",eventos:"Events",corporativo:"Corporate",casos:"Customer stories",salesforce:"Braze + Salesforce"},
   st:{anunciado:"Announced",rumoreado:"Rumoured",disponible:"Available",analisis:"Analysis"},
   noData:"No news yet. It will arrive with the next weekly selection.",
   src:d=>`Weekly COE selection · Updated on ${d}` },
  fr:{ locale:"fr-FR", nav1:"01 Formation", nav2:"02 Produit", nav3:"03 Actualités", filtersLabel:"Filtrer par catégorie",
   title:"Actualités Braze", lead:"L'essentiel de l'actualité autour de Braze, sélectionné et expliqué chaque semaine par le COE. À droite, le suivi du rachat par Salesforce.",
   all:"Toutes", why:"Pourquoi c'est important", read:s=>`Lire sur ${s} ↗`, track:"SUIVI", sfTitle:"Braze + Salesforce",
-  cats:{producto:"Produit",mercado:"Marché",eventos:"Événements",corporativo:"Entreprise",salesforce:"Braze + Salesforce"},
+  cats:{producto:"Produit",mercado:"Marché",eventos:"Événements",corporativo:"Entreprise",casos:"Cas clients",salesforce:"Braze + Salesforce"},
   st:{anunciado:"Annoncé",rumoreado:"Rumeur",disponible:"Disponible",analisis:"Analyse"},
   noData:"Pas encore d'actualités. Elles arriveront avec la prochaine sélection hebdomadaire.",
   src:d=>`Sélection hebdomadaire du COE · Mis à jour le ${d}` },
  it:{ locale:"it-IT", nav1:"01 Formazione", nav2:"02 Prodotto", nav3:"03 Attualità", filtersLabel:"Filtra per categoria",
   title:"Attualità Braze", lead:"Le notizie più rilevanti su Braze, selezionate e spiegate ogni settimana dal COE. A destra, il monitoraggio dell'acquisizione da parte di Salesforce.",
   all:"Tutte", why:"Perché ci interessa", read:s=>`Leggi su ${s} ↗`, track:"MONITORAGGIO", sfTitle:"Braze + Salesforce",
-  cats:{producto:"Prodotto",mercado:"Mercato",eventos:"Eventi",corporativo:"Azienda",salesforce:"Braze + Salesforce"},
+  cats:{producto:"Prodotto",mercado:"Mercato",eventos:"Eventi",corporativo:"Azienda",casos:"Casi cliente",salesforce:"Braze + Salesforce"},
   st:{anunciado:"Annunciato",rumoreado:"Indiscrezione",disponible:"Disponibile",analisis:"Analisi"},
   noData:"Ancora nessuna notizia. Arriverà con la prossima selezione settimanale.",
   src:d=>`Selezione settimanale del COE · Aggiornato il ${d}` }
@@ -189,7 +189,7 @@ const T=()=>I18N[LANG];
 const esc=s=>String(s==null?"":s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
 const tr=o=>(o||{})[LANG]||(o||{}).es||"";
 const fmt=iso=>new Date(iso+"T12:00:00Z").toLocaleDateString(T().locale,{day:"numeric",month:"long",year:"numeric",timeZone:"UTC"});
-const ORDER=["producto","mercado","eventos","corporativo","salesforce"];
+const ORDER=["producto","casos","mercado","eventos","corporativo","salesforce"];
 let cat="all";
 
 function items(){

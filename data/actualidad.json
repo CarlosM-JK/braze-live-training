@@ -1,5 +1,5 @@
 {
- "_ayuda": "Actualidad Braze. Lo prepara Claude cada semana. noticias: cat = producto | mercado | eventos | corporativo. salesforce.items: status = anunciado | rumoreado | disponible | analisis. hitos: state = done | next | todo. Deja image vacío: el robot busca la imagen oficial de la fuente (solo braze.com y salesforce.com). source: nombre corto y neutro de la fuente (Braze Blog, Business Wire, Salesforce, CIO.com…).",
+ "_ayuda": "Actualidad Braze. Lo prepara Claude cada semana. noticias: cat = producto | casos | mercado | eventos | corporativo. salesforce.items: status = anunciado | rumoreado | disponible | analisis. hitos: state = done | next | todo. Deja image vacío: el robot busca la imagen oficial de la fuente (solo braze.com y salesforce.com). source: nombre corto y neutro de la fuente (Braze Blog, Business Wire, Salesforce, CIO.com…).",
  "updated": "2026-11-14",
  "noticias": [
   {

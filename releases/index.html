@@ -41,6 +41,8 @@ button{font-family:inherit}
 .nav{display:flex;align-items:center;gap:30px;font-size:14px;font-weight:700;flex-wrap:wrap}
 .nav a{color:var(--black)}
 .nav a[aria-current="page"]{color:var(--jblue-3)}
+.back{display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:700;color:var(--jblue);padding:7px 14px;border:1px solid #cfd4e2;border-radius:999px}
+.back:hover{border-color:var(--jblue)}
 .langs{display:flex;gap:4px;padding-left:22px;border-left:1px solid #e3e3e8}
 .langs button{background:none;border:0;font:700 12px var(--font);letter-spacing:.08em;color:#8a8a99;padding:6px;cursor:pointer;border-bottom:2px solid transparent}
 .langs button[aria-pressed="true"]{color:var(--black);border-bottom-color:var(--red)}
@@ -121,6 +123,7 @@ footer img{height:18px;display:block}
   <div class="wrap">
     <a class="brand" href="../"><img src="../assets/jakala-logo-full.png" alt="JAKALA"><i></i><span>COE Braze Iberia</span></a>
     <nav class="nav" aria-label="Secciones">
+      <a class="back" href="../"><span aria-hidden="true">←</span> <span data-t="home"></span></a>
       <a href="../sesiones/" data-t="nav1"></a>
       <a href="./" aria-current="page" data-t="nav2"></a>
       <a href="../actualidad/" data-t="nav3"></a>
@@ -161,7 +164,7 @@ let NOTES = /*__RELNOTES__*/null;
 let PODS = /*__PODCASTS__*/null;
 
 const I18N = {
- es:{ locale:"es-ES", pod:"PÓDCAST", podT:"Resumen en audio de esta release (generado con NotebookLM)", podTag:"PÓDCAST", nav1:"01 Formación", nav2:"02 Producto", nav3:"03 Actualidad", indexLabel:"Índice de lanzamientos",
+ es:{ locale:"es-ES", home:"Inicio", pod:"PÓDCAST", podT:"Resumen en audio de esta release (generado con NotebookLM)", podTag:"PÓDCAST", nav1:"01 Formación", nav2:"02 Producto", nav3:"03 Actualidad", indexLabel:"Índice de lanzamientos",
   title:"Releases de Braze", lead:"Lanzamientos de producto publicados por Braze desde 2026. Despliega cada uno para ver sus novedades.",
   stR:"lanzamientos", stI:"funcionalidades", news:n=>`${n} novedades`, inGA:n=>`${n} en GA`, latest:"ÚLTIMO",
   labels:{ga:"GA",beta:"Beta",early:"Early access",none:"Sin etiqueta"},
@@ -169,7 +172,7 @@ const I18N = {
   pending:"Pendiente de valorar por el grupo", evUse:"Casos de uso", evInst:"¿La tenemos?", evAsk:"¿Pedirla?", evOwner:"Responsable", evNote:"Comentario",
   yes:"Sí", no:"No", unknown:"Por confirmar", noData:"Todavía no hay datos de releases. Se cargarán en la próxima actualización automática.",
   src:d=>`Fuente: release notes oficiales de Braze · Actualizado el ${d}` },
- en:{ locale:"en-GB", pod:"PODCAST", podT:"Audio summary of this release (generated with NotebookLM, in Spanish)", podTag:"PODCAST", nav1:"01 Training", nav2:"02 Product", nav3:"03 News", indexLabel:"Release index",
+ en:{ locale:"en-GB", home:"Home", pod:"PODCAST", podT:"Audio summary of this release (generated with NotebookLM, in Spanish)", podTag:"PODCAST", nav1:"01 Training", nav2:"02 Product", nav3:"03 News", indexLabel:"Release index",
   title:"Braze releases", lead:"Product releases published by Braze since 2026. Expand each one to see what's new.",
   stR:"releases", stI:"features", news:n=>`${n} updates`, inGA:n=>`${n} in GA`, latest:"LATEST",
   labels:{ga:"GA",beta:"Beta",early:"Early access",none:"No label"},
@@ -177,7 +180,7 @@ const I18N = {
   pending:"Pending group assessment", evUse:"Use cases", evInst:"Do we have it?", evAsk:"Request it?", evOwner:"Owner", evNote:"Comment",
   yes:"Yes", no:"No", unknown:"To be confirmed", noData:"No release data yet. It will load on the next automatic update.",
   src:d=>`Source: official Braze release notes · Updated on ${d}` },
- fr:{ locale:"fr-FR", pod:"PODCAST", podT:"Résumé audio de cette release (généré avec NotebookLM, en espagnol)", podTag:"PODCAST", nav1:"01 Formation", nav2:"02 Produit", nav3:"03 Actualités", indexLabel:"Index des releases",
+ fr:{ locale:"fr-FR", home:"Accueil", pod:"PODCAST", podT:"Résumé audio de cette release (généré avec NotebookLM, en espagnol)", podTag:"PODCAST", nav1:"01 Formation", nav2:"02 Produit", nav3:"03 Actualités", indexLabel:"Index des releases",
   title:"Releases Braze", lead:"Les lancements produit publiés par Braze depuis 2026. Dépliez-en un pour voir ses nouveautés.",
   stR:"lancements", stI:"fonctionnalités", news:n=>`${n} nouveautés`, inGA:n=>`${n} en GA`, latest:"DERNIER",
   labels:{ga:"GA",beta:"Bêta",early:"Early access",none:"Sans étiquette"},
@@ -185,7 +188,7 @@ const I18N = {
   pending:"Évaluation du groupe en attente", evUse:"Cas d'usage", evInst:"L'avons-nous ?", evAsk:"La demander ?", evOwner:"Responsable", evNote:"Commentaire",
   yes:"Oui", no:"Non", unknown:"À confirmer", noData:"Pas encore de données. Elles arriveront à la prochaine mise à jour automatique.",
   src:d=>`Source : release notes officielles de Braze · Mis à jour le ${d}` },
- it:{ locale:"it-IT", pod:"PODCAST", podT:"Riepilogo audio di questa release (generato con NotebookLM, in spagnolo)", podTag:"PODCAST", nav1:"01 Formazione", nav2:"02 Prodotto", nav3:"03 Attualità", indexLabel:"Indice delle release",
+ it:{ locale:"it-IT", home:"Home", pod:"PODCAST", podT:"Riepilogo audio di questa release (generato con NotebookLM, in spagnolo)", podTag:"PODCAST", nav1:"01 Formazione", nav2:"02 Prodotto", nav3:"03 Attualità", indexLabel:"Indice delle release",
   title:"Release di Braze", lead:"Le release di prodotto pubblicate da Braze dal 2026. Espandine una per vedere le novità.",
   stR:"release", stI:"funzionalità", news:n=>`${n} novità`, inGA:n=>`${n} in GA`, latest:"ULTIMA",
   labels:{ga:"GA",beta:"Beta",early:"Early access",none:"Senza etichetta"},
@@ -288,7 +291,7 @@ document.querySelectorAll(".langs button").forEach(b=>b.onclick=()=>{LANG=b.data
 function init(){
   const h=decodeURIComponent(location.hash.slice(1));
   if(/^\d{4}-\d{2}-\d{2}$/.test(h) && REL().some(r=>r.date===h)) state.open.add(h);
-  else if(REL()[0]) state.open.add(REL()[0].date);
+  else if(h!=="todas" && REL()[0]) state.open.add(REL()[0].date);
   renderAll();
   if(state.open.has(h)){ const el=document.getElementById(h); if(el) setTimeout(()=>el.scrollIntoView({block:"start"}),50); }
 }

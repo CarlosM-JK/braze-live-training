@@ -154,7 +154,7 @@ a.tl:hover{transform:translateX(4px);box-shadow:0 18px 36px -24px rgba(4,0,102,.
 .slide .art{position:absolute;right:6%;top:50%;width:min(440px,38vw);aspect-ratio:1/1.1547;transform:translateY(-50%);display:grid;place-items:center;background:rgba(140,170,255,.14);color:#c9d3ff;font-size:13px;font-weight:800;letter-spacing:.16em;text-transform:uppercase}
 .slide .art::before{content:"";position:absolute;inset:14%;background:rgba(140,170,255,.12);clip-path:inherit}
 .slide .art span{position:relative}
-.slide .shade{position:absolute;inset:0;background:linear-gradient(90deg,rgba(0,0,0,.92) 0%,rgba(0,0,0,.62) 48%,rgba(0,0,0,.08) 82%)}
+.slide .shade{position:absolute;inset:0;background:linear-gradient(90deg,rgba(0,0,0,.92) 0%,rgba(0,0,0,.6) 40%,rgba(0,0,0,0) 62%)}
 .obs .wrap{position:relative;padding-top:96px;padding-bottom:88px;display:flex;flex-direction:column;gap:22px;min-height:640px}
 .obs .num{-webkit-text-stroke-color:var(--sky)}
 .chips{display:flex;gap:10px;flex-wrap:wrap}
@@ -257,11 +257,10 @@ footer img{height:18px;display:block}
       <span class="num" aria-hidden="true">02</span>
       <h2 data-t="s2t"></h2>
       <p data-t="s2d"></p>
-      <a class="cta" href="releases/"><span data-t="s2cta"></span> <span aria-hidden="true">→</span></a>
+      <a class="cta" href="releases/#todas"><span data-t="s2cta"></span> <span aria-hidden="true">→</span></a>
     </div>
     <div class="content">
       <div class="timeline" id="relList"></div>
-      <p class="tl-note" id="relNote"></p>
     </div>
   </div>
 </section>
@@ -392,9 +391,9 @@ function highlights(r){
   return out;
 }
 function renderReleases(){
-  const box=document.getElementById("relList"), note=document.getElementById("relNote");
+  const box=document.getElementById("relList");
   const rs=(RELEASES&&RELEASES.releases||[]).slice(0,4);
-  if(!rs.length){ box.innerHTML=[0,1,2].map(()=>`<div class="tl" aria-hidden="true"><span style="display:flex;flex-direction:column;gap:10px"><span class="sk" style="width:60%;height:14px"></span><span class="sk" style="width:40%"></span></span><span class="sk" style="width:46px;height:20px"></span></div>`).join(""); note.textContent=T().s2note; return; }
+  if(!rs.length){ box.innerHTML=[0,1,2].map(()=>`<div class="tl" aria-hidden="true"><span style="display:flex;flex-direction:column;gap:10px"><span class="sk" style="width:60%;height:14px"></span><span class="sk" style="width:40%"></span></span><span class="sk" style="width:46px;height:20px"></span></div>`).join(""); return; }
   box.innerHTML=rs.map((r,k)=>{
     const d=new Date(r.date+"T12:00:00Z");
     const mon=d.toLocaleDateString(T().locale,{month:"long",timeZone:"UTC"});
@@ -403,9 +402,15 @@ function renderReleases(){
       <span class="hl"><small>${T().s2hl}</small><span>${highlights(r).map(i=>esc(i.title)).join(" · ")}</span></span>
       <span class="cnt"><b>${r.items.length}</b><span>${T().s2nov}</span></span></a>`;
   }).join("");
-  note.textContent=T().s2live;
 }
 
+/* Ilustración de reserva (estilo I2) para noticias sin imagen oficial: siempre la misma para cada noticia */
+const ILUS_CATS=["producto","casos","mercado","eventos","corporativo","salesforce"];
+function ilus(it, base){
+  const cat=ILUS_CATS.includes(it.cat)?it.cat:"mercado";
+  let h=0; for(const ch of String(it.url||tr(it.title)||"")) h=(h*31+ch.charCodeAt(0))>>>0;
+  return `${base}assets/ilustraciones/${cat}-${h%3+1}.svg`;
+}
 /* Actualidad Braze: noticias + seguimiento Braze + Salesforce, en un carrusel con filtros */
 let obsF = "all", obsI = 0, obsTimer = null;
 const tr = o => (o||{})[LANG] || (o||{}).es || "";
@@ -425,7 +430,7 @@ function renderObs(){
   const ch = document.getElementById("chips");
   ch.innerHTML = ["all","news","sf"].map((f,k) => `<button type="button" data-f="${f}" aria-pressed="${f===obsF}">${T().filters[k]}</button>`).join("");
   ch.querySelectorAll("button").forEach(b => b.onclick = () => { obsF = b.dataset.f; obsI = 0; renderObs(); startObs(); });
-  document.getElementById("slides").innerHTML = items.map((it,k) => `<div class="slide${k===obsI?" on":""}"><div class="img"${it.image?` style="background-image:url('${esc(it.image)}')"`:""}>${it.image?"":`<svg class="mesh" style="opacity:.3" aria-hidden="true"><defs><pattern id="ob${k}" width="56" height="97" patternUnits="userSpaceOnUse"><path d="M28 0L56 16.2V48.5L28 64.7L0 48.5V16.2Z M28 64.7V97" fill="none" stroke="#8caaff" stroke-width="1"/></pattern></defs><rect width="100%" height="100%" fill="url(#ob${k})"/></svg><div class="art hex" aria-hidden="true"><span>${esc(T().cats[it.cat]||"")}</span></div>`}</div><div class="shade"></div></div>`).join("");
+  document.getElementById("slides").innerHTML = items.map((it,k) => `<div class="slide${k===obsI?" on":""}"><div class="img" style="background-image:url('${esc(it.image||ilus(it,""))}')"></div><div class="shade"></div></div>`).join("");
   const it = items[obsI];
   const badge = it.kind==="sf" ? `<span class="st">${esc(T().st[it.status]||it.status||"")}</span>` : `<span class="cat">${esc(T().cats[it.cat]||it.cat||"")}</span>`;
   const body = it.kind==="sf" ? esc(tr(it.text)) : `<b>${T().why} · </b>${esc(tr(it.why))}`;

@@ -41,6 +41,8 @@ button{font-family:inherit}
 .nav{display:flex;align-items:center;gap:30px;font-size:14px;font-weight:700;flex-wrap:wrap}
 .nav a{color:var(--black)}
 .nav a[aria-current="page"]{color:var(--jblue-3)}
+.back{display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:700;color:var(--jblue);padding:7px 14px;border:1px solid #cfd4e2;border-radius:999px}
+.back:hover{border-color:var(--jblue)}
 .langs{display:flex;gap:4px;padding-left:22px;border-left:1px solid #e3e3e8}
 .langs button{background:none;border:0;font:700 12px var(--font);letter-spacing:.08em;color:#8a8a99;padding:6px;cursor:pointer;border-bottom:2px solid transparent}
 .langs button[aria-pressed="true"]{color:var(--black);border-bottom-color:var(--red)}
@@ -114,6 +116,7 @@ footer img{height:18px;display:block}
   <div class="wrap">
     <a class="brand" href="../"><img src="../assets/jakala-logo-full.png" alt="JAKALA"><i></i><span>COE Braze Iberia</span></a>
     <nav class="nav" aria-label="Secciones">
+      <a class="back" href="../"><span aria-hidden="true">←</span> <span data-t="home"></span></a>
       <a href="../sesiones/" data-t="nav1"></a>
       <a href="../releases/" data-t="nav2"></a>
       <a href="./" aria-current="page" data-t="nav3"></a>
@@ -154,28 +157,28 @@ footer img{height:18px;display:block}
 let DATA = /*__ACTUALIDAD__*/null;
 
 const I18N = {
- es:{ locale:"es-ES", nav1:"01 Formación", nav2:"02 Producto", nav3:"03 Actualidad", filtersLabel:"Filtrar por categoría",
+ es:{ locale:"es-ES", home:"Inicio", nav1:"01 Formación", nav2:"02 Producto", nav3:"03 Actualidad", filtersLabel:"Filtrar por categoría",
   title:"Actualidad Braze", lead:"Lo más relevante alrededor de Braze, seleccionado y explicado cada semana por el COE. A la derecha, el seguimiento de la compra por Salesforce.",
   all:"Todas", why:"Por qué nos importa", read:s=>`Leer en ${s} ↗`, track:"SEGUIMIENTO", sfTitle:"Braze + Salesforce",
   cats:{producto:"Producto",mercado:"Mercado",eventos:"Eventos",corporativo:"Corporativo",casos:"Casos de cliente",salesforce:"Braze + Salesforce"},
   st:{anunciado:"Anunciado",rumoreado:"Rumoreado",disponible:"Disponible",analisis:"Análisis"},
   noData:"Todavía no hay noticias. Llegarán con la próxima selección semanal.",
   src:d=>`Selección semanal del COE · Actualizado el ${d}` },
- en:{ locale:"en-GB", nav1:"01 Training", nav2:"02 Product", nav3:"03 News", filtersLabel:"Filter by category",
+ en:{ locale:"en-GB", home:"Home", nav1:"01 Training", nav2:"02 Product", nav3:"03 News", filtersLabel:"Filter by category",
   title:"Braze news", lead:"The most relevant news around Braze, selected and explained every week by the COE. On the right, tracking of the Salesforce acquisition.",
   all:"All", why:"Why it matters", read:s=>`Read on ${s} ↗`, track:"TRACKING", sfTitle:"Braze + Salesforce",
   cats:{producto:"Product",mercado:"Market",eventos:"Events",corporativo:"Corporate",casos:"Customer stories",salesforce:"Braze + Salesforce"},
   st:{anunciado:"Announced",rumoreado:"Rumoured",disponible:"Available",analisis:"Analysis"},
   noData:"No news yet. It will arrive with the next weekly selection.",
   src:d=>`Weekly COE selection · Updated on ${d}` },
- fr:{ locale:"fr-FR", nav1:"01 Formation", nav2:"02 Produit", nav3:"03 Actualités", filtersLabel:"Filtrer par catégorie",
+ fr:{ locale:"fr-FR", home:"Accueil", nav1:"01 Formation", nav2:"02 Produit", nav3:"03 Actualités", filtersLabel:"Filtrer par catégorie",
   title:"Actualités Braze", lead:"L'essentiel de l'actualité autour de Braze, sélectionné et expliqué chaque semaine par le COE. À droite, le suivi du rachat par Salesforce.",
   all:"Toutes", why:"Pourquoi c'est important", read:s=>`Lire sur ${s} ↗`, track:"SUIVI", sfTitle:"Braze + Salesforce",
   cats:{producto:"Produit",mercado:"Marché",eventos:"Événements",corporativo:"Entreprise",casos:"Cas clients",salesforce:"Braze + Salesforce"},
   st:{anunciado:"Annoncé",rumoreado:"Rumeur",disponible:"Disponible",analisis:"Analyse"},
   noData:"Pas encore d'actualités. Elles arriveront avec la prochaine sélection hebdomadaire.",
   src:d=>`Sélection hebdomadaire du COE · Mis à jour le ${d}` },
- it:{ locale:"it-IT", nav1:"01 Formazione", nav2:"02 Prodotto", nav3:"03 Attualità", filtersLabel:"Filtra per categoria",
+ it:{ locale:"it-IT", home:"Home", nav1:"01 Formazione", nav2:"02 Prodotto", nav3:"03 Attualità", filtersLabel:"Filtra per categoria",
   title:"Attualità Braze", lead:"Le notizie più rilevanti su Braze, selezionate e spiegate ogni settimana dal COE. A destra, il monitoraggio dell'acquisizione da parte di Salesforce.",
   all:"Tutte", why:"Perché ci interessa", read:s=>`Leggi su ${s} ↗`, track:"MONITORAGGIO", sfTitle:"Braze + Salesforce",
   cats:{producto:"Prodotto",mercado:"Mercato",eventos:"Eventi",corporativo:"Azienda",casos:"Casi cliente",salesforce:"Braze + Salesforce"},
@@ -198,9 +201,16 @@ function items(){
   const sf=((DATA.salesforce||{}).items||[]).map(n=>Object.assign({kind:"sf",cat:"salesforce"},n));
   return news.concat(sf).sort((a,b)=>(b.date||"").localeCompare(a.date||""));
 }
+/* Ilustración de reserva (estilo I2) para noticias sin imagen oficial: siempre la misma para cada noticia */
+const ILUS_CATS=["producto","casos","mercado","eventos","corporativo","salesforce"];
+function ilus(it, base){
+  const cat=ILUS_CATS.includes(it.cat)?it.cat:"mercado";
+  let h=0; for(const ch of String(it.url||tr(it.title)||"")) h=(h*31+ch.charCodeAt(0))>>>0;
+  return `${base}assets/ilustraciones/${cat}-${h%3+1}.svg`;
+}
 function pic(it,k){
-  if(it.image) return `<div class="pic" style="background-image:url('${esc(it.image)}')" role="img" aria-label="${esc(tr(it.title))}"></div>`;
-  return `<div class="pic" aria-hidden="true"><svg class="mesh" style="opacity:.35"><defs><pattern id="p${k}" width="48" height="83" patternUnits="userSpaceOnUse"><path d="M24 0L48 13.9V41.6L24 55.4L0 41.6V13.9Z M24 55.4V83" fill="none" stroke="#8caaff" stroke-width="1"/></pattern></defs><rect width="100%" height="100%" fill="url(#p${k})"/></svg><span>${esc(T().cats[it.cat]||"")}</span></div>`;
+  const src=it.image||ilus(it,"../");
+  return `<div class="pic" style="background-image:url('${esc(src)}')${it.image?"":";background-position:66% center"}" ${it.image?`role="img" aria-label="${esc(tr(it.title))}"`:'aria-hidden="true"'}></div>`;
 }
 function renderFilters(){
   const all=items(), counts={}; all.forEach(i=>counts[i.cat]=(counts[i.cat]||0)+1);

@@ -36,7 +36,11 @@ h1,h2,h3{margin:0;text-wrap:balance}
 .brand .sep{width:1px;height:24px;background:var(--line-2)}
 .brand span{font-size:13px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--black)}
 .home-link{display:block}
-.back{margin-left:auto;margin-right:18px;font-size:13px;font-weight:700;color:var(--jblue);text-decoration:none;padding:7px 14px;border:1px solid var(--line-2);border-radius:999px}
+.secnav{margin-left:auto;margin-right:18px;display:flex;align-items:center;gap:28px}
+.sections{display:flex;gap:26px;font-size:14px;font-weight:700}
+.sections a{color:var(--black);text-decoration:none}
+.sections a[aria-current="page"]{color:var(--jblue-3)}
+.back{font-size:13px;font-weight:700;color:var(--jblue);text-decoration:none;padding:7px 14px;border:1px solid var(--line-2);border-radius:999px}
 .back:hover{border-color:var(--jblue)}
 .langs{display:flex;align-items:center;gap:2px}
 .langs svg{width:16px;height:16px;stroke:var(--muted);margin-right:8px}
@@ -198,7 +202,8 @@ footer .meta{display:flex;flex-direction:column;gap:4px;max-width:70ch}
   .seg{margin-left:0}
   .langs svg{display:none}
 }
-@media (max-width:520px){.brand span,.brand .sep{display:none}.back{margin-right:6px;padding:6px 10px}.langs button{padding:8px 6px}}
+@media (max-width:900px){.sections{display:none}}
+@media (max-width:520px){.brand span,.brand .sep{display:none}.secnav{margin-right:6px}.back{padding:6px 10px}.langs button{padding:8px 6px}}
 @media (max-width:420px){.container{padding:0 16px}}
 @media (prefers-reduced-motion:reduce){*{transition:none!important}}
 </style>
@@ -208,7 +213,8 @@ footer .meta{display:flex;flex-direction:column;gap:4px;max-width:70ch}
 <nav class="topnav" aria-label="Cabecera">
   <div class="container">
     <div class="brand"><a href="../" class="home-link" data-i18n-title="home"><img src="../assets/jakala-logo-full.png" alt="JAKALA"></a><i class="sep"></i><span>COE Braze Iberia</span></div>
-    <a class="back" href="../"><span aria-hidden="true">←</span> <span data-i18n="home"></span></a>
+    <div class="secnav"><a class="back" href="../"><span aria-hidden="true">←</span> <span data-i18n="home"></span></a>
+      <nav class="sections" aria-label="Secciones"><a href="./" aria-current="page" data-i18n="nav1"></a><a href="../releases/" data-i18n="nav2"></a><a href="../actualidad/" data-i18n="nav3"></a></nav></div>
     <div class="langs" role="group" aria-label="Idioma / Language">
       <svg viewBox="0 0 16 16" fill="none" stroke-width="1.4" aria-hidden="true"><circle cx="8" cy="8" r="6.5"/><path d="M1.5 8h13M8 1.5c2 2 2 11 0 13M8 1.5c-2 2-2 11 0 13"/></svg>
       <button type="button" data-lang="es" aria-pressed="true">ES</button>
@@ -296,7 +302,7 @@ const AREA = Object.fromEntries(AREAS.map(a=>[a.id,a]));
 
 /* ===== Textos por idioma ===== */
 const I18N = {
- es:{ home:"Inicio", locale:"es-ES",
+ es:{ home:"Inicio", nav1:"01 Formación", nav2:"02 Producto", nav3:"03 Actualidad", locale:"es-ES",
   h1:"Aprende Braze <em>en directo</em>, sin perderte ninguna sesión.",
   lead:"Todas las sesiones en directo de Braze Learning en hora de Madrid, organizadas por área. Elige, filtra y regístrate desde la ficha de cada sesión.",
   nextEs:"Próxima en horario ES", noNextEs:"Sin sesiones próximas en horario ES", loading:"Cargando sesiones…", noData:"Datos no disponibles",
@@ -314,7 +320,7 @@ const I18N = {
   error:"No se han podido cargar las sesiones. Recarga la página; si sigue fallando, avisa a quien mantiene el repositorio.",
   dow:["Dom","Lun","Mar","Mié","Jue","Vie","Sáb"],
   areas:{orq:"Orquestación",can:"Canales",dat:"Datos e integraciones",ia:"IA y personalización",uc:"Casos de uso",cert:"Certificación",otr:"Otros"} },
- en:{ home:"Home", locale:"en-GB",
+ en:{ home:"Home", nav1:"01 Training", nav2:"02 Product", nav3:"03 News", locale:"en-GB",
   h1:"Learn Braze <em>live</em>, without missing a single session.",
   lead:"Every Braze Learning live session in Madrid time, organised by area. Browse, filter and register from each session page.",
   nextEs:"Next in Spain hours", noNextEs:"No upcoming sessions in Spain hours", loading:"Loading sessions…", noData:"Data not available",
@@ -332,7 +338,7 @@ const I18N = {
   error:"Sessions could not be loaded. Reload the page; if it keeps failing, tell whoever maintains the repository.",
   dow:["Sun","Mon","Tue","Wed","Thu","Fri","Sat"],
   areas:{orq:"Orchestration",can:"Channels",dat:"Data & integrations",ia:"AI & personalisation",uc:"Use cases",cert:"Certification",otr:"Other"} },
- fr:{ home:"Accueil", locale:"fr-FR",
+ fr:{ home:"Accueil", nav1:"01 Formation", nav2:"02 Produit", nav3:"03 Actualités", locale:"fr-FR",
   h1:"Apprenez Braze <em>en direct</em>, sans manquer aucune session.",
   lead:"Toutes les sessions en direct de Braze Learning à l'heure de Madrid, classées par domaine. Parcourez, filtrez et inscrivez-vous depuis la fiche de chaque session.",
   nextEs:"Prochaine en horaire Espagne", noNextEs:"Aucune session à venir en horaire Espagne", loading:"Chargement des sessions…", noData:"Données indisponibles",
@@ -350,7 +356,7 @@ const I18N = {
   error:"Impossible de charger les sessions. Rechargez la page ; si le problème persiste, prévenez la personne qui gère le dépôt.",
   dow:["Dim","Lun","Mar","Mer","Jeu","Ven","Sam"],
   areas:{orq:"Orchestration",can:"Canaux",dat:"Données et intégrations",ia:"IA et personnalisation",uc:"Cas d'usage",cert:"Certification",otr:"Autres"} },
- it:{ home:"Home", locale:"it-IT",
+ it:{ home:"Home", nav1:"01 Formazione", nav2:"02 Prodotto", nav3:"03 Attualità", locale:"it-IT",
   h1:"Impara Braze <em>dal vivo</em>, senza perdere nessuna sessione.",
   lead:"Tutte le sessioni dal vivo di Braze Learning in orario di Madrid, organizzate per area. Sfoglia, filtra e iscriviti dalla scheda di ogni sessione.",
   nextEs:"Prossima in orario Spagna", noNextEs:"Nessuna sessione in arrivo in orario Spagna", loading:"Caricamento sessioni…", noData:"Dati non disponibili",

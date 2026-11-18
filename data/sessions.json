@@ -1,8 +1,8 @@
 {
- "updated": "2026-11-16T07:43:12+01:00",
+ "updated": "2026-11-18T07:20:23+01:00",
  "source": "https://learning.braze.com/calendar",
  "timezone": "Europe/Madrid",
- "count": 48,
+ "count": 59,
  "events": [
   {
    "title": "Email Messaging with Braze",
@@ -253,6 +253,16 @@
    ]
   },
   {
+   "title": "Agentic Marketing Workshop",
+   "start": "2026-12-01T03:00:00+01:00",
+   "end": "2026-12-01T04:30:00+01:00",
+   "url": "/agentic-marketing-workshop/2516886",
+   "tags": [
+    "english",
+    "apac-timezones"
+   ]
+  },
+  {
    "title": "Connected Content",
    "start": "2026-12-01T04:00:00+01:00",
    "end": "2026-12-01T05:30:00+01:00",
@@ -280,6 +290,16 @@
    ]
   },
   {
+   "title": "Experience Orchestration with Canvas",
+   "start": "2026-12-02T03:00:00+01:00",
+   "end": "2026-12-02T04:30:00+01:00",
+   "url": "/canvas-101/516007",
+   "tags": [
+    "english",
+    "apac-timezones"
+   ]
+  },
+  {
    "title": "Get Started with Braze: Driving First Transactions",
    "start": "2026-12-02T04:00:00+01:00",
    "end": "2026-12-02T05:00:00+01:00",
@@ -300,6 +320,16 @@
    ]
   },
   {
+   "title": "Agentic Marketing Workshop",
+   "start": "2026-12-03T16:00:00+01:00",
+   "end": "2026-12-03T17:30:00+01:00",
+   "url": "/agentic-marketing-workshop/2516886",
+   "tags": [
+    "english",
+    "emea-timezones"
+   ]
+  },
+  {
    "title": "Introduction to Liquid",
    "start": "2026-12-04T21:00:00+01:00",
    "end": "2026-12-04T22:30:00+01:00",
@@ -307,6 +337,16 @@
    "tags": [
     "english",
     "amer-timezones"
+   ]
+  },
+  {
+   "title": "Introduction to Liquid",
+   "start": "2026-12-07T03:00:00+01:00",
+   "end": "2026-12-07T04:30:00+01:00",
+   "url": "/introduction-to-liquid/1823536",
+   "tags": [
+    "english",
+    "apac-timezones"
    ]
   },
   {
@@ -350,6 +390,16 @@
    ]
   },
   {
+   "title": "Marketing Specialist Bootcamp",
+   "start": "2026-12-09T03:00:00+01:00",
+   "end": "2026-12-09T06:00:00+01:00",
+   "url": "/braze-certified-marketer-bootcamp-and-certification/2178931",
+   "tags": [
+    "english",
+    "apac-timezones"
+   ]
+  },
+  {
    "title": "Practitioner Bootcamp",
    "start": "2026-12-09T04:00:00+01:00",
    "end": "2026-12-09T06:00:00+01:00",
@@ -357,6 +407,26 @@
    "tags": [
     "english",
     "apac-timezones"
+   ]
+  },
+  {
+   "title": "Advanced Liquid",
+   "start": "2026-12-10T03:00:00+01:00",
+   "end": "2026-12-10T05:00:00+01:00",
+   "url": "/advanced-liquid/464032",
+   "tags": [
+    "english",
+    "apac-timezones"
+   ]
+  },
+  {
+   "title": "Agentic Marketing Workshop",
+   "start": "2026-12-10T16:00:00+01:00",
+   "end": "2026-12-10T17:30:00+01:00",
+   "url": "/agentic-marketing-workshop/2516886",
+   "tags": [
+    "english",
+    "emea-timezones"
    ]
   },
   {
@@ -380,6 +450,16 @@
    ]
   },
   {
+   "title": "AI Liquid Essentials",
+   "start": "2026-12-15T03:00:00+01:00",
+   "end": "2026-12-15T05:00:00+01:00",
+   "url": "/ai-liquid-essentials/2549871",
+   "tags": [
+    "english",
+    "apac-timezones"
+   ]
+  },
+  {
    "title": "Get Started with Braze: Foundations for Effective Campaigns",
    "start": "2026-12-15T04:00:00+01:00",
    "end": "2026-12-15T06:00:00+01:00",
@@ -395,6 +475,16 @@
    "end": "2026-12-15T08:30:00+01:00",
    "url": "/seamless-reengagement-with-targeted-reminders-ja/2450189",
    "tags": []
+  },
+  {
+   "title": "Practitioner Bootcamp",
+   "start": "2026-12-15T15:00:00+01:00",
+   "end": "2026-12-15T17:00:00+01:00",
+   "url": "/braze-certified-practitioner-bootcamp-and-certification/2101366",
+   "tags": [
+    "english",
+    "emea-timezones"
+   ]
   },
   {
    "title": "Get Started with Braze: Foundations for Effective Campaigns",
@@ -417,6 +507,16 @@
    ]
   },
   {
+   "title": "Marketing Specialist Bootcamp",
+   "start": "2026-12-16T15:00:00+01:00",
+   "end": "2026-12-16T18:00:00+01:00",
+   "url": "/braze-certified-marketer-bootcamp-and-certification/2178931",
+   "tags": [
+    "english",
+    "emea-timezones"
+   ]
+  },
+  {
    "title": "Get Started with Braze: Seamless Reengagement with Targeted Reminders",
    "start": "2026-12-16T23:30:00+01:00",
    "end": "2026-12-17T00:30:00+01:00",
@@ -424,6 +524,16 @@
    "tags": [
     "english",
     "apac-timezones"
+   ]
+  },
+  {
+   "title": "Get Started with Braze: Winback and Sunset Strategies for Lasting Engagement",
+   "start": "2026-12-17T10:00:00+01:00",
+   "end": "2026-12-17T11:00:00+01:00",
+   "url": "/get-started-use-cases-winback-sunset-strategies-for-lasting-engagement/2165828",
+   "tags": [
+    "english",
+    "emea-timezones"
    ]
   },
   {

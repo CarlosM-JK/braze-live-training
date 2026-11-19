@@ -1,19 +1,9 @@
 {
- "updated": "2026-11-18T07:20:23+01:00",
+ "updated": "2026-11-19T07:17:21+01:00",
  "source": "https://learning.braze.com/calendar",
  "timezone": "Europe/Madrid",
- "count": 59,
+ "count": 58,
  "events": [
-  {
-   "title": "Email Messaging with Braze",
-   "start": "2026-11-09T21:00:00+01:00",
-   "end": "2026-11-09T23:00:00+01:00",
-   "url": "/email-messaging-with-braze/1839452",
-   "tags": [
-    "english",
-    "amer-timezones"
-   ]
-  },
   {
    "title": "Get Started with Braze: Engage and Retain with Personalized Recommendations",
    "start": "2026-11-10T04:00:00+01:00",

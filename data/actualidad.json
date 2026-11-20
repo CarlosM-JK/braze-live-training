@@ -1,7 +1,26 @@
 {
  "_ayuda": "Actualidad Braze. Lo prepara Claude cada semana. noticias: cat = producto | casos | mercado | eventos | corporativo. salesforce.items: status = anunciado | rumoreado | disponible | analisis. hitos: state = done | next | todo. Deja image vacío: el robot busca la imagen oficial de la fuente (solo braze.com y salesforce.com). source: nombre corto y neutro de la fuente (Braze Blog, Business Wire, Salesforce, CIO.com…).",
- "updated": "2026-11-14",
+ "updated": "2026-11-20",
  "noticias": [
+  {
+   "date": "2026-11-19",
+   "cat": "mercado",
+   "source": "Braze Blog",
+   "url": "https://www.braze.com/resources/articles/forrester-ccmh-wave-q4-2026",
+   "image": "",
+   "title": {
+    "es": "Braze, Líder en el Forrester Wave de Cross-Channel Marketing Hubs (Q4 2026)",
+    "en": "Braze named a Leader in the Forrester Wave for Cross-Channel Marketing Hubs (Q4 2026)",
+    "fr": "Braze nommé Leader du Forrester Wave des Cross-Channel Marketing Hubs (T4 2026)",
+    "it": "Braze nominata Leader nel Forrester Wave dei Cross-Channel Marketing Hubs (Q4 2026)"
+   },
+   "why": {
+    "es": "Tercer reconocimiento de analistas en dos meses (máxima nota en Estrategia): argumento sólido para propuestas y para defender Braze frente a SFMC durante la integración con Salesforce.",
+    "en": "Third analyst recognition in two months (top Strategy score): strong backing for proposals and for positioning Braze alongside SFMC during the Salesforce integration.",
+    "fr": "Troisième reconnaissance d'analystes en deux mois (meilleure note en Stratégie) : un argument solide pour nos propositions et pour positionner Braze face à SFMC.",
+    "it": "Terzo riconoscimento degli analisti in due mesi (punteggio massimo in Strategia): argomento solido per le proposte e per posizionare Braze rispetto a SFMC."
+   }
+  },
   {
    "date": "2026-11-09",
    "cat": "mercado",

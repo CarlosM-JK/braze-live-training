@@ -1,6 +1,6 @@
 {
  "_ayuda": "Actualidad Braze. Lo prepara Claude cada semana. noticias: cat = producto | casos | mercado | eventos | corporativo. salesforce.items: status = anunciado | rumoreado | disponible | analisis. hitos: state = done | next | todo. Deja image vacío: el robot busca la imagen oficial de la fuente (solo braze.com y salesforce.com). source: nombre corto y neutro de la fuente (Braze Blog, Business Wire, Salesforce, CIO.com…).",
- "updated": "2026-11-20",
+ "updated": "2026-11-21",
  "noticias": [
   {
    "date": "2026-11-19",
@@ -152,10 +152,10 @@
      "it": "Approvazione degli azionisti di Braze"
     },
     "note": {
-     "es": "Pendiente",
-     "en": "Pending",
-     "fr": "En attente",
-     "it": "In attesa"
+     "es": "Proxy preliminar presentado el 20 nov 2026 · junta sin fecha",
+     "en": "Preliminary proxy filed 20 Nov 2026 · meeting date TBD",
+     "fr": "Circulaire préliminaire déposée le 20 nov. 2026 · date d'assemblée à fixer",
+     "it": "Proxy preliminare depositata il 20 nov 2026 · data assemblea da definire"
     }
    },
    {
@@ -168,10 +168,10 @@
      "it": "Approvazioni regolamentari"
     },
     "note": {
-     "es": "Pendiente",
-     "en": "Pending",
-     "fr": "En attente",
-     "it": "In attesa"
+     "es": "Notificación HSR (EE. UU.) presentada el 12 nov 2026 · resto pendiente",
+     "en": "US HSR filing made 12 Nov 2026 · others pending",
+     "fr": "Notification HSR (É.-U.) déposée le 12 nov. 2026 · autres en attente",
+     "it": "Notifica HSR (USA) depositata il 12 nov 2026 · altre in attesa"
     }
    },
    {
@@ -193,22 +193,21 @@
   ],
   "items": [
    {
-    "date": "2026-10-20",
+    "date": "2026-11-20",
     "status": "anunciado",
-    "source": "Salesforce",
-    "url": "https://salesforce.com/news/press-releases/2026/10/20/salesforce-signs-definitive-agreement-to-acquire-braze",
-    "image": "https://www.salesforce.com/news/wp-content/uploads/sites/3/2026/10/Braze-Salesforce_3-2.png",
+    "source": "SEC (Braze)",
+    "url": "https://www.sec.gov/Archives/edgar/data/1676238/000114036126045107/ny20084397x1_prem14a.htm",
     "title": {
-     "es": "Salesforce firma el acuerdo para comprar Braze por unos 5.660 M$",
-     "en": "Salesforce signs an agreement to acquire Braze for about $5.66B",
-     "fr": "Salesforce signe l'accord de rachat de Braze pour environ 5,66 Md$",
-     "it": "Salesforce firma l'accordo per acquisire Braze per circa 5,66 mld $"
+     "es": "Braze presenta el proxy preliminar para la votación de la compra",
+     "en": "Braze files preliminary proxy for the merger vote",
+     "fr": "Braze dépose la circulaire préliminaire pour le vote sur le rachat",
+     "it": "Braze deposita la proxy preliminare per il voto sull'acquisizione"
     },
     "text": {
-     "es": "47,50 $ por acción en efectivo. Cierre previsto en el año fiscal 2028 de Salesforce (desde febrero de 2027), pendiente de accionistas y reguladores.",
-     "en": "$47.50 per share in cash. Closing expected in Salesforce's fiscal 2028 (from February 2027), subject to shareholder and regulatory approval.",
-     "fr": "47,50 $ par action en numéraire. Clôture prévue sur l'exercice 2028 de Salesforce (dès février 2027), sous réserve des actionnaires et des régulateurs.",
-     "it": "47,50 $ per azione in contanti. Chiusura prevista nell'anno fiscale 2028 di Salesforce (da febbraio 2027), in attesa di azionisti e autorità."
+     "es": "La junta extraordinaria (virtual) aún no tiene fecha. Ambas compañías notificaron la operación bajo la ley antimonopolio de EE. UU. (HSR) el 12/11. Cierre previsto desde feb 2027.",
+     "en": "The (virtual) special meeting has no date yet. Both companies filed under the US HSR antitrust act on 12 Nov. Closing expected from Feb 2027.",
+     "fr": "L'assemblée extraordinaire (virtuelle) n'a pas encore de date. Les deux sociétés ont notifié l'opération au titre de la loi antitrust américaine HSR le 12/11. Clôture prévue à partir de févr. 2027.",
+     "it": "L'assemblea straordinaria (virtuale) non ha ancora una data. Le due società hanno notificato l'operazione ai sensi della legge antitrust USA HSR il 12/11. Chiusura prevista da feb 2027."
     }
    },
    {
@@ -247,6 +246,25 @@
      "en": "Analyst interpretation, not confirmed by the companies.",
      "fr": "Interprétation d'analystes, non confirmée par les entreprises.",
      "it": "Interpretazione degli analisti, non confermata dalle aziende."
+    }
+   },
+   {
+    "date": "2026-10-20",
+    "status": "anunciado",
+    "source": "Salesforce",
+    "url": "https://salesforce.com/news/press-releases/2026/10/20/salesforce-signs-definitive-agreement-to-acquire-braze",
+    "image": "https://www.salesforce.com/news/wp-content/uploads/sites/3/2026/10/Braze-Salesforce_3-2.png",
+    "title": {
+     "es": "Salesforce firma el acuerdo para comprar Braze por unos 5.660 M$",
+     "en": "Salesforce signs an agreement to acquire Braze for about $5.66B",
+     "fr": "Salesforce signe l'accord de rachat de Braze pour environ 5,66 Md$",
+     "it": "Salesforce firma l'accordo per acquisire Braze per circa 5,66 mld $"
+    },
+    "text": {
+     "es": "47,50 $ por acción en efectivo. Cierre previsto en el año fiscal 2028 de Salesforce (desde febrero de 2027), pendiente de accionistas y reguladores.",
+     "en": "$47.50 per share in cash. Closing expected in Salesforce's fiscal 2028 (from February 2027), subject to shareholder and regulatory approval.",
+     "fr": "47,50 $ par action en numéraire. Clôture prévue sur l'exercice 2028 de Salesforce (dès février 2027), sous réserve des actionnaires et des régulateurs.",
+     "it": "47,50 $ per azione in contanti. Chiusura prevista nell'anno fiscale 2028 di Salesforce (da febbraio 2027), in attesa di azionisti e autorità."
     }
    }
   ]

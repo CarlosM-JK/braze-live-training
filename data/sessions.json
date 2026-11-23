@@ -1,29 +1,9 @@
 {
- "updated": "2026-11-22T07:10:35+01:00",
+ "updated": "2026-11-23T07:24:27+01:00",
  "source": "https://learning.braze.com/calendar",
  "timezone": "Europe/Madrid",
- "count": 55,
+ "count": 53,
  "events": [
-  {
-   "title": "Canvas Flow を活用したエクスペリエンス オーケストレーション",
-   "start": "2026-11-13T07:30:00+01:00",
-   "end": "2026-11-13T09:00:00+01:00",
-   "url": "/canvas-101-ja/2158246",
-   "tags": [
-    "ja",
-    "apac-timezones"
-   ]
-  },
-  {
-   "title": "Prompt Engineering Workshop",
-   "start": "2026-11-13T15:00:00+01:00",
-   "end": "2026-11-13T17:00:00+01:00",
-   "url": "/prompt-engineering-workshop/2517729",
-   "tags": [
-    "live-training",
-    "english"
-   ]
-  },
   {
    "title": "Advanced Liquid",
    "start": "2026-11-16T03:00:00+01:00",

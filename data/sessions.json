@@ -1,8 +1,8 @@
 {
- "updated": "2026-11-23T07:24:27+01:00",
+ "updated": "2026-11-25T07:15:01+01:00",
  "source": "https://learning.braze.com/calendar",
  "timezone": "Europe/Madrid",
- "count": 53,
+ "count": 57,
  "events": [
   {
    "title": "Advanced Liquid",
@@ -507,10 +507,41 @@
    "tags": []
   },
   {
+   "title": "Brazeを始めよう：成果を生み出す施策設定の基礎：ライブトレーニング",
+   "start": "2027-01-06T07:30:00+01:00",
+   "end": "2027-01-06T09:30:00+01:00",
+   "url": "/braze90-course/2317453",
+   "tags": []
+  },
+  {
    "title": "How Bilt Personalizes Offers for Every Member",
    "start": "2027-01-07T17:00:00+01:00",
    "end": "2027-01-07T18:00:00+01:00",
    "url": "/webinar-how-bilt-personalizes-offers-for-every-member/2596441",
+   "tags": []
+  },
+  {
+   "title": "Canvas Flow を活用したエクスペリエンス オーケストレーション",
+   "start": "2027-01-12T07:30:00+01:00",
+   "end": "2027-01-12T09:00:00+01:00",
+   "url": "/canvas-101-ja/2158246",
+   "tags": [
+    "ja",
+    "apac-timezones"
+   ]
+  },
+  {
+   "title": "Brazeを始めよう：初回取引の促進（F1転換）",
+   "start": "2027-01-19T07:30:00+01:00",
+   "end": "2027-01-19T08:30:00+01:00",
+   "url": "/getting-started-with-braze-driving-first-transactions-ja/2450185",
+   "tags": []
+  },
+  {
+   "title": "Brazeを始めよう：離脱気味なユーザーを自然に呼び戻す",
+   "start": "2027-01-26T07:30:00+01:00",
+   "end": "2027-01-26T08:30:00+01:00",
+   "url": "/reengage-churning-users-ja/2488446",
    "tags": []
   }
  ]

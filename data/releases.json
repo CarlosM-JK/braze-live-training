@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-15T06:06:27+00:00",
+ "updated": "2026-11-25T06:15:16+00:00",
  "source": "https://www.braze.com/docs/releases/history",
  "releases": [
   {
@@ -204,7 +204,7 @@
      "section": "BrazeAI",
      "label": "ga",
      "summary": "Decisioning Studio Go agents show the standard Braze email stats you use on campaigns: sends, opens, clicks, unsubscribes, and bounces. The numbers are summed across everything the agent has sent, so you can see how the agent performs in the same metrics you use elsewhere in Braze.",
-     "doc": "https://www.braze.com/docs/user_guide/brazeai/decisioning_studio_go/measuring"
+     "doc": "https://www.braze.com/docs/user_guide/brazeai/decisioning_studio_go/reporting"
     },
     {
      "id": "partner-app-governance",

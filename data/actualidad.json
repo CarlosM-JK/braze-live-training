@@ -1,7 +1,45 @@
 {
  "_ayuda": "Actualidad Braze. Lo prepara Claude cada semana. noticias: cat = producto | casos | mercado | eventos | corporativo. salesforce.items: status = anunciado | rumoreado | disponible | analisis. hitos: state = done | next | todo. Deja image vacío: el robot busca la imagen oficial de la fuente (solo braze.com y salesforce.com). source: nombre corto y neutro de la fuente (Braze Blog, Business Wire, Salesforce, CIO.com…).",
- "updated": "2026-11-21",
+ "updated": "2026-11-25",
  "noticias": [
+  {
+   "date": "2026-11-23",
+   "cat": "eventos",
+   "source": "Braze Blog",
+   "url": "https://www.braze.com/resources/articles/key-insights-from-grow-with-braze-bangkok-2026",
+   "image": "",
+   "title": {
+    "es": "Las claves de Grow with Braze Bangkok 2026",
+    "en": "Key insights from Grow with Braze Bangkok 2026",
+    "fr": "Les points clés de Grow with Braze Bangkok 2026",
+    "it": "I punti chiave di Grow with Braze Bangkok 2026"
+   },
+   "why": {
+    "es": "Tendencias y casos de marcas asiáticas presentados en el evento; material de referencia para demos y propuestas con el equipo internacional.",
+    "en": "Trends and Asian brand cases from the event; reference material for demos and proposals with the international team.",
+    "fr": "Tendances et cas de marques asiatiques présentés lors de l'événement ; matière pour les démos et propositions internationales.",
+    "it": "Tendenze e casi di brand asiatici presentati all'evento; materiale di riferimento per demo e proposte con il team internazionale."
+   }
+  },
+  {
+   "date": "2026-11-20",
+   "cat": "casos",
+   "source": "PR TIMES",
+   "url": "https://prtimes.jp/main/html/rd/p/000000183.000066773.html",
+   "image": "",
+   "title": {
+    "es": "La marca de moda japonesa NEWYORKER (Daidoh Forward) adopta Braze",
+    "en": "Japanese fashion brand NEWYORKER (Daidoh Forward) adopts Braze",
+    "fr": "La marque de mode japonaise NEWYORKER (Daidoh Forward) adopte Braze",
+    "it": "Il marchio di moda giapponese NEWYORKER (Daidoh Forward) adotta Braze"
+   },
+   "why": {
+    "es": "Retail moda: unifica email, LINE y app sobre Databricks sin código. Caso replicable para retailers con canales de mensajería separados y datos en data warehouse.",
+    "en": "Fashion retail: unifies email, LINE and app on top of Databricks with no code. A reusable case for retailers with siloed messaging channels and warehouse data.",
+    "fr": "Retail mode : unifie email, LINE et app sur Databricks sans code. Cas reproductible pour les retailers aux canaux cloisonnés et données en data warehouse.",
+    "it": "Retail moda: unifica email, LINE e app su Databricks senza codice. Caso replicabile per retailer con canali separati e dati in data warehouse."
+   }
+  },
   {
    "date": "2026-11-19",
    "cat": "mercado",

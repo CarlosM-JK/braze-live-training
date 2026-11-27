@@ -1,33 +1,9 @@
 {
- "updated": "2026-11-26T07:14:35+01:00",
+ "updated": "2026-11-27T07:19:17+01:00",
  "source": "https://learning.braze.com/calendar",
  "timezone": "Europe/Madrid",
- "count": 55,
+ "count": 52,
  "events": [
-  {
-   "title": "Practitioner Bootcamp",
-   "start": "2026-11-17T04:00:00+01:00",
-   "end": "2026-11-17T06:00:00+01:00",
-   "url": "/braze-certified-practitioner-bootcamp-and-certification/2101366",
-   "tags": [
-    "english",
-    "apac-timezones"
-   ]
-  },
-  {
-   "title": "Brazeを始めよう：初回取引の促進（F1転換）",
-   "start": "2026-11-17T07:30:00+01:00",
-   "end": "2026-11-17T08:30:00+01:00",
-   "url": "/getting-started-with-braze-driving-first-transactions-ja/2450185",
-   "tags": []
-  },
-  {
-   "title": "Webinar: Braze in the Wild - Real-World Technical Solutions",
-   "start": "2026-11-17T18:00:00+01:00",
-   "end": "2026-11-17T19:30:00+01:00",
-   "url": "/webinar-braze-in-the-wild-real-world-technical-solutions/2596567",
-   "tags": []
-  },
   {
    "title": "Get Started with Braze: Seamless Reengagement with Targeted Reminders",
    "start": "2026-11-18T04:00:00+01:00",
